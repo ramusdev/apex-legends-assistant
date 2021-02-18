@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         window.setNavigationBarColor(this.getResources().getColor(R.color.red));
 
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.list, ItemFragment.class, null).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, ItemFragment.class, null).commit();
     }
 
     @Override

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.rb.apexlegendsassistant.dummy.DummyContent;
 
@@ -54,6 +55,9 @@ public class ItemFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
+        // ListView listView = (ListView) view.findViewById(android.R.id.list);
+        // listView.addHeaderView(new View(view.getContext()));
+        // listView.addFooterView(new View(getActivity().getApplicationContext()));
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -64,7 +68,9 @@ public class ItemFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(DummyContent.ITEMS));
+
+            MyItemRecyclerViewAdapter adapter = new MyItemRecyclerViewAdapter(DummyContent.ITEMS);
+            recyclerView.setAdapter(adapter);
         }
         return view;
     }
