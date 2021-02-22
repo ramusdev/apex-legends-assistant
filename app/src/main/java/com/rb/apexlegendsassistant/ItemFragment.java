@@ -15,6 +15,10 @@ import android.widget.ListView;
 
 import com.rb.apexlegendsassistant.dummy.DummyContent;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A fragment representing a list of Items.
  */
@@ -54,10 +58,12 @@ public class ItemFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
-        // ListView listView = (ListView) view.findViewById(android.R.id.list);
-        // listView.addHeaderView(new View(view.getContext()));
-        // listView.addFooterView(new View(getActivity().getApplicationContext()));
+
+        NewsLoader newsLoader = new NewsLoader(getContext());
+        // List<News> newsArray = NewsLoader.convertDateToView(newsLoader.load());
+        List<News> newsArray = newsLoader.loadThen().convertDateToView();
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -69,7 +75,7 @@ public class ItemFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
 
-            MyItemRecyclerViewAdapter adapter = new MyItemRecyclerViewAdapter(DummyContent.ITEMS);
+            MyItemRecyclerViewAdapter adapter = new MyItemRecyclerViewAdapter(getContext(), newsArray);
             recyclerView.setAdapter(adapter);
         }
         return view;
