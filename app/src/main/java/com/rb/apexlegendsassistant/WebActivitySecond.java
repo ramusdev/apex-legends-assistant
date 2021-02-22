@@ -8,6 +8,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -45,9 +46,19 @@ public class WebActivitySecond extends AppCompatActivity {
         webView.getSettings().setAllowFileAccess(true);
         webView.setWebChromeClient(new WebChromeClient());
 
-        String text = "Text";
+        String text = getIntent().getStringExtra("BUNDLE_TEXT");
+        String title = getIntent().getStringExtra("BUNDLE_TITLE");
+        String titleHtml = "<div class=\"main_title\">" + title + "</div>";
 
-        webView.loadDataWithBaseURL(null, text, "text/html", "utf-8", "");
+        // Style after move to parser
+        String style = "<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"https://edgenews.ru/android/apexlegends/news/style/style.css\">";
+        StringBuilder stringBuilder = new StringBuilder(text)
+            .insert(0, "<html>")
+            .insert(6, titleHtml)
+            .append(style)
+            .append("</html>");
+
+        webView.loadDataWithBaseURL(null, stringBuilder.toString(), "text/html", "utf-8", "");
     }
 
     @Override

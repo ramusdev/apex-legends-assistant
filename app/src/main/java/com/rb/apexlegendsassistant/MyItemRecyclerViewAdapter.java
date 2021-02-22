@@ -83,7 +83,8 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         public void onClick(View v) {
             Log.d("MyTag", "Element " + getAdapterPosition() + " clicked");
             Intent intent = new Intent(context, WebActivitySecond.class);
-            intent.putExtra("BUNDLE_ARGS", "<html><h1>Title</h1></html>");
+            intent.putExtra("BUNDLE_TEXT", mItem.getText());
+            intent.putExtra("BUNDLE_TITLE", mItem.getTitle());
             context.startActivity(intent);
         }
     }
