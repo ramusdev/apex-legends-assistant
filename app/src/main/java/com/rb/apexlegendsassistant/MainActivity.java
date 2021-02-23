@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new DataDbHelper(this);
 
         // Tasks after create
-        // createTasks();
+        createTasks();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);

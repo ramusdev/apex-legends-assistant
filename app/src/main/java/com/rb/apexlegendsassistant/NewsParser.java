@@ -97,13 +97,17 @@ public class NewsParser {
             textUncoded = new String(bytes);
             news.setDate(textUncoded);
 
+
             // Content
-            element = document.select("ea-section[slot=section]").get(1);
-            bytes = element.toString().getBytes(StandardCharsets.UTF_8);
-            textUncoded = new String(bytes);
-            news.setText(textUncoded);
+            Elements elements = document.select("ea-section[slot=section]");
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = 1; i < elements.size() - 1; i++) {
+                bytes = elements.get(i).toString().getBytes(StandardCharsets.UTF_8);
+                textUncoded = new String(bytes);
+                stringBuilder.append(textUncoded);
+            }
 
-
+            news.setText(stringBuilder.toString());
         }
 
         return newsArray;
