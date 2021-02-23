@@ -21,8 +21,23 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_main2">MainActivity</string>
 
+    <!-- Text donate tab -->
+    <string name="donate_text">
+    <![CDATA[
+        <font color=#712123>Привет! Поддержи приложение донатом!</font><br><br>
+        Warface Assistant полностью бесплатное и поддерживается только вашими пожертвованиями.<br><br>
+        Если тебе понравилось приложение поддержи его донатом, это мотивирует на дальнейшее улутшение.
+    ]]>
+    </string>
+
     <!-- Tollbar menu -->
     <string name="toolbar_main">Главная</string>
     <string name="toolbar_news">Новости</string>
     <string name="toolbar_donate">Донат</string>
+    <string name="title_activity_my_application">MyApplication</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>

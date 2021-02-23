@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         window.setStatusBarColor(this.getResources().getColor(R.color.red));
         window.setNavigationBarColor(this.getResources().getColor(R.color.red));
 
-        // getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, NewsFragment.class, null).commit();
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, DonateFragment.class, null).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, NewsFragment.class, null).commit();
+        // getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, DonateFragment.class, null).commit();
     }
 
     @Override
