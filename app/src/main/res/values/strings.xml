@@ -22,5 +22,7 @@
     <string name="title_activity_main2">MainActivity</string>
 
     <!-- Tollbar menu -->
+    <string name="toolbar_main">Главная</string>
     <string name="toolbar_news">Новости</string>
+    <string name="toolbar_donate">Донат</string>
 </resources>

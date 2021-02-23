@@ -2,27 +2,19 @@ package com.rb.apexlegendsassistant;
 
 import android.content.Context;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
-
-import com.rb.apexlegendsassistant.dummy.DummyContent;
-
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * A fragment representing a list of Items.
  */
-public class ItemFragment extends Fragment {
+public class NewsFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -33,13 +25,13 @@ public class ItemFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public ItemFragment() {
+    public NewsFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static ItemFragment newInstance(int columnCount) {
-        ItemFragment fragment = new ItemFragment();
+    public static NewsFragment newInstance(int columnCount) {
+        NewsFragment fragment = new NewsFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -62,7 +54,6 @@ public class ItemFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
 
         NewsLoader newsLoader = new NewsLoader(getContext());
-        // List<News> newsArray = NewsLoader.convertDateToView(newsLoader.load());
         List<News> newsArray = newsLoader.loadThen().convertDateToView();
 
         // Set the adapter

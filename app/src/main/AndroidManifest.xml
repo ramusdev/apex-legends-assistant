@@ -11,7 +11,7 @@
         android:hardwareAccelerated="true"
         android:theme="@style/Theme.ApexLegendsAssistant">
         <activity
-            android:name=".WebActivitySecond"
+            android:name=".WebActivity"
             android:label="@string/title_activity_web_second"
             android:theme="@style/Theme.ApexLegendsAssistant.NoActionBar" />
         <activity

@@ -10,14 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
-import com.rb.apexlegendsassistant.dummy.DummyContent.DummyItem;
 import java.util.List;
 import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> {
 
     private final List<News> mValues;
@@ -27,8 +22,6 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         mValues = items;
         this.context = context;
     }
-
-
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -82,7 +75,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
         @Override
         public void onClick(View v) {
             Log.d("MyTag", "Element " + getAdapterPosition() + " clicked");
-            Intent intent = new Intent(context, WebActivitySecond.class);
+            Intent intent = new Intent(context, WebActivity.class);
             intent.putExtra("BUNDLE_TEXT", mItem.getText());
             intent.putExtra("BUNDLE_TITLE", mItem.getTitle());
             context.startActivity(intent);
