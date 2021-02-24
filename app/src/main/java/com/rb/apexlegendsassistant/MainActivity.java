@@ -1,7 +1,9 @@
 package com.rb.apexlegendsassistant;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import com.google.android.material.navigation.NavigationView;
@@ -10,6 +12,8 @@ import com.rb.apexlegendsassistant.data.DataDbHelper;
 import java.io.IOException;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -36,8 +40,41 @@ public class MainActivity extends AppCompatActivity {
         // Tasks after create
         createTasks();
 
+        // Navigation
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                drawer.closeDrawers();
+
+
+                if (item.getItemId() == R.id.nav_item_news) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.replace(R.id.nav_host_fragment, NewsFragment.class, null).commit();
+                        }
+                    }, 200);
+                }
+
+                if (item.getItemId() == R.id.nav_item_donate) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.replace(R.id.nav_host_fragment, NewsFragment.class, null).commit();
+                        }
+                    }, 200);
+                }
+
+
+                return false;
+            }
+        });
+
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(

@@ -2,6 +2,8 @@ package com.rb.apexlegendsassistant;
 
 import android.content.Context;
 import android.os.Bundle;
+
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -52,6 +54,10 @@ public class NewsFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
+
+        // Toolbar
+        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+        toolbar.setTitle(getResources().getString(R.string.toolbar_news));
 
         NewsLoader newsLoader = new NewsLoader(getContext());
         List<News> newsArray = newsLoader.loadThen().convertDateToView();
