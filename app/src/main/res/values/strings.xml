@@ -34,6 +34,7 @@
     <string name="toolbar_main">Главная</string>
     <string name="toolbar_news">Новости</string>
     <string name="toolbar_donate">Донат</string>
+    <string name="toolbar_about">О приложении</string>
     <string name="title_activity_my_application">MyApplication</string>
     <!--
     This string is used for square devices and overridden by hello_world in

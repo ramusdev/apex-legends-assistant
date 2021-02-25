@@ -67,29 +67,27 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem item) {
                 drawerLayout.closeDrawers();
 
-                Log.d("MyTag", String.valueOf(item.getItemId()));
-                Log.d("MyTag", "text");
-
                 if (item.getItemId() == R.id.nav_item_news) {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
+                            item.setChecked(true);
                             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                             transaction.replace(R.id.nav_host_fragment, NewsFragment.class, null).commit();
                         }
-                    }, 500);
+                    }, 250);
                 }
 
                 if (item.getItemId() == R.id.nav_item_donate) {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
+                            item.setChecked(true);
                             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                             transaction.replace(R.id.nav_host_fragment, DonateFragment.class, null).commit();
                         }
-                    }, 500);
+                    }, 250);
                 }
-
 
                 return false;
             }
