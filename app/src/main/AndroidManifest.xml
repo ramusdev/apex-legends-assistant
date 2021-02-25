@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:hardwareAccelerated="true"
         android:name=".MyApplicationContext"
+        android:screenOrientation="portrait"
         android:theme="@style/Theme.ApexLegendsAssistant">
         <activity
             android:name=".WebActivity"

@@ -6,17 +6,12 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
-    <string name="menu_home">Главная</string>
-    <string name="menu_gallery">Новости</string>
-    <string name="menu_slideshow">О приложении</string>
     <string name="title_activity_web_second">WebActivitySecond</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_main2">MainActivity</string>
@@ -24,34 +19,44 @@
     <!-- Text donate tab -->
     <string name="donate_text">
     <![CDATA[
-        <font color=#712123>Привет! Поддержи приложение донатом!</font><br><br>
-        Warface Assistant полностью бесплатное и поддерживается только вашими пожертвованиями.<br><br>
-        Если тебе понравилось приложение поддержи его донатом, это мотивирует на дальнейшее улутшение.
+       <font color=#712123>Hi! Support the app with a donation!</font><br><br>
+        Warface Assistant is completely free and supported only by your donations.<br><br>
+        If you liked the application, support it with a donation, it motivates you to further improve.
     ]]>
     </string>
 
     <!-- Text about tab -->
     <string name="about_text">
     <![CDATA[
-        Данное приложение не является продуктом компании Electronic Arts.<br><br>
-        Приложение содержит информацию по игре Apex Legends<br><br>
-        <font color=#712123>Правовое уведомление</font><br><br>
-        Политика конфиденциальности <a href="https://edgenews.ru/android/apexlegends/privacy/privacy_policy.html">читать.</a><br><br>
-        Авторские права содержащихся изображений и материалов принадлежат компании Electronic Arts и являются интеллектуальной собственностью Electronic Arts: © 2021 Electronic Arts. Все права защищены.<br><br>
-        Apex Legends и логотип Apex Legends являются зарегистрированными товарными знаками или товарными знаками Electronic Arts.<br><br>
-        <font color=#712123>Дополнительная информация</font><br><br>
-        - Текущая версия: 1.0.3<br>
-        - Разработчик: RB dev.<br>
-        - Связаться: ram219219@gmail.com
+        This application is not a product of Electronic Arts.<br><br>
+        The app contains information about the game Apex Legends<br><br>
+        <font color=#712123>Legal notice</font><br><br>
+        Privacy Policy <a href="https://edgenews.ru/android/apexlegends/privacy/privacy_policy.html">read.</a><br><br>
+        The copyright of the images and materials contained is owned by Electronic Arts and is the intellectual property of Electronic Arts: © 2021 Electronic Arts. All rights reserved.<br><br>
+        Apex Legends and the Apex Legends logo are registered trademarks or trademarks of Electronic Arts.<br><br>
+        <font color=#712123>Additional information</font><br><br>
+        - Current version: 1.0.3<br>
+        - Developer: RB dev.<br>
+        - Contact: ram219219@gmail.com
     ]]>
     </string>
 
     <!-- Tollbar menu -->
-    <string name="toolbar_main">Главная</string>
-    <string name="toolbar_news">Новости</string>
-    <string name="toolbar_donate">Донат</string>
-    <string name="toolbar_about">О приложении</string>
+    <string name="toolbar_main">MAIN</string>
+    <string name="toolbar_news">NEWS</string>
+    <string name="toolbar_donate">DONATE</string>
+    <string name="toolbar_about">ABOUT</string>
     <string name="title_activity_my_application">MyApplication</string>
+
+    <!-- Donate buttons -->
+    <string name="donate_button_one">Recruit</string>
+    <string name="donate_button_two">Sergeant</string>
+    <string name="donate_button_three">Lieutenant</string>
+    <string name="donate_button_four">Marshal</string>
+
+    <!-- News link -->
+    <string name="news_link">https://www.ea.com/games/apex-legends/news</string>
+
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.

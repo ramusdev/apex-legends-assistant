@@ -48,7 +48,7 @@
                 app:backgroundTint="@null"
                 android:background="@drawable/button_donate_click"
                 android:textColor="@drawable/text_donate_click"
-                android:text="Новобранец"
+                android:text="@string/donate_button_one"
                 android:textSize="15sp" />
 
             <Button
@@ -61,7 +61,7 @@
                 app:backgroundTint="@null"
                 android:background="@drawable/button_donate_click"
                 android:textColor="@drawable/text_donate_click"
-                android:text="Сержант"
+                android:text="@string/donate_button_two"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -80,7 +80,7 @@
                 app:backgroundTint="@null"
                 android:background="@drawable/button_donate_click"
                 android:textColor="@drawable/text_donate_click"
-                android:text="Лейтенант"
+                android:text="@string/donate_button_three"
                 android:textSize="15sp" />
 
             <Button
@@ -93,7 +93,7 @@
                 app:backgroundTint="@null"
                 android:background="@drawable/button_donate_click"
                 android:textColor="@drawable/text_donate_click"
-                android:text="Маршал"
+                android:text="@string/donate_button_four"
                 android:textSize="15sp" />
         </LinearLayout>
 

@@ -2,6 +2,7 @@ package com.rb.apexlegendsassistant;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
@@ -24,8 +25,7 @@ public class UpdateNewsAsync extends AsyncTask<Void, Void, Void> {
 
     Context context;
     List<News> newsArray = new ArrayList<News>();
-    public static final String NEWS_LINK = "https://www.ea.com/ru-ru/games/apex-legends/news";
-
+    // public static final String NEWS_LINK = "https://www.ea.com/ru-ru/games/apex-legends/news";
     public UpdateNewsAsync(Context context) {
         this.context = context;
     }
@@ -45,7 +45,7 @@ public class UpdateNewsAsync extends AsyncTask<Void, Void, Void> {
 
     public void parseNews() {
         try {
-            NewsParser newsParser = new NewsParser(NEWS_LINK);
+            NewsParser newsParser = new NewsParser(context.getResources().getString(R.string.news_link));
             newsArray = newsParser.parse();
         } catch (IOException e) {
             System.out.println(e.getMessage());
