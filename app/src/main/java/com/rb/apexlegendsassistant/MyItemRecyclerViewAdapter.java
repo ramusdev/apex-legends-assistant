@@ -74,7 +74,6 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
 
         @Override
         public void onClick(View v) {
-            Log.d("MyTag", "Element " + getAdapterPosition() + " clicked");
             Intent intent = new Intent(context, WebActivity.class);
             intent.putExtra("BUNDLE_TEXT", mItem.getText());
             intent.putExtra("BUNDLE_TITLE", mItem.getTitle());
