@@ -30,6 +30,22 @@
     ]]>
     </string>
 
+    <!-- Text about tab -->
+    <string name="about_text">
+    <![CDATA[
+        Данное приложение не является продуктом компании Electronic Arts.<br><br>
+        Приложение содержит информацию по игре Apex Legends<br><br>
+        <font color=#712123>Правовое уведомление</font><br><br>
+        Политика конфиденциальности <a href="https://edgenews.ru/android/apexlegends/privacy/privacy_policy.html">читать.</a><br><br>
+        Авторские права содержащихся изображений и материалов принадлежат компании Electronic Arts и являются интеллектуальной собственностью Electronic Arts: © 2021 Electronic Arts. Все права защищены.<br><br>
+        Apex Legends и логотип Apex Legends являются зарегистрированными товарными знаками или товарными знаками Electronic Arts.<br><br>
+        <font color=#712123>Дополнительная информация</font><br><br>
+        - Текущая версия: 1.0.3<br>
+        - Разработчик: RB dev.<br>
+        - Связаться: ram219219@gmail.com
+    ]]>
+    </string>
+
     <!-- Tollbar menu -->
     <string name="toolbar_main">Главная</string>
     <string name="toolbar_news">Новости</string>
@@ -41,4 +57,6 @@
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

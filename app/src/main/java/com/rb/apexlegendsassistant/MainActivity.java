@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
                             item.setChecked(true);
                             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                             transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                            // transaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
                             transaction.replace(R.id.nav_host_fragment, NewsFragment.class, null).commit();
                         }
                     }, 250);
@@ -87,8 +86,19 @@ public class MainActivity extends AppCompatActivity {
                             item.setChecked(true);
                             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                             transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                            // transaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
                             transaction.replace(R.id.nav_host_fragment, DonateFragment.class, null).commit();
+                        }
+                    }, 250);
+                }
+
+                if (item.getItemId() == R.id.nav_item_about) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            item.setChecked(true);
+                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                            transaction.replace(R.id.nav_host_fragment, AboutFragment.class, null).commit();
                         }
                     }, 250);
                 }
