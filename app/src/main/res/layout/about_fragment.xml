@@ -26,6 +26,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_marginTop="20dp"
+            android:textColorLink="@color/dark_red"
             android:autoLink="none"
             android:text="Привет! Поддержи приложение донатом!"
             android:textSize="15sp" />
