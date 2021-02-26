@@ -18,7 +18,8 @@
 
     <style name="Theme.ApexLegendsAssistant.NoActionBar">
         <item name="windowNoTitle">true</item>
-  		<item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <!-- <item name="android:background">@drawable/apex_splash10</item> -->
 	</style>
 
     <style name="Widget.Theme.ApexLegendsAssistant.ButtonBar.Fullscreen" parent="">
