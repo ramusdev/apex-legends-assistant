@@ -2,7 +2,6 @@ package com.rb.apexlegendsassistant;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
@@ -12,12 +11,9 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.util.Log;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import com.rb.apexlegendsassistant.data.DataContract;
 import com.rb.apexlegendsassistant.data.DataDbHelper;
 
@@ -42,7 +38,6 @@ public class UpdateNewsAsync extends AsyncTask<Void, Void, Void> {
         return null;
     }
 
-
     public void parseNews() {
         try {
             NewsParser newsParser = new NewsParser(context.getResources().getString(R.string.news_link));
@@ -52,62 +47,12 @@ public class UpdateNewsAsync extends AsyncTask<Void, Void, Void> {
         }
     }
 
-    public String cleanText(String text, String imageLink) {
-        StringBuilder stringBuilder = new StringBuilder(text);
-        String html = "<html>";
-        String style = "<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"https://edgenews.ru/android/wardocwarface/news/style.css\">";
-        String image = "<img src=\"" + imageLink + "\">";
-
-        stringBuilder.insert(0, html);
-        stringBuilder.insert(6, style);
-        stringBuilder.insert(121, image);
-        stringBuilder.append("</html>");
-
-        String cleanTags = stringBuilder
-                .toString()
-                .replace("&lt;", "<")
-                .replace("&gt;", ">")
-                .replace("&amp;", "&")
-                .replace("&nbsp;", " ")
-                .replace("&quot;", "\"")
-                .replace("&mdash;", "—")
-        	    .replace("<!--break-->", "");
-
-        Pattern pattern = Pattern.compile("<script(.*?)</script>(.*?)<style(.*?)</style>", Pattern.DOTALL);
-        Matcher matcher = pattern.matcher(cleanTags);
-        String cleanScript = matcher.replaceAll("");
-
-        return cleanScript;
-    }
-
-    public String cleanPreview(String text) {
-        String cleanText = text
-                .replace("&lt;", "<")
-                .replace("&gt;", ">")
-                .replace("&amp;", "&")
-                .replace("&nbsp;", " ")
-                .replace("&quot;", "\"")
-                .replace("&mdash;", "—")
-                .replace("<!--break-->", "");
-
-        return cleanText;
-    }
-
     public void insertNewsToDatabase() {
         DataDbHelper dbHelper = new DataDbHelper(context);
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
 
         for (News news : newsArray) {
             if (! isNewsExists(news, sqLiteDatabase)) {
-                // String text = cleanText(news.getText(), news.getImage());
-                // news.setText(text);
-
-                // String previewText = cleanPreview(news.getPreviewText());
-                // news.setPreviewText(previewText);
-
-                // String date = News.formatFromParseToDatabase(news.getDate());
-                // news.setDate(date);
-
                 NewsValuesAdapter newValuesAdapter = new NewsValuesAdapter(news);
                 ContentValues contentValues = newValuesAdapter.convert();
                 long newRowId = sqLiteDatabase.insert(DataContract.NewsEntry.TABLE_NAME, null, contentValues);

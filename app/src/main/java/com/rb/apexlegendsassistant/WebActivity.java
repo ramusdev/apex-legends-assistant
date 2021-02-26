@@ -21,8 +21,8 @@ public class WebActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_second);
 
         // Toolbar
