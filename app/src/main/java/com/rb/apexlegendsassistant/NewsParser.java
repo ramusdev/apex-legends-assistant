@@ -50,7 +50,7 @@ public class NewsParser {
 
         List<News> newsArrayFiltered = newsArray.stream().filter(e -> {
             return e.getLink().contains("/news/");
-        }).collect(Collectors.toList());
+        }).limit(10).collect(Collectors.toList());
 
         return newsArrayFiltered;
     }

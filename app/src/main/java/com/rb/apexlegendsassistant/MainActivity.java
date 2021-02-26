@@ -35,14 +35,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(getResources().getString(R.string.donate_text));
+        toolbar.setTitle(getResources().getString(R.string.about_text));
         setSupportActionBar(toolbar);
 
         // Open connection to db
         dbHelper = new DataDbHelper(this);
 
         // Tasks after create
-        createTasks();
+        // createTasks();
 
         // mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         // mNavigationView = (NavigationView) findViewById(R.id.shitstuff);
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                             transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                             transaction.replace(R.id.nav_host_fragment, NewsFragment.class, null).commit();
                         }
-                    }, 250);
+                    }, 275);
                 }
 
                 if (item.getItemId() == R.id.nav_item_donate) {
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                             transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                             transaction.replace(R.id.nav_host_fragment, DonateFragment.class, null).commit();
                         }
-                    }, 250);
+                    }, 275);
                 }
 
                 if (item.getItemId() == R.id.nav_item_about) {
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                             transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                             transaction.replace(R.id.nav_host_fragment, AboutFragment.class, null).commit();
                         }
-                    }, 250);
+                    }, 275);
                 }
 
                 return false;
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         window.setNavigationBarColor(this.getResources().getColor(R.color.red));
 
         // getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, NewsFragment.class, null).commit();
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, DonateFragment.class, null).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, AboutFragment.class, null).commit();
     }
 
     /*

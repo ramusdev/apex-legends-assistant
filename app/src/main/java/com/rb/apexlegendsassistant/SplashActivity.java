@@ -2,15 +2,20 @@ package com.rb.apexlegendsassistant;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import com.rb.apexlegendsassistant.data.DataDbHelper;
+import java.util.List;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private final int SPLASH_TIME = 2000;
+    private int splashTime;
+    public DataDbHelper dbHelper;
 
     @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
@@ -26,9 +31,15 @@ public class SplashActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
         decorView.setSystemUiVisibility(flags);
 
-
         setContentView(R.layout.activity_splash);
 
+        // Open connection to db
+        dbHelper = new DataDbHelper(this);
+
+        // Tasks after create
+        createTasks();
+
+        /*
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -37,8 +48,36 @@ public class SplashActivity extends AppCompatActivity {
                 SplashActivity.this.finish();
             }
         }, SPLASH_TIME);
+        */
 
+    }
 
+    public void updateNewsIfNotExists() {
+        NewsLoader newsLoader = new NewsLoader(this.getApplicationContext());
+        List<News> news = newsLoader.load();
+
+        if (news.size() <= 0) {
+            UpdateNewsAsync updateNewsAsync = new UpdateNewsAsync(this.getApplicationContext());
+            updateNewsAsync.execute();
+
+            splashTime = 8000;
+        } else {
+            splashTime = 1000;
+        }
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                SplashActivity.this.startActivity(intent);
+                SplashActivity.this.finish();
+            }
+        }, splashTime);
+    }
+
+    public void createTasks() {
+        updateNewsIfNotExists();
+        // createPeriodicTask();
     }
 
     /*
