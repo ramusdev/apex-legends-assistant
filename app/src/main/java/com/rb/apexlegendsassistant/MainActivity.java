@@ -1,5 +1,9 @@
 package com.rb.apexlegendsassistant;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -11,7 +15,9 @@ import com.google.android.material.navigation.NavigationView;
 import com.rb.apexlegendsassistant.data.DataDbHelper;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -35,17 +41,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(getResources().getString(R.string.about_text));
+        toolbar.setTitle(getResources().getString(R.string.toolbar_news));
         setSupportActionBar(toolbar);
 
         // Open connection to db
         dbHelper = new DataDbHelper(this);
 
         // Tasks after create
-        // createTasks();
+        createTasks();
 
-        // mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        // mNavigationView = (NavigationView) findViewById(R.id.shitstuff);
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.navigation_view);
 
@@ -54,14 +58,6 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.bringToFront();
-
-        // navigationView.setNavigationItemSelectedListener(this);
-        // ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
-        // drawerLayout.setDrawerListener(mDrawerToggle);
-        // mDrawerToggle.syncState();
-        // Navigation
-        // DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        // NavigationView navigationView = findViewById(R.id.nav_view);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -108,19 +104,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-
-        // mAppBarConfiguration = new AppBarConfiguration.Builder(
-                // R.id.nav_item_news, R.id.nav_item_donate)
-                // .setDrawerLayout(drawerLayout)
-                // .build();
-
-        // NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        // NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        // NavigationUI.setupWithNavController(navigationView, navController);
-
-
         // Set window top and bottop color
         Window window = this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -128,38 +111,23 @@ public class MainActivity extends AppCompatActivity {
         window.setStatusBarColor(this.getResources().getColor(R.color.red));
         window.setNavigationBarColor(this.getResources().getColor(R.color.red));
 
-        // getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, NewsFragment.class, null).commit();
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, AboutFragment.class, null).commit();
-    }
-
-    /*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }
-    */
-
-    public void updateNewsIfNotExists() {
-        NewsLoader newsLoader = new NewsLoader(this.getApplicationContext());
-        List<News> news = newsLoader.load();
-
-        if (news.size() <= 0) {
-            UpdateNewsAsync updateNewsAsync = new UpdateNewsAsync(this.getApplicationContext());
-            updateNewsAsync.execute();
-        }
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, NewsFragment.class, null).commit();
     }
 
     public void createTasks() {
-        updateNewsIfNotExists();
-        // createPeriodicTask();
+        createPeriodicTask();
+    }
+
+    public void createPeriodicTask() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        // calendar.add(Calendar.SECOND, 10);
+        long time = calendar.getTimeInMillis();
+
+        Intent intent = new Intent(this, Broadcast.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        manager.setRepeating(AlarmManager.RTC_WAKEUP, time, TimeUnit.HOURS.toMillis(24), pendingIntent);
     }
 }

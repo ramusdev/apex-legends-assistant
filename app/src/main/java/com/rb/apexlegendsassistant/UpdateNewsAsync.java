@@ -28,8 +28,6 @@ public class UpdateNewsAsync extends AsyncTask<Void, Void, Void> {
 
     @Override
     protected Void doInBackground(Void... voids) {
-        Log.e("CustomLogTag", "From background update news");
-
         if (isNetworkAvailable()) {
             parseNews();
             insertNewsToDatabase();

@@ -38,18 +38,6 @@ public class SplashActivity extends AppCompatActivity {
 
         // Tasks after create
         createTasks();
-
-        /*
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-                SplashActivity.this.startActivity(intent);
-                SplashActivity.this.finish();
-            }
-        }, SPLASH_TIME);
-        */
-
     }
 
     public void updateNewsIfNotExists() {
@@ -60,7 +48,7 @@ public class SplashActivity extends AppCompatActivity {
             UpdateNewsAsync updateNewsAsync = new UpdateNewsAsync(this.getApplicationContext());
             updateNewsAsync.execute();
 
-            splashTime = 8000;
+            splashTime = 9000;
         } else {
             splashTime = 1000;
         }
@@ -77,7 +65,6 @@ public class SplashActivity extends AppCompatActivity {
 
     public void createTasks() {
         updateNewsIfNotExists();
-        // createPeriodicTask();
     }
 
     /*
