@@ -1,12 +1,9 @@
-package com.rb.apexlegendsassistant;
+package com.rbdev.apexlegendsassistant;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -115,10 +112,10 @@ public class DonateFragment extends Fragment implements View.OnClickListener {
                     Log.d("MyTag", "Donate: connect ok billing client");
 
                     List<String> skuList = new ArrayList<String>();
-                    skuList.add("donate_lvl_1");
-                    skuList.add("donate_lvl_2");
-                    skuList.add("donate_lvl_3");
-                    skuList.add("donate_lvl_4");
+                    skuList.add("donate_1");
+                    skuList.add("donate_2");
+                    skuList.add("donate_3");
+                    skuList.add("donate_4");
 
                     SkuDetailsParams.Builder params = SkuDetailsParams.newBuilder();
                     params.setSkusList(skuList).setType(BillingClient.SkuType.INAPP);

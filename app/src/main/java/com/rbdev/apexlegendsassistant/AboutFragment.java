@@ -1,4 +1,4 @@
-package com.rb.apexlegendsassistant;
+package com.rbdev.apexlegendsassistant;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;

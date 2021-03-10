@@ -1,8 +1,7 @@
-package com.rb.apexlegendsassistant;
+package com.rbdev.apexlegendsassistant;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -10,7 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import com.rb.apexlegendsassistant.data.DataDbHelper;
+import com.rbdev.apexlegendsassistant.data.DataDbHelper;
 import java.util.List;
 
 public class SplashActivity extends AppCompatActivity {
@@ -50,7 +49,7 @@ public class SplashActivity extends AppCompatActivity {
             UpdateNewsAsync updateNewsAsync = new UpdateNewsAsync(this.getApplicationContext());
             updateNewsAsync.execute();
 
-            splashTime = 9000;
+            splashTime = 10000;
         } else {
             splashTime = 1000;
         }

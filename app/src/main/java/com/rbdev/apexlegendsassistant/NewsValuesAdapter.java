@@ -1,7 +1,7 @@
-package com.rb.apexlegendsassistant;
+package com.rbdev.apexlegendsassistant;
 
 import android.content.ContentValues;
-import com.rb.apexlegendsassistant.data.DataContract;
+import com.rbdev.apexlegendsassistant.data.DataContract;
 
 public class NewsValuesAdapter {
 

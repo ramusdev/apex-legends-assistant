@@ -1,4 +1,4 @@
-package com.rb.apexlegendsassistant;
+package com.rbdev.apexlegendsassistant;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,12 +10,12 @@ import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.util.Log;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.rb.apexlegendsassistant.data.DataContract;
-import com.rb.apexlegendsassistant.data.DataDbHelper;
+import com.rbdev.apexlegendsassistant.data.DataContract;
+import com.rbdev.apexlegendsassistant.data.DataDbHelper;
 
 public class UpdateNewsAsync extends AsyncTask<Void, Void, Void> {
 

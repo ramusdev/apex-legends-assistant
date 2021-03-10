@@ -1,10 +1,10 @@
-package com.rb.apexlegendsassistant;
+package com.rbdev.apexlegendsassistant;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
-import com.rb.apexlegendsassistant.data.DataContract;
-import com.rb.apexlegendsassistant.data.DataDbHelper;
+import com.rbdev.apexlegendsassistant.data.DataContract;
+import com.rbdev.apexlegendsassistant.data.DataDbHelper;
 
 public class NewsClear extends AsyncTask {
 

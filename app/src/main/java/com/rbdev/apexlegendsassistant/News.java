@@ -1,4 +1,4 @@
-package com.rb.apexlegendsassistant;
+package com.rbdev.apexlegendsassistant;
 
 public class News {
 
