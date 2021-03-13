@@ -40,7 +40,7 @@
         </receiver>
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-4140002463111288~7771735508"/>
+            android:value="ca-app-pub-4140002463111288~4468777132"/>
     </application>
     <uses-permission android:name="com.android.vending.BILLING" />
     <uses-permission android:name="android.permission.INTERNET" />

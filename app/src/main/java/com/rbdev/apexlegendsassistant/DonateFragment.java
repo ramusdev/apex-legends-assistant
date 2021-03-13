@@ -65,9 +65,10 @@ public class DonateFragment extends Fragment implements View.OnClickListener {
         Button buttonDonateLvlFour = (Button) view.findViewById(R.id.button_donate_lvl_four);
         buttonDonateLvlFour.setOnClickListener(this);
 
-        // if (mainActivity.isNetworkAvailable()) {
+        MainActivity mainActivity = (MainActivity) getActivity();
+        if (mainActivity.isNetworkAvailable()) {
             initBillingClient();
-        // }
+        }
 
         return view;
     }
@@ -161,7 +162,7 @@ public class DonateFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         Log.d("MyTag", "Donate: onclick");
-        v.getId();
+        // v.getId();
 
         int responseCode;
 
@@ -176,7 +177,7 @@ public class DonateFragment extends Fragment implements View.OnClickListener {
         BillingFlowParams billingFlowParams = null;
         BillingFlowParams.Builder billingFlowParamsBuilder = BillingFlowParams.newBuilder();
 
-        switch (view.getId()) {
+        switch (v.getId()) {
             case R.id.button_donate_lvl_one:
                 try {
                     billingFlowParams = billingFlowParamsBuilder.setSkuDetails(skuDetailsLvlOne).build();
@@ -206,13 +207,14 @@ public class DonateFragment extends Fragment implements View.OnClickListener {
                 }
                 break;
             default:
-                throw new IllegalStateException("Unexpected value: " + view.getId());
+                Log.d("MyTag", "Unexpected value");
+                throw new IllegalStateException("Unexpected value: " + v.getId());
         }
 
         try {
             responseCode = billingClient.launchBillingFlow(getActivity(), billingFlowParams).getResponseCode();
         } catch (NullPointerException e) {
-            // Log.e("CustomLogTag", "SKU null pointer");
+            Log.d("MyTag", "SKU null pointer");
         }
     }
 }
