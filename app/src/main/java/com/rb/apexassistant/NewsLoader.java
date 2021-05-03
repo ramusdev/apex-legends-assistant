@@ -1,4 +1,4 @@
-package com.rbdev.apexlegendsassistant;
+package com.rb.apexassistant;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import com.rbdev.apexlegendsassistant.data.DataContract;
-import com.rbdev.apexlegendsassistant.data.DataDbHelper;
+import com.rb.apexassistant.data.DataContract;
+import com.rb.apexassistant.data.DataDbHelper;
 
 public class NewsLoader {
 

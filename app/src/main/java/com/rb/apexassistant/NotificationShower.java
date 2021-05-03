@@ -1,4 +1,4 @@
-package com.rbdev.apexlegendsassistant;
+package com.rb.apexassistant;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -16,8 +16,8 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.util.Log;
-import com.rbdev.apexlegendsassistant.data.DataContract;
-import com.rbdev.apexlegendsassistant.data.DataDbHelper;
+import com.rb.apexassistant.data.DataContract;
+import com.rb.apexassistant.data.DataDbHelper;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;

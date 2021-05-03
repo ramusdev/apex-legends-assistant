@@ -1,4 +1,4 @@
-package com.rbdev.apexlegendsassistant;
+package com.rb.apexassistant;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -20,9 +20,10 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.navigation.NavigationView;
-import com.rbdev.apexlegendsassistant.data.DataDbHelper;
+import com.rb.apexassistant.data.DataDbHelper;
 
 import java.util.Calendar;
+import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Set window top and bottop color
+        // Set window top and bottom color
         Window window = this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -126,9 +127,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createTasks() {
-        createPeriodicTask();
+        // createPeriodicTask();
+        // updateNews();
     }
 
+    /*
+    public void updateNews() {
+        TaskRunner<Integer> taskRunner = new TaskRunner<Integer>();
+        Callable callable = new UpdateNewsCallable(1);
+        taskRunner.executeAsync(callable);
+    }
+    */
+
+    /*
     public void createPeriodicTask() {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
@@ -141,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
         AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         manager.setRepeating(AlarmManager.RTC_WAKEUP, time, TimeUnit.HOURS.toMillis(24), pendingIntent);
     }
+    */
 
     public boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);

@@ -1,4 +1,4 @@
-package com.rbdev.apexlegendsassistant;
+package com.rb.apexassistant;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,15 +9,15 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import com.rbdev.apexlegendsassistant.data.DataDbHelper;
+import com.rb.apexassistant.data.DataDbHelper;
 import java.util.List;
+import java.util.concurrent.Callable;
 
 public class SplashActivity extends AppCompatActivity {
 
     private int splashTime;
     public DataDbHelper dbHelper;
 
-    @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
     public void onCreate(Bundle savedInstanceState) {
         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
@@ -34,26 +34,35 @@ public class SplashActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash);
 
-        // Open connection to db
-        dbHelper = new DataDbHelper(this);
-
         // Tasks after create
         createTasks();
     }
 
     public void updateNewsIfNotExists() {
+        dbHelper = new DataDbHelper(this.getApplicationContext());
         NewsLoader newsLoader = new NewsLoader(this.getApplicationContext());
         List<News> news = newsLoader.load();
 
         if (news.size() <= 0) {
-            UpdateNewsAsync updateNewsAsync = new UpdateNewsAsync(this.getApplicationContext());
-            updateNewsAsync.execute();
+            final TaskRunner.TaskRunnerCallback<Integer> task = new TaskRunner.TaskRunnerCallback<Integer>() {
+                @Override
+                public void execute(Integer taskAfterDone) {
+                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                    SplashActivity.this.startActivity(intent);
+                    SplashActivity.this.finish();
+                }
+            };
 
-            splashTime = 10000;
+            TaskRunner<Integer> taskRunner = new TaskRunner<Integer>();
+            Callable callable = new UpdateNewsCallable(2);
+            taskRunner.executeAsync(callable, task);
         } else {
-            splashTime = 1000;
+            closeSplash();
         }
+    }
 
+    public void closeSplash() {
+        splashTime = 1000;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.rbdev.apexlegendsassistant">
+    package="com.rb.apexassistant">
 
     <application
-        android:name="com.rbdev.apexlegendsassistant.MyApplicationContext"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,7 +14,7 @@
         android:largeHeap="true"
         android:theme="@style/Theme.ApexLegendsAssistant">
         <activity
-            android:name="com.rbdev.apexlegendsassistant.SplashActivity"
+            android:name="com.rb.apexassistant.SplashActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.ApexLegendsAssistant.NoActionBar">
             <intent-filter>
@@ -23,21 +23,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.rbdev.apexlegendsassistant.WebActivity"
+            android:name="com.rb.apexassistant.WebActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.ApexLegendsAssistant.NoActionBar" />
         <activity
-            android:name="com.rbdev.apexlegendsassistant.MainActivity"
+            android:name="com.rb.apexassistant.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.ApexLegendsAssistant.NoActionBar">
         </activity>
+        <!--
         <receiver
-            android:name="com.rbdev.apexlegendsassistant.Broadcast"
+            android:name="com.rb.apexassistant.Broadcast"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+        -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-4140002463111288~4468777132"/>

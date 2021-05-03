@@ -1,4 +1,4 @@
-package com.rbdev.apexlegendsassistant;
+package com.rb.apexassistant;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -12,11 +12,13 @@ import java.util.stream.Collectors;
 
 public class NewsParser {
 
-    private String newsLink;
+    public String newsLink;
     public static final String DOMAIN = "https://www.ea.com";
+    public int newsToPars;
 
-    public NewsParser(String newsLink) {
+    public NewsParser(String newsLink, int newsToPars) {
         this.newsLink = newsLink;
+        this.newsToPars = newsToPars;
     }
 
     public List<News> parse() throws IOException {
@@ -62,7 +64,9 @@ public class NewsParser {
         Element element;
         byte[] bytes;
 
-        for (News news : newsArray) {
+        for (int i = 0; i < newsToPars; i++) {
+            News news = newsArray.get(i);
+
             Document document;
             document = Jsoup.connect(news.getLink())
                     .userAgent("Chrome/4.0.249.0 Safari/532.5")
@@ -97,12 +101,11 @@ public class NewsParser {
             textUncoded = new String(bytes);
             news.setDate(textUncoded);
 
-
             // Content
             Elements elements = document.select("ea-section[slot=section]");
             StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 1; i < elements.size() - 1; i++) {
-                bytes = elements.get(i).toString().getBytes(StandardCharsets.UTF_8);
+            for (int k = 1; k < elements.size() - 1; k++) {
+                bytes = elements.get(k).toString().getBytes(StandardCharsets.UTF_8);
                 textUncoded = new String(bytes);
                 stringBuilder.append(textUncoded);
             }

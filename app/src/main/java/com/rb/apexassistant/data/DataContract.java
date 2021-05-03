@@ -1,4 +1,4 @@
-package com.rbdev.apexlegendsassistant.data;
+package com.rb.apexassistant.data;
 
 import android.provider.BaseColumns;
 

@@ -1,4 +1,4 @@
-package com.rbdev.apexlegendsassistant;
+package com.rb.apexassistant;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -14,31 +14,36 @@ import android.os.Build;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import com.rbdev.apexlegendsassistant.data.DataContract;
-import com.rbdev.apexlegendsassistant.data.DataDbHelper;
+import java.util.concurrent.Callable;
 
-public class UpdateNewsAsync extends AsyncTask<Void, Void, Void> {
+import com.rb.apexassistant.data.DataContract;
+import com.rb.apexassistant.data.DataDbHelper;
+
+public class UpdateNewsCallable implements Callable<Integer> {
 
     Context context;
     List<News> newsArray = new ArrayList<News>();
+    int newsToPars;
     // public static final String NEWS_LINK = "https://www.ea.com/ru-ru/games/apex-legends/news";
-    public UpdateNewsAsync(Context context) {
-        this.context = context;
+
+    public UpdateNewsCallable(int newsToPars) {
+        this.context = MyApplicationContext.getAppContext();
+        this.newsToPars = newsToPars;
     }
 
     @Override
-    protected Void doInBackground(Void... voids) {
+    public Integer call() {
         if (isNetworkAvailable()) {
             parseNews();
             insertNewsToDatabase();
         }
 
-        return null;
+        return 1;
     }
 
     public void parseNews() {
         try {
-            NewsParser newsParser = new NewsParser(context.getResources().getString(R.string.news_link));
+            NewsParser newsParser = new NewsParser(context.getResources().getString(R.string.news_link), newsToPars);
             newsArray = newsParser.parse();
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -98,4 +103,5 @@ public class UpdateNewsAsync extends AsyncTask<Void, Void, Void> {
             return networkInfo != null && networkInfo.isConnected();
         }
     }
+
 }
