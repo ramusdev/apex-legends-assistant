@@ -113,10 +113,10 @@ public class DonateFragment extends Fragment implements View.OnClickListener {
                     Log.d("MyTag", "Donate: connect ok billing client");
 
                     List<String> skuList = new ArrayList<String>();
-                    skuList.add("donate_1");
-                    skuList.add("donate_2");
-                    skuList.add("donate_3");
-                    skuList.add("donate_4");
+                    skuList.add("bronze");
+                    skuList.add("silver");
+                    skuList.add("gold");
+                    skuList.add("diamond");
 
                     SkuDetailsParams.Builder params = SkuDetailsParams.newBuilder();
                     params.setSkusList(skuList).setType(BillingClient.SkuType.INAPP);

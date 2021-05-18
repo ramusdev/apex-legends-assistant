@@ -34,7 +34,7 @@ public class MyApplication extends Application {
         // Work manager
         Log.d("MyTag", "my application start class --->");
         WorkManager workManager = WorkManager.getInstance(this);
-        ListenableFuture<List<WorkInfo>> statuses = workManager.getWorkInfosByTag("task_worker2");
+        ListenableFuture<List<WorkInfo>> statuses = workManager.getWorkInfosByTag("task_worker3");
 
         try {
             List<WorkInfo> workInfoList = statuses.get();

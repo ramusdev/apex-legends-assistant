@@ -6,19 +6,21 @@ import android.os.AsyncTask;
 import com.rb.apexassistant.data.DataContract;
 import com.rb.apexassistant.data.DataDbHelper;
 
-public class NewsClear extends AsyncTask {
+import java.util.concurrent.Callable;
+
+public class NewsClearCallable implements Callable<Integer> {
 
     private Context context;
 
-    public NewsClear(Context context) {
-        this.context = context;
+    public NewsClearCallable() {
+        this.context = MyApplicationContext.getAppContext();
     }
 
     @Override
-    protected Object doInBackground(Object[] objects) {
+    public Integer call() {
         clearNews();
 
-        return null;
+        return 1;
     }
 
     public void clearNews() {

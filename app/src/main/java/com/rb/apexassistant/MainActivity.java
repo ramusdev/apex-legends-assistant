@@ -127,32 +127,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createTasks() {
-        // createPeriodicTask();
-        // updateNews();
+
     }
-
-    /*
-    public void updateNews() {
-        TaskRunner<Integer> taskRunner = new TaskRunner<Integer>();
-        Callable callable = new UpdateNewsCallable(1);
-        taskRunner.executeAsync(callable);
-    }
-    */
-
-    /*
-    public void createPeriodicTask() {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(System.currentTimeMillis());
-        // calendar.add(Calendar.SECOND, 10);
-        long time = calendar.getTimeInMillis();
-
-        Intent intent = new Intent(this, Broadcast.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        manager.setRepeating(AlarmManager.RTC_WAKEUP, time, TimeUnit.HOURS.toMillis(24), pendingIntent);
-    }
-    */
 
     public boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);

@@ -1,10 +1,7 @@
 package com.rb.apexassistant;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
-
-import com.rb.apexassistant.data.DataDbHelper;
 
 import java.util.concurrent.Callable;
 
@@ -30,8 +27,15 @@ public class PeriodicWork extends Worker {
         Log.d("MyTag", "periodic work class -->");
 
         TaskRunner<Integer> taskRunner = new TaskRunner<Integer>();
-        Callable callable = new UpdateNewsCallable(5);
-        taskRunner.executeAsync(callable);
+
+        Callable newsUpdateCallable = new NewsUpdateCallable(10);
+        taskRunner.executeAsync(newsUpdateCallable);
+
+        Callable newsClearCallable = new NewsClearCallable();
+        taskRunner.executeAsync(newsClearCallable);
+
+        Callable newsNotificationCallable = new NewsNotificationCallable();
+        taskRunner.executeAsync(newsNotificationCallable);
 
         return Result.success();
     }

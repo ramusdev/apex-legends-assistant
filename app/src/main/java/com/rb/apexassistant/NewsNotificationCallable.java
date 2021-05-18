@@ -20,33 +20,34 @@ import com.rb.apexassistant.data.DataContract;
 import com.rb.apexassistant.data.DataDbHelper;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
-public class NotificationShower extends AsyncTask {
+public class NewsNotificationCallable implements Callable<Integer> {
 
     private Context context;
     private List<News> newsArray;
     DataDbHelper dbHelper;
 
-    public NotificationShower(Context context) {
-        this.context = context;
+    public NewsNotificationCallable() {
+        this.context = MyApplicationContext.getAppContext();
         newsArray = new ArrayList<News>();
         dbHelper = new DataDbHelper(context);
     }
 
     @Override
-    protected Object doInBackground(Object[] objects) {
+    public Integer call() {
         try {
-            Thread.sleep(TimeUnit.SECONDS.toMillis(30));
+            Thread.sleep(TimeUnit.SECONDS.toMillis(20));
         } catch (InterruptedException e) {
-            Log.e("CustomLogTag", "Exception");
+            Log.e("MyTag", "NotificationShowerCallablee exeption: " + e.getMessage());
         }
 
         loadNotShowedNews();
         showNotificationIfExists();
         changeNewsToShowed();
 
-        return null;
+        return 1;
     }
 
     public void notificationShow(News news) {

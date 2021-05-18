@@ -19,14 +19,14 @@ import java.util.concurrent.Callable;
 import com.rb.apexassistant.data.DataContract;
 import com.rb.apexassistant.data.DataDbHelper;
 
-public class UpdateNewsCallable implements Callable<Integer> {
+public class NewsUpdateCallable implements Callable<Integer> {
 
     Context context;
     List<News> newsArray = new ArrayList<News>();
     int newsToPars;
     // public static final String NEWS_LINK = "https://www.ea.com/ru-ru/games/apex-legends/news";
 
-    public UpdateNewsCallable(int newsToPars) {
+    public NewsUpdateCallable(int newsToPars) {
         this.context = MyApplicationContext.getAppContext();
         this.newsToPars = newsToPars;
     }

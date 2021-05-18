@@ -1,11 +1,9 @@
 package com.rb.apexassistant;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -54,7 +52,7 @@ public class SplashActivity extends AppCompatActivity {
             };
 
             TaskRunner<Integer> taskRunner = new TaskRunner<Integer>();
-            Callable callable = new UpdateNewsCallable(2);
+            Callable callable = new NewsUpdateCallable(2);
             taskRunner.executeAsync(callable, task);
         } else {
             closeSplash();
