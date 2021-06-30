@@ -44,6 +44,7 @@
     <!-- Tollbar menu -->
     <string name="toolbar_main">MAIN</string>
     <string name="toolbar_news">NEWS</string>
+    <string name="toolbar_twitter">TWITTER</string>
     <string name="toolbar_donate">DONATE</string>
     <string name="toolbar_about">ABOUT</string>
     <string name="title_activity_my_application">MyApplication</string>

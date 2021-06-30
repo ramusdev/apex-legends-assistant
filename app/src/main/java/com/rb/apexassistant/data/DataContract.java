@@ -20,4 +20,15 @@ public final class DataContract {
         public static final String COLUMN_IMAGE = "image";
         public static final String COLUMN_NOTIFIED = "notified";
     }
+
+    public static final class TweetsEntry implements BaseColumns {
+        public final static String TABLE_NAME = "tweets";
+
+        public static final String _ID = BaseColumns._ID;
+        public static final String COLUMN_TWEETID = "tweetid";
+        public static final String COLUMN_TEXT = "text";
+        public static final String COLUMN_DATE = "date";
+        public static final String COLUMN_IMAGE = "image";
+        public static final String COLUMN_NOTIFIED = "notified";
+    }
 }

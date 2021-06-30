@@ -44,6 +44,7 @@
     <!-- Tollbar menu -->
     <string name="toolbar_main">ГЛАВНАЯ</string>
     <string name="toolbar_news">НОВОСТИ</string>
+    <string name="toolbar_twitter">Твиттер</string>
     <string name="toolbar_donate">ДОНАТ</string>
     <string name="toolbar_about">О ПРИЛОЖЕНИИ</string>
     <string name="title_activity_my_application">MyApplication</string>

@@ -10,6 +10,10 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/toolbar_news" />
         <item
+            android:id="@+id/nav_item_twitter"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/toolbar_twitter" />
+        <item
             android:id="@+id/nav_item_donate"
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/toolbar_donate" />

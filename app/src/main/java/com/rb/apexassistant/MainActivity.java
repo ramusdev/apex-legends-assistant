@@ -12,6 +12,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
@@ -112,6 +113,18 @@ public class MainActivity extends AppCompatActivity {
                     }, 275);
                 }
 
+                if (item.getItemId() == R.id.nav_item_twitter) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            item.setChecked(true);
+                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                            transaction.replace(R.id.nav_host_fragment, AboutFragment.class, null).commit();
+                        }
+                    }, 275);
+                }
+
                 return false;
             }
         });
@@ -127,7 +140,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createTasks() {
+        Log.d("MyTag", "create task -->");
 
+        TaskRunner<Integer> taskRunner = new TaskRunner<Integer>();
+
+        Callable tweetsUpdateCallable = new TweetsUpdateCallable();
+        taskRunner.executeAsync(tweetsUpdateCallable);
     }
 
     public boolean isNetworkAvailable() {
