@@ -19,7 +19,8 @@ import java.util.concurrent.Callable;
 public class TweetsUpdateCallable implements Callable<Integer> {
 
     private static final String BEARER_TOKEN = "AAAAAAAAAAAAAAAAAAAAAMSSOAEAAAAAUrlw%2F5NK7PaofUsqVwIxqAzDwt4%3DXjFrA4cvtSMuNeS9yD4RuPHkTO1WXnWwQdJJzzvs1keEXPeNq9";
-    private static final String ACCOUNT_ID = "1048018930785083392";
+    // private static final String ACCOUNT_ID = "1048018930785083392";
+    private static final String ACCOUNT_ID = "14922225";
 
     Context context;
 
@@ -52,16 +53,14 @@ public class TweetsUpdateCallable implements Callable<Integer> {
         DataDbHelper dbHelper = new DataDbHelper(context);
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
 
+        for (Tweet tweet : tweets) {
+            // if (! isNewsExists(news, sqLiteDatabase)) {
+                // NewsValuesAdapter newValuesAdapter = new NewsValuesAdapter(news);
+                // ContentValues contentValues = newValuesAdapter.convert();
 
-        /*
-        for (News news : newsArray) {
-            if (! isNewsExists(news, sqLiteDatabase)) {
-                NewsValuesAdapter newValuesAdapter = new NewsValuesAdapter(news);
-                ContentValues contentValues = newValuesAdapter.convert();
-                long newRowId = sqLiteDatabase.insert(DataContract.NewsEntry.TABLE_NAME, null, contentValues);
-            }
+                long newRowId = sqLiteDatabase.insert(DataContract.TweetsEntry.TABLE_NAME, null, TweetValuesAdapter.convert(tweet));
+            // }
         }
-        */
     }
 
     public boolean isNetworkAvailable() {

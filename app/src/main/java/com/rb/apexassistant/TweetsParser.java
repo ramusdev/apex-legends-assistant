@@ -63,7 +63,7 @@ public class TweetsParser {
             ArrayList<String> imageKeys = t.getImageKeys();
             imageKeys.forEach(i -> {
                 if (media.containsKey(i)) {
-                    t.setImages(media.get(i));
+                    t.setImage(media.get(i));
                 }
             });
         });
@@ -149,7 +149,7 @@ public class TweetsParser {
 
             if (type.equals("photo")) {
                 url = item.getAsJsonObject().get("url").getAsString();
-            } else if (type.equals("video") || type.equals("GIF")) {
+            } else if (type.equals("video") || type.equals("GIF") || type.equals("animated_gif")) {
                 url = item.getAsJsonObject().get("preview_image_url").getAsString();
             }
 

@@ -26,10 +26,10 @@ public class PeriodicWorkCreator {
 
         PeriodicWorkRequest periodicWorkRequest = new PeriodicWorkRequest.Builder(PeriodicWork.class, 20, TimeUnit.HOURS)
                 .setConstraints(constraints)
-                .addTag("task_worker3")
+                .addTag("task_worker4")
                 .build();
 
         workManager = WorkManager.getInstance(application);
-        workManager.enqueueUniquePeriodicWork("work_manager_name3", ExistingPeriodicWorkPolicy.REPLACE, periodicWorkRequest);
+        workManager.enqueueUniquePeriodicWork("work_manager_name4", ExistingPeriodicWorkPolicy.REPLACE, periodicWorkRequest);
     }
 }

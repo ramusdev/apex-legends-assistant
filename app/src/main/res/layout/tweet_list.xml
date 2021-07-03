@@ -10,5 +10,5 @@
     android:clipToPadding="false"
     android:paddingTop="15dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".TweetsFragment"
-    tools:listitem="@layout/tweet_item" />
+    tools:context=".NewsFragment"
+    tools:listitem="@layout/fragment_item" />

@@ -21,12 +21,28 @@ public class Tweet {
         this.imageKeys.add(imageKey);
     }
 
-    public void setImages(String url) {
+    public void setImage(String url) {
         this.images.add(url);
+    }
+
+    public void setImages(ArrayList<String> images) {
+        this.images = images;
     }
 
     public ArrayList<String> getImageKeys() {
         return imageKeys;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setDate(String date) {
+        this.created_at = date;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 
     public ArrayList<String> getImages() {
@@ -44,4 +60,5 @@ public class Tweet {
     public String getId() {
         return id;
     }
+
 }

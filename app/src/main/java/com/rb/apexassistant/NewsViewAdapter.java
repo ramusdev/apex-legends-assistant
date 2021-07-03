@@ -3,21 +3,25 @@ package com.rb.apexassistant;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.MultiTransformation;
+import com.bumptech.glide.load.resource.bitmap.GranularRoundedCorners;
+
 import java.util.List;
 import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
-public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> {
+public class NewsViewAdapter extends RecyclerView.Adapter<NewsViewAdapter.ViewHolder> {
 
     private final List<News> mValues;
     private Context context;
 
-    public MyItemRecyclerViewAdapter(Context context, List<News> items) {
+    public NewsViewAdapter(Context context, List<News> items) {
         mValues = items;
         this.context = context;
     }
@@ -39,6 +43,7 @@ public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecycl
                 .load(mValues.get(position).getImage())
                 .dontTransform()
                 .transition(withCrossFade())
+                .transform(new MultiTransformation(new GranularRoundedCorners(20, 20, 0, 0)))
                 .into(holder.mImageView);
     }
 

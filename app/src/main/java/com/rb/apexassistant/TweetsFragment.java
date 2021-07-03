@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * A fragment representing a list of Items.
  */
-public class NewsFragment extends Fragment {
+public class TweetsFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -27,7 +27,7 @@ public class NewsFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public NewsFragment() {
+    public TweetsFragment() {
     }
 
     // TODO: Customize parameter initialization
@@ -56,10 +56,10 @@ public class NewsFragment extends Fragment {
 
         // Toolbar
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle(getResources().getString(R.string.toolbar_news));
+        toolbar.setTitle(getResources().getString(R.string.toolbar_twitter));
 
-        NewsLoader newsLoader = new NewsLoader(getContext());
-        List<News> newsArray = newsLoader.loadThen().convertDateToView();
+        TweetsLoader tweetsLoader = new TweetsLoader(getContext());
+        List<Tweet> tweetsArray = tweetsLoader.loadThen().convertDateToView();
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -71,7 +71,7 @@ public class NewsFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
 
-            NewsViewAdapter adapter = new NewsViewAdapter(getContext(), newsArray);
+            TweetsViewAdapter adapter = new TweetsViewAdapter(getContext(), tweetsArray);
             recyclerView.setAdapter(adapter);
         }
         return view;

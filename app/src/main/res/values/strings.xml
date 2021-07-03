@@ -42,11 +42,11 @@
     </string>
 
     <!-- Tollbar menu -->
-    <string name="toolbar_main">MAIN</string>
-    <string name="toolbar_news">NEWS</string>
-    <string name="toolbar_twitter">TWITTER</string>
-    <string name="toolbar_donate">DONATE</string>
-    <string name="toolbar_about">ABOUT</string>
+    <string name="toolbar_main">Main</string>
+    <string name="toolbar_news">News</string>
+    <string name="toolbar_twitter">Twitter</string>
+    <string name="toolbar_donate">Donate</string>
+    <string name="toolbar_about">About</string>
     <string name="title_activity_my_application">MyApplication</string>
 
     <!-- Donate buttons -->

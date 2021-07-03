@@ -3,15 +3,9 @@ package com.rb.apexassistant;
 import android.content.ContentValues;
 import com.rb.apexassistant.data.DataContract;
 
-public class NewsValuesAdapter {
+public class NewsValuesAdapter implements ValuesAdapterInterface {
 
-    private News news;
-
-    public NewsValuesAdapter(News news) {
-        this.news = news;
-    }
-
-    public ContentValues convert() {
+    public static ContentValues convert(News news) {
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(DataContract.NewsEntry.COLUMN_TITLE, news.getTitle());

@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new DataDbHelper(this);
 
         // Tasks after create
-        createTasks();
+        // createTasks();
 
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.navigation_view);
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                             item.setChecked(true);
                             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                             transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                            transaction.replace(R.id.nav_host_fragment, AboutFragment.class, null).commit();
+                            transaction.replace(R.id.nav_host_fragment, TweetsFragment.class, null).commit();
                         }
                     }, 275);
                 }

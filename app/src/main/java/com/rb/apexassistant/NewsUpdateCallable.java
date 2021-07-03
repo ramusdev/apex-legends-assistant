@@ -56,9 +56,7 @@ public class NewsUpdateCallable implements Callable<Integer> {
 
         for (News news : newsArray) {
             if (! isNewsExists(news, sqLiteDatabase)) {
-                NewsValuesAdapter newValuesAdapter = new NewsValuesAdapter(news);
-                ContentValues contentValues = newValuesAdapter.convert();
-                long newRowId = sqLiteDatabase.insert(DataContract.NewsEntry.TABLE_NAME, null, contentValues);
+                long newRowId = sqLiteDatabase.insert(DataContract.NewsEntry.TABLE_NAME, null, NewsValuesAdapter.convert(news));
             }
         }
     }
