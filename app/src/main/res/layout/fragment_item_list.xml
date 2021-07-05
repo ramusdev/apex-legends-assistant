@@ -11,4 +11,4 @@
     android:paddingTop="15dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".TweetsFragment"
-    tools:listitem="@layout/tweet_item" />
+    tools:listitem="@layout/tweet_item_oneimage" />

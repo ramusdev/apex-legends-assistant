@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new DataDbHelper(this);
 
         // Tasks after create
-        // createTasks();
+        createTasks();
 
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.navigation_view);
@@ -146,6 +146,11 @@ public class MainActivity extends AppCompatActivity {
 
         Callable tweetsUpdateCallable = new TweetsUpdateCallable();
         taskRunner.executeAsync(tweetsUpdateCallable);
+
+        // Callable tweetsClearCallable = new TweetsClearCallable();
+        // taskRunner.executeAsync(tweetsClearCallable);
+
+
     }
 
     public boolean isNetworkAvailable() {

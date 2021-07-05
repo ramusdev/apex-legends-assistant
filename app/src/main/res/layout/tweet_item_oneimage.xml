@@ -39,9 +39,10 @@
         android:id="@+id/news_image"
         android:layout_below="@+id/news_text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="220dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY" />
+        ads:srcCompat="@drawable/apex_news_logo"
+        android:scaleType="centerCrop" />
 </RelativeLayout>

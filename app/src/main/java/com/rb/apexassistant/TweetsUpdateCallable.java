@@ -2,6 +2,7 @@ package com.rb.apexassistant;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
 import android.net.Network;
@@ -19,8 +20,8 @@ import java.util.concurrent.Callable;
 public class TweetsUpdateCallable implements Callable<Integer> {
 
     private static final String BEARER_TOKEN = "AAAAAAAAAAAAAAAAAAAAAMSSOAEAAAAAUrlw%2F5NK7PaofUsqVwIxqAzDwt4%3DXjFrA4cvtSMuNeS9yD4RuPHkTO1WXnWwQdJJzzvs1keEXPeNq9";
-    // private static final String ACCOUNT_ID = "1048018930785083392";
-    private static final String ACCOUNT_ID = "14922225";
+    private static final String ACCOUNT_ID = "1048018930785083392";
+    // private static final String ACCOUNT_ID = "14922225";
 
     Context context;
 
@@ -54,12 +55,33 @@ public class TweetsUpdateCallable implements Callable<Integer> {
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
 
         for (Tweet tweet : tweets) {
-            // if (! isNewsExists(news, sqLiteDatabase)) {
-                // NewsValuesAdapter newValuesAdapter = new NewsValuesAdapter(news);
-                // ContentValues contentValues = newValuesAdapter.convert();
-
+            if (! isTweetExists(tweet, sqLiteDatabase)) {
                 long newRowId = sqLiteDatabase.insert(DataContract.TweetsEntry.TABLE_NAME, null, TweetValuesAdapter.convert(tweet));
-            // }
+            }
+        }
+    }
+
+    public boolean isTweetExists(Tweet tweet, SQLiteDatabase sqLiteDatabase) {
+        String selection = DataContract.TweetsEntry.COLUMN_TWEETID + " = ?";
+        String[] selectionArgs = { tweet.getId() };
+
+        Cursor cursor = sqLiteDatabase.query(DataContract.TweetsEntry.TABLE_NAME,
+                null,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
+        );
+
+        if (cursor.moveToNext()) {
+            // Log.e("CustomLogTag", "Entry exists in database");
+            cursor.close();
+            return true;
+        } else {
+            // Log.e("CustomLogTag", "Entry do not exists in database");
+            cursor.close();
+            return false;
         }
     }
 
