@@ -13,6 +13,8 @@
         android:supportsRtl="true"
         android:largeHeap="true"
         android:theme="@style/Theme.ApexLegendsAssistant">
+
+        <!--
         <activity
             android:name="com.rb.apexassistant.SplashActivity"
             android:label="@string/app_name"
@@ -22,6 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        -->
+
         <activity
             android:name="com.rb.apexassistant.WebActivity"
             android:label="@string/app_name"
@@ -29,26 +33,24 @@
         <activity
             android:name="com.rb.apexassistant.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ApexLegendsAssistant.NoActionBar">
-        </activity>
-        <!--
-        <receiver
-            android:name="com.rb.apexassistant.Broadcast"
-            android:exported="true">
+            android:theme="@style/Theme.ApexLegendsAssistant.NoActionBar" >
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </receiver>
-        -->
+        </activity>
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-4140002463111288~4468777132"/>
+            android:value="ca-app-pub-4140002463111288~6633624015"/>
     </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.android.vending.BILLING" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.QUICKBOOT_POWERON" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
 </manifest>

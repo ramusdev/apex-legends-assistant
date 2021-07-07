@@ -16,7 +16,7 @@ import androidx.work.WorkManager;
 
 public class MyApplication extends Application {
 
-    // private static AppOpenManager appOpenManager;
+    private static AppOpenManager appOpenManager;
 
     @Override
     public void onCreate() {
@@ -24,17 +24,17 @@ public class MyApplication extends Application {
 
         MyApplicationContext myApplicationContext = new MyApplicationContext(this);
 
-        // MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            // @Override
-            // public void onInitializationComplete(InitializationStatus initializationStatus) {
-            // }
-        // });
-        // appOpenManager = new AppOpenManager(this);
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        appOpenManager = new AppOpenManager(this);
 
         // Work manager
         Log.d("MyTag", "my application start class --->");
         WorkManager workManager = WorkManager.getInstance(this);
-        ListenableFuture<List<WorkInfo>> statuses = workManager.getWorkInfosByTag("task_worker4");
+        ListenableFuture<List<WorkInfo>> statuses = workManager.getWorkInfosByTag("task_worker6");
 
         try {
             List<WorkInfo> workInfoList = statuses.get();

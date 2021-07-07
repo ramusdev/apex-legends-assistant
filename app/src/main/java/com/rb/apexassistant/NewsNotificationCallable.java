@@ -38,7 +38,7 @@ public class NewsNotificationCallable implements Callable<Integer> {
     @Override
     public Integer call() {
         try {
-            Thread.sleep(TimeUnit.SECONDS.toMillis(20));
+            Thread.sleep(TimeUnit.SECONDS.toMillis(10));
         } catch (InterruptedException e) {
             Log.e("MyTag", "NotificationShowerCallablee exeption: " + e.getMessage());
         }

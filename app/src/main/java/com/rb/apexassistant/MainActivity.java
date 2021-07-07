@@ -24,6 +24,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.rb.apexassistant.data.DataDbHelper;
 
 import java.util.Calendar;
+import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
@@ -50,12 +51,14 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle(getResources().getString(R.string.toolbar_news));
         setSupportActionBar(toolbar);
 
+        /*
         // Init mobile ads
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
+        */
 
         // Open connection to db
         dbHelper = new DataDbHelper(this);
@@ -142,15 +145,23 @@ public class MainActivity extends AppCompatActivity {
     public void createTasks() {
         Log.d("MyTag", "create task -->");
 
+        NewsLoader newsLoader = new NewsLoader(this.getApplicationContext());
+        List<News> news = newsLoader.load();
+
+        TweetsLoader tweetsLoader = new TweetsLoader(this.getApplicationContext());
+        List<Tweet> tweets = tweetsLoader.load();
+
         TaskRunner<Integer> taskRunner = new TaskRunner<Integer>();
 
-        Callable tweetsUpdateCallable = new TweetsUpdateCallable();
-        taskRunner.executeAsync(tweetsUpdateCallable);
+        if (news.size() <= 0) {
+            Callable callable = new NewsUpdateCallable(5);
+            taskRunner.executeAsync(callable);
+        }
 
-        // Callable tweetsClearCallable = new TweetsClearCallable();
-        // taskRunner.executeAsync(tweetsClearCallable);
-
-
+        if (tweets.size() <= 0) {
+            Callable callable = new TweetsUpdateCallable();
+            taskRunner.executeAsync(callable);
+        }
     }
 
     public boolean isNetworkAvailable() {
