@@ -29,7 +29,8 @@ public class MyApplication extends Application {
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
-        appOpenManager = new AppOpenManager(this);
+
+        // appOpenManager = new AppOpenManager(this);
 
         // Work manager
         Log.d("MyTag", "my application start class --->");

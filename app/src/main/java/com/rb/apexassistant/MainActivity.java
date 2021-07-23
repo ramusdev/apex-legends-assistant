@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle(getResources().getString(R.string.toolbar_news));
         setSupportActionBar(toolbar);
 
+
         /*
         // Init mobile ads
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -128,6 +129,18 @@ public class MainActivity extends AppCompatActivity {
                     }, 275);
                 }
 
+                if (item.getItemId() == R.id.nav_item_wallpaper) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            item.setChecked(true);
+                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                            transaction.replace(R.id.nav_host_fragment, WallpaperFragment.class, null).commit();
+                        }
+                    }, 275);
+                }
+
                 return false;
             }
         });
@@ -139,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         window.setStatusBarColor(this.getResources().getColor(R.color.red));
         window.setNavigationBarColor(this.getResources().getColor(R.color.red));
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, NewsFragment.class, null).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, WallpaperFragment.class, null).commit();
     }
 
     public void createTasks() {
