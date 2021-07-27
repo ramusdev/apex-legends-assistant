@@ -41,10 +41,10 @@ import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOption
 
 public class WallpaperViewAdapter extends RecyclerView.Adapter<WallpaperViewAdapter.ViewHolder> {
 
-    private final List<News> mValues;
+    private final List<Wallpaper> mValues;
     private Context context;
 
-    public WallpaperViewAdapter(Context context, List<News> items) {
+    public WallpaperViewAdapter(Context context, List<Wallpaper> items) {
         mValues = items;
         this.context = context;
     }
@@ -66,7 +66,7 @@ public class WallpaperViewAdapter extends RecyclerView.Adapter<WallpaperViewAdap
                 .load(mValues.get(position).getImage())
                 .dontTransform()
                 .transition(withCrossFade())
-                .transform(new MultiTransformation(new GranularRoundedCorners(20, 20, 0, 0)))
+                .transform(new MultiTransformation(new GranularRoundedCorners(20, 20, 20, 20)))
                 .into(holder.mImageView);
     }
 
@@ -82,7 +82,7 @@ public class WallpaperViewAdapter extends RecyclerView.Adapter<WallpaperViewAdap
         // public final TextView mDateView;
         public final ImageView mImageView;
         public Button button;
-        public News mItem;
+        public Wallpaper mItem;
 
         public ViewHolder(View view) {
             super(view);

@@ -31,4 +31,11 @@ public final class DataContract {
         public static final String COLUMN_IMAGE = "image";
         public static final String COLUMN_NOTIFIED = "notified";
     }
+
+    public static final class WallpaperEntry implements BaseColumns {
+        public final static String TABLE_NAME = "wallpapers";
+
+        public static final String _ID = BaseColumns._ID;
+        public static final String COLUMN_IMAGE = "image";
+    }
 }

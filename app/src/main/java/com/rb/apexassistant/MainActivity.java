@@ -156,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createTasks() {
+
         Log.d("MyTag", "create task -->");
 
         NewsLoader newsLoader = new NewsLoader(this.getApplicationContext());
@@ -175,6 +176,10 @@ public class MainActivity extends AppCompatActivity {
             Callable callable = new TweetsUpdateCallable();
             taskRunner.executeAsync(callable);
         }
+
+
+        Callable databasePopulatorCallable = new DatabasePopulatorCallable();
+        taskRunner.executeAsync(databasePopulatorCallable);
     }
 
     public boolean isNetworkAvailable() {

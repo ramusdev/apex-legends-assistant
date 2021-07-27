@@ -34,7 +34,7 @@ public class ImageDownloadCallable implements Callable<String> {
 
     @Override
     public String call() throws IOException {
-        // String fileLink = "https://edgenews.ru/android/apexlegends/wallpapers/4265064.jpg";
+        String fileLink = "https://edgenews.ru/android/apexlegends/wallpapers/4265064.jpg";
 
         URL url = new URL(fileLink);
         Path path = Paths.get(url.getPath());

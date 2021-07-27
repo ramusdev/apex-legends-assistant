@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.appcompat.widget.Toolbar;
@@ -22,7 +23,7 @@ public class WallpaperFragment extends Fragment {
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
-    private int mColumnCount = 1;
+    private int mColumnCount = 2;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -53,7 +54,7 @@ public class WallpaperFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_item_list, container, false);
+        View view = inflater.inflate(R.layout.wallpaper_list, container, false);
 
         // Toolbar
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
@@ -62,6 +63,10 @@ public class WallpaperFragment extends Fragment {
         // Wallpaper loader
         NewsLoader newsLoader = new NewsLoader(getContext());
         List<News> newsArray = newsLoader.loadThen().convertDateToView();
+
+        DatabaseEntity<Wallpaper> databaseEntity = new DatabaseEntity<Wallpaper>();
+        List<Wallpaper> wallpapers = databaseEntity.load();
+
 
         // Adapter
         if (view instanceof RecyclerView) {
@@ -73,7 +78,7 @@ public class WallpaperFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
 
-            WallpaperViewAdapter adapter = new WallpaperViewAdapter(getContext(), newsArray);
+            WallpaperViewAdapter adapter = new WallpaperViewAdapter(getContext(), wallpapers);
             recyclerView.setAdapter(adapter);
         }
         return view;
