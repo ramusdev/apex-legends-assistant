@@ -177,7 +177,6 @@ public class MainActivity extends AppCompatActivity {
             taskRunner.executeAsync(callable);
         }
 
-
         Callable databasePopulatorCallable = new DatabasePopulatorCallable();
         taskRunner.executeAsync(databasePopulatorCallable);
     }

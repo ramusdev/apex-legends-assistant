@@ -34,13 +34,12 @@ public class ImageDownloadCallable implements Callable<String> {
 
     @Override
     public String call() throws IOException {
-        String fileLink = "https://edgenews.ru/android/apexlegends/wallpapers/4265064.jpg";
+        // String fileLink = "https://edgenews.ru/android/apexlegends/wallpapers/4265064.jpg";
 
         URL url = new URL(fileLink);
         Path path = Paths.get(url.getPath());
         String fileName = path.getFileName().toString();
 
-        // String fileSavePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + fileName;
         String fileSavePath = MyApplicationContext.getAppContext().getExternalFilesDir(DIRECTORY_PICTURES).toString() + "/" + fileName;
         Log.d("MyTag", fileSavePath);
 
@@ -56,30 +55,29 @@ public class ImageDownloadCallable implements Callable<String> {
             Log.d("MyTag", e.getMessage());
         };
 
+        setWallpaper(fileSavePath);
 
+        return fileSavePath;
+    }
 
-        Bitmap bitmapWallpaper = null;
+    public void setWallpaper(String fileSavePath) {
         WallpaperManager wallpaperManager = WallpaperManager.getInstance(MyApplicationContext.getAppContext());
+        Bitmap bitmap = BitmapFactory.decodeFile(fileSavePath);
 
         int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
         int screenHeight = Resources.getSystem().getDisplayMetrics().heightPixels;
 
-        FutureTarget<Bitmap> futureTarget =
-                Glide.with(MyApplicationContext.getAppContext())
-                        .asBitmap()
-                        .load(fileSavePath)
-                        .submit(screenWidth, screenHeight);
+        wallpaperManager.suggestDesiredDimensions(screenWidth, screenHeight);
+
+        int wallpaperWidth = wallpaperManager.getDesiredMinimumWidth();
+        int wallpaperHeight = wallpaperManager.getDesiredMinimumHeight();
+
+        Bitmap bitmapWallpaper = Bitmap.createScaledBitmap(bitmap, wallpaperWidth, wallpaperHeight, true);
 
         try {
-            bitmapWallpaper = futureTarget.get();
-        } catch (ExecutionException | InterruptedException e) {
-            Log.d("MyTag", e.getMessage());
+            wallpaperManager.setBitmap(bitmapWallpaper);
+        } catch (IOException e) {
+            Log.d("MyTag", "Error setWallpaper: " + e.getMessage());
         }
-
-        wallpaperManager.setBitmap(bitmapWallpaper);
-
-
-
-        return fileSavePath;
     }
 }

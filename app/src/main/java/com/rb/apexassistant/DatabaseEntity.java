@@ -3,56 +3,71 @@ package com.rb.apexassistant;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.util.Log;
 
-import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
 import com.rb.apexassistant.data.DataContract;
 import com.rb.apexassistant.data.DataDbHelper;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.RequiresApi;
+
 public class DatabaseEntity<T> {
 
     public T[] data;
+    Class<T> classTyped;
 
-    public DatabaseEntity() {
-
+    public DatabaseEntity(Class<T> classTyped) {
+        this.classTyped = classTyped;
     }
 
     public void insert(T[] data) {
         this.data = data;
 
+        String className = classTyped.getSimpleName();
+        String tableName = className.toLowerCase() + "s";
+        Field[] fields = classTyped.getDeclaredFields();
+
         DataDbHelper dataDbHelper = new DataDbHelper(MyApplicationContext.getAppContext());
         SQLiteDatabase sqLiteDatabase = dataDbHelper.getWritableDatabase();
 
         for (int i = 0; i < data.length; ++i) {
-            Log.d("MyTag", "Inside class");
-            ContentValues contentValues = adapter(data[i]);
-            sqLiteDatabase.insert(DataContract.WallpaperEntry.TABLE_NAME, null, contentValues);
+            ContentValues contentValues = adapter(data[i], fields);
+            sqLiteDatabase.insert(tableName, null, contentValues);
         }
     }
 
     public void clear() {
+        String className = classTyped.getSimpleName();
+        String tableName = className.toLowerCase() + "s";
+
         DataDbHelper dbHelper = new DataDbHelper(MyApplicationContext.getAppContext());
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
 
         String deleteQuery = "DELETE" +
-                " FROM " + DataContract.WallpaperEntry.TABLE_NAME;
+                " FROM " + tableName;
 
         sqLiteDatabase.execSQL(deleteQuery);
     }
 
-    public List<Wallpaper> load() {
+    public List<T> load() {
+
+        String className = classTyped.getSimpleName();
+        String tableName = className.toLowerCase() + "s";
+
         DataDbHelper dbHelper = new DataDbHelper(MyApplicationContext.getAppContext());
         SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
 
-        String orderBy = DataContract.WallpaperEntry.COLUMN_IMAGE + " DESC";
-        String limit = "20";
-        Cursor cursor = sqLiteDatabase.query(DataContract.WallpaperEntry.TABLE_NAME,
+        String limit = "30";
+        Cursor cursor = sqLiteDatabase.query(tableName,
                 null,
                 null,
                 null,
@@ -62,32 +77,45 @@ public class DatabaseEntity<T> {
                 limit
         );
 
-        List<Wallpaper> wallpapers = new ArrayList<Wallpaper>();
+        List<T> someObjects = new ArrayList<T>();
 
         while (cursor.moveToNext()) {
-            Wallpaper wallpaper = new Wallpaper();
-            wallpaper.setImage(cursor.getString(cursor.getColumnIndexOrThrow(DataContract.WallpaperEntry.COLUMN_IMAGE)));
-
-            wallpapers.add(wallpaper);
+            try {
+                T someObject = classTyped.getDeclaredConstructor().newInstance();
+                filler(someObject, cursor);
+                someObjects.add(someObject);
+            } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InstantiationException e) {
+                Log.d("MyTag", e.getMessage());
+            }
         }
 
         cursor.close();
 
-        return wallpapers;
+        return someObjects;
     }
 
-    public ContentValues adapter(T someClass) {
-        Field[] fields = someClass.getClass().getDeclaredFields();
+    public void filler(T someObject, Cursor cursor) {
+        Field[] fields = classTyped.getDeclaredFields();
+
+        for (Field field : fields) {
+            try {
+                String name = field.getName();
+                String value = cursor.getString(cursor.getColumnIndexOrThrow(name));
+                field.set(someObject, value);
+            } catch(IllegalAccessException e) {
+                System.out.println("Error filler: " + e.getMessage());
+            }
+        }
+    }
+
+    public ContentValues adapter(T someClass, Field[] fields) {
         ContentValues contentValues = new ContentValues();
-        Log.d("MyTag", "Inside class 2");
 
         for (int k = 0; k < fields.length; ++k) {
             try {
                 Field field = fields[k];
                 String name = field.getName();
                 Object value = field.get(someClass);
-
-                Log.d("MyTag", value.toString());
 
                 if (value instanceof String) {
                     contentValues.put(name, (String) value);

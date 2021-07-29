@@ -43,14 +43,12 @@ public class DatabasePopulatorCallable implements Callable<Integer> {
             editor.apply();
         }
 
-        DatabaseEntity<Wallpaper> databaseEntity = new DatabaseEntity<Wallpaper>();
+        DatabaseEntity<Wallpaper> databaseEntity = new DatabaseEntity<Wallpaper>(Wallpaper.class);
         databaseEntity.clear();
         databaseEntity.insert(jsonContainer.getWallpapers());
     }
 
     public JsonContainer<Wallpaper> parseJsonToObject(String stringJson) {
-        JsonParser jsonParser = new JsonParser();
-
         Gson gson = new Gson();
         Type type = new TypeToken<JsonContainer<Wallpaper>>(){}.getType();
         JsonContainer<Wallpaper> jsonContainer = gson.fromJson(stringJson, type);
@@ -71,8 +69,6 @@ public class DatabasePopulatorCallable implements Callable<Integer> {
         } catch(IOException e) {
             Log.d("MyTag", "Error: " + e.getMessage());
         }
-
-        // Log.d("MyTag", json);
 
         return json;
     }

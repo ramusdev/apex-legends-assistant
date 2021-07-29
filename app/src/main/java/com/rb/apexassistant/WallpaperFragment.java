@@ -61,17 +61,14 @@ public class WallpaperFragment extends Fragment {
         toolbar.setTitle(getResources().getString(R.string.toolbar_wallpaper));
 
         // Wallpaper loader
-        NewsLoader newsLoader = new NewsLoader(getContext());
-        List<News> newsArray = newsLoader.loadThen().convertDateToView();
-
-        DatabaseEntity<Wallpaper> databaseEntity = new DatabaseEntity<Wallpaper>();
+        DatabaseEntity<Wallpaper> databaseEntity = new DatabaseEntity<Wallpaper>(Wallpaper.class);
         List<Wallpaper> wallpapers = databaseEntity.load();
-
 
         // Adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
+            recyclerView.setItemViewCacheSize(22);
             if (mColumnCount <= 1) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
             } else {
