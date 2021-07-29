@@ -60,6 +60,7 @@
     <string name="news_link">https://www.ea.com/games/apex-legends/news</string>
 
     <!-- Wallpaper -->
+    <string name="wallpaper_set">Set</string>
     <string name="wallpaper_downloading">Downloading ...</string>
     <string name="wallpaper_loaded">Loaded</string>
 

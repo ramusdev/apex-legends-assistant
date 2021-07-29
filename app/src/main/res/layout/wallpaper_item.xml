@@ -33,7 +33,7 @@
             android:layout_weight="1"
             android:background="@drawable/button_wallpaper_click"
             android:gravity="center"
-            android:text="Установить"
+            android:text="@string/wallpaper_set"
             android:textColor="@drawable/text_wallpaper_click"
             android:textSize="15sp"
             app:backgroundTint="@null" />

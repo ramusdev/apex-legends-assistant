@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         window.setStatusBarColor(this.getResources().getColor(R.color.red));
         window.setNavigationBarColor(this.getResources().getColor(R.color.red));
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, WallpaperFragment.class, null).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, NewsFragment.class, null).commit();
     }
 
     public void createTasks() {
@@ -177,8 +177,8 @@ public class MainActivity extends AppCompatActivity {
             taskRunner.executeAsync(callable);
         }
 
-        Callable databasePopulatorCallable = new DatabasePopulatorCallable();
-        taskRunner.executeAsync(databasePopulatorCallable);
+        // Callable databasePopulatorCallable = new DatabasePopulatorCallable();
+        // taskRunner.executeAsync(databasePopulatorCallable);
     }
 
     public boolean isNetworkAvailable() {

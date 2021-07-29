@@ -6,24 +6,24 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_item_news"
-            android:icon="@drawable/ic_menu_camera"
+            android:checked="true"
+            android:icon="@drawable/menu_news4"
             android:title="@string/toolbar_news" />
         <item
             android:id="@+id/nav_item_twitter"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/menu_twitter2"
             android:title="@string/toolbar_twitter" />
         <item
             android:id="@+id/nav_item_wallpaper"
-            android:checked="true"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/menu_wallpaper4"
             android:title="@string/toolbar_wallpaper" />
         <item
             android:id="@+id/nav_item_donate"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/menu_donate"
             android:title="@string/toolbar_donate" />
         <item
             android:id="@+id/nav_item_about"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/menu_about3"
             android:title="@string/toolbar_about" />
     </group>
 </menu>

@@ -36,7 +36,8 @@ public class DatabaseEntity<T> {
         String tableName = className.toLowerCase() + "s";
         Field[] fields = classTyped.getDeclaredFields();
 
-        DataDbHelper dataDbHelper = new DataDbHelper(MyApplicationContext.getAppContext());
+        DataConnection dataConnection = DataConnection.getInstance();
+        DataDbHelper dataDbHelper = dataConnection.getDataDbHelper();
         SQLiteDatabase sqLiteDatabase = dataDbHelper.getWritableDatabase();
 
         for (int i = 0; i < data.length; ++i) {
@@ -49,8 +50,9 @@ public class DatabaseEntity<T> {
         String className = classTyped.getSimpleName();
         String tableName = className.toLowerCase() + "s";
 
-        DataDbHelper dbHelper = new DataDbHelper(MyApplicationContext.getAppContext());
-        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+        DataConnection dataConnection = DataConnection.getInstance();
+        DataDbHelper dataDbHelper = dataConnection.getDataDbHelper();
+        SQLiteDatabase sqLiteDatabase = dataDbHelper.getWritableDatabase();
 
         String deleteQuery = "DELETE" +
                 " FROM " + tableName;
@@ -63,8 +65,9 @@ public class DatabaseEntity<T> {
         String className = classTyped.getSimpleName();
         String tableName = className.toLowerCase() + "s";
 
-        DataDbHelper dbHelper = new DataDbHelper(MyApplicationContext.getAppContext());
-        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        DataConnection dataConnection = DataConnection.getInstance();
+        DataDbHelper dataDbHelper = dataConnection.getDataDbHelper();
+        SQLiteDatabase sqLiteDatabase = dataDbHelper.getReadableDatabase();
 
         String limit = "30";
         Cursor cursor = sqLiteDatabase.query(tableName,
