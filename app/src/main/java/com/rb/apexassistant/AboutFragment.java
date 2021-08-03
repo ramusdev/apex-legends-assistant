@@ -32,6 +32,8 @@ public class AboutFragment extends Fragment {
 
         view = inflater.inflate(R.layout.about_fragment, container, false);
 
+        // ((MainActivity) getActivity()).showMopubInterstitial();
+
         return view;
     }
 
@@ -48,7 +50,6 @@ public class AboutFragment extends Fragment {
                 textView.setText(s);
             }
         });
-        // TODO: Use the ViewModel
     }
 
 }

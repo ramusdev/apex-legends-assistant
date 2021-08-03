@@ -51,10 +51,10 @@
     <string name="title_activity_my_application">MyApplication</string>
 
     <!-- Donate buttons -->
-    <string name="donate_button_one">Новобранец</string>
-    <string name="donate_button_two">Сержант</string>
-    <string name="donate_button_three">Лейтенант</string>
-    <string name="donate_button_four">Маршал</string>
+    <string name="donate_button_one">Бронза</string>
+    <string name="donate_button_two">Серебро</string>
+    <string name="donate_button_three">Золото</string>
+    <string name="donate_button_four">Алмаз</string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/ru-ru/games/apex-legends/news</string>

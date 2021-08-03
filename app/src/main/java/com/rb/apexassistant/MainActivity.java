@@ -1,10 +1,15 @@
 package com.rb.apexassistant;
 
+import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
@@ -21,6 +26,12 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.navigation.NavigationView;
+import com.mopub.common.MoPub;
+import com.mopub.common.SdkConfiguration;
+import com.mopub.common.SdkInitializationListener;
+import com.mopub.common.logging.MoPubLog;
+import com.mopub.mobileads.MoPubErrorCode;
+import com.mopub.mobileads.MoPubInterstitial;
 import com.rb.apexassistant.data.DataDbHelper;
 
 import java.util.Calendar;
@@ -35,10 +46,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MoPubInterstitial.InterstitialAdListener {
 
     private AppBarConfiguration mAppBarConfiguration;
     public DataDbHelper dbHelper;
+    MoPubInterstitial moPubInterstitial;
+    // public static String AD_INTERSTITIAL_ID = "24534e1901884e398f1253216226017e";
+    // public static String AD_INTERSTITIAL_ID = "5464a093fe214524afd97bc94b408a6c";
+    public static String AD_INTERSTITIAL_ID = "a51cf41cb09d40f3b9cad9837a74ccfc";
+    public static final String APP_PREFERENCES = "settings";
+    public static final String APP_PREFERENCES_VERSION = "version";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,14 +68,18 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle(getResources().getString(R.string.toolbar_news));
         setSupportActionBar(toolbar);
 
-
         /*
-        // Init mobile ads
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+        final SdkConfiguration.Builder configBuilder = new SdkConfiguration.Builder(AD_INTERSTITIAL_ID);
+        configBuilder.withLogLevel(MoPubLog.LogLevel.DEBUG);
+
+        SdkInitializationListener sdkInitializationListener = new SdkInitializationListener() {
             @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            public void onInitializationFinished() {
+                loadAdInterstitial();
             }
-        });
+        };
+
+        MoPub.initializeSdk(this, configBuilder.build(), sdkInitializationListener);
         */
 
         // Open connection to db
@@ -177,8 +198,20 @@ public class MainActivity extends AppCompatActivity {
             taskRunner.executeAsync(callable);
         }
 
-        // Callable databasePopulatorCallable = new DatabasePopulatorCallable();
-        // taskRunner.executeAsync(databasePopulatorCallable);
+        SharedPreferences sharedPreferences = MyApplicationContext.getAppContext().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
+        String currentVersion = sharedPreferences.getString(APP_PREFERENCES_VERSION, "");
+
+        if (! currentVersion.equals(getVersionName())) {
+            Callable databasePopulatorCallable = new DatabasePopulatorCallable();
+            taskRunner.executeAsync(databasePopulatorCallable);
+
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(APP_PREFERENCES_VERSION, getVersionName());
+            editor.apply();
+
+            Log.d("MyTag", "Save new version name");
+        }
+
     }
 
     public boolean isNetworkAvailable() {
@@ -196,5 +229,56 @@ public class MainActivity extends AppCompatActivity {
             NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
             return networkInfo != null && networkInfo.isConnected();
         }
+    }
+
+    public String getVersionName() {
+        String versionName = null;
+
+        try {
+            ComponentName componentName = new ComponentName(MyApplicationContext.getAppContext(), MyApplicationContext.getAppContext().getClass());
+            PackageInfo packageInfo = MyApplicationContext.getAppContext().getPackageManager().getPackageInfo(componentName.getPackageName(), 0);
+            versionName = packageInfo.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.d("MyTag", "Error: getVersionName" + e.getMessage());
+        }
+
+        return versionName;
+    }
+
+    public void showMopubInterstitial() {
+        if (moPubInterstitial.isReady()) {
+            moPubInterstitial.show();
+        }
+    }
+
+    public void loadAdInterstitial() {
+        moPubInterstitial = new MoPubInterstitial(this, AD_INTERSTITIAL_ID);
+        moPubInterstitial.setInterstitialAdListener(this);
+        moPubInterstitial.load();
+    }
+
+    @Override
+    public void onInterstitialLoaded(MoPubInterstitial moPubInterstitial) {
+        // showMopubInterstitial();
+    }
+
+    @Override
+    public void onInterstitialFailed(MoPubInterstitial moPubInterstitial, MoPubErrorCode moPubErrorCode) {
+
+    }
+
+    @Override
+    public void onInterstitialShown(MoPubInterstitial moPubInterstitial) {
+
+    }
+
+    @Override
+    public void onInterstitialClicked(MoPubInterstitial moPubInterstitial) {
+
+    }
+
+    @Override
+    public void onInterstitialDismissed(MoPubInterstitial moPubInterstitial) {
+
     }
 }

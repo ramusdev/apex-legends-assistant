@@ -10,8 +10,8 @@ android {
         applicationId "com.rb.apexassistant"
         minSdkVersion 26
         targetSdkVersion 30
-        versionCode 27
-        versionName "2.1.0"
+        versionCode 29
+        versionName "2.1.2"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,6 +29,10 @@ android {
     packagingOptions {
         pickFirst "META-INF/DEPENDENCIES"
     }
+}
+
+repositories {
+    mavenCentral() // MoPub SDK is now available in Maven Central
 }
 
 dependencies {
@@ -51,4 +55,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
     implementation "androidx.lifecycle:lifecycle-runtime:2.0.0"
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.0.0"
+    implementation('com.mopub:mopub-sdk:5.17.0@aar') {
+        transitive = true
+    }
 }
