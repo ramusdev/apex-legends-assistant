@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">Apex Assistant</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_web_second">WebActivitySecond</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_main2">MainActivity</string>
+
+    <!-- Text donate tab -->
+    <string name="donate_text">
+    <![CDATA[
+       <font color=#712123>Ciao! Sostieni l\'app con una donazione!</font><br><br>
+         Apex Assistant è completamente gratuito e supportato solo dalle tue donazioni.<br><br>
+         Se l\'applicazione ti è piaciuta, sostienila con una donazione, ci motiva a migliorare ulteriormente.
+    ]]>
+    </string>
+
+    <!-- Text about tab -->
+    <string name="about_text">
+    <![CDATA[
+   Questa applicazione non è un prodotto di Electronic Arts.<br><br>
+         L\'app contiene informazioni sul gioco Apex Legends<br><br>
+         <font color=#712123>Avviso legale</font><br><br>
+         Informativa sulla privacy <a href="https://edgenews.ru/android/apexlegends/privacy/privacy_policy.html">leggi.</a><br><br>
+         Il copyright delle immagini e dei materiali contenuti è di proprietà di Electronic Arts ed è proprietà intellettuale di Electronic Arts: © 2021 Electronic Arts. Tutti i diritti riservati.<br><br>
+         Apex Legends e il logo Apex Legends sono marchi registrati o marchi di Electronic Arts.<br><br>
+         <font color=#712123>Informazioni aggiuntive</font><br><br>
+         - Versione attuale: 2.1.2<br>
+         - Sviluppatore: RB dev.<br>
+         - Contatto: ram219219@gmail.com
+    ]]>
+    </string>
+
+    <!-- Tollbar menu -->
+    <string name="toolbar_main">Principale</string>
+    <string name="toolbar_news">Notizia</string>
+    <string name="toolbar_twitter">Twitter</string>
+    <string name="toolbar_wallpaper">Sfondo</string>
+    <string name="toolbar_donate">Donare</string>
+    <string name="toolbar_about">Di</string>
+    <string name="title_activity_my_application">MyApplication</string>
+
+    <!-- Donate buttons -->
+    <string name="donate_button_one">Bronzo</string>
+    <string name="donate_button_two">D\'argento</string>
+    <string name="donate_button_three">Oro</string>
+    <string name="donate_button_four">Diamante</string>
+
+    <!-- News link -->
+    <string name="news_link">https://www.ea.com/it-it/games/apex-legends/news</string>
+
+    <!-- Wallpaper -->
+    <string name="wallpaper_set">Impostato</string>
+    <string name="wallpaper_downloading">Download in corso...</string>
+    <string name="wallpaper_loaded">Caricato</string>
+
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

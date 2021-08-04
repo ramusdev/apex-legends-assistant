@@ -19,50 +19,50 @@
     <!-- Text donate tab -->
     <string name="donate_text">
     <![CDATA[
-       <font color=#712123>Hi! Support the app with a donation!</font><br><br>
-        Apex Assistant is completely free and supported only by your donations.<br><br>
-        If you liked the application, support it with a donation, it motivates us to further improve.
+      <font color=#711223>Hallo! Unterstützen Sie die App mit einer Spende!</font><br><br>
+         Apex Assistant ist völlig kostenlos und wird nur durch Ihre Spenden unterstützt.<br><br>
+         Wenn Ihnen die Anwendung gefallen hat, unterstützen Sie sie mit einer Spende, das motiviert uns, uns weiter zu verbessern.
     ]]>
     </string>
 
     <!-- Text about tab -->
     <string name="about_text">
     <![CDATA[
-        This application is not a product of Electronic Arts.<br><br>
-        The app contains information about the game Apex Legends<br><br>
-        <font color=#712123>Legal notice</font><br><br>
-        Privacy Policy <a href="https://edgenews.ru/android/apexlegends/privacy/privacy_policy.html">read.</a><br><br>
-        The copyright of the images and materials contained is owned by Electronic Arts and is the intellectual property of Electronic Arts: © 2021 Electronic Arts. All rights reserved.<br><br>
-        Apex Legends and the Apex Legends logo are registered trademarks or trademarks of Electronic Arts.<br><br>
-        <font color=#712123>Additional information</font><br><br>
-        - Current version: 2.1.2<br>
-        - Developer: RB dev.<br>
-        - Contact: ram219219@gmail.com
+     Diese Anwendung ist kein Produkt von Electronic Arts.<br><br>
+         Die App enthält Informationen zum Spiel Apex Legends<br><br>
+         <font color=#712123>Rechtlicher Hinweis</font><br><br>
+         Datenschutzrichtlinie <a href="https://edgenews.ru/android/apexlegends/privacy/privacy_policy.html">lesen.</a><br><br>
+         Das Copyright der enthaltenen Bilder und Materialien liegt bei Electronic Arts und ist geistiges Eigentum von Electronic Arts: © 2021 Electronic Arts. Alle Rechte vorbehalten.<br><br>
+         Apex Legends und das Apex Legends-Logo sind eingetragene Marken oder Marken von Electronic Arts.<br><br>
+         <font color=#712123>Zusätzliche Informationen</font><br><br>
+         - Aktuelle Version: 2.1.2<br>
+         - Entwickler: RB-Entwickler<br>
+         - Kontakt: ram219219@gmail.com
     ]]>
     </string>
 
     <!-- Tollbar menu -->
-    <string name="toolbar_main">Main</string>
-    <string name="toolbar_news">News</string>
+    <string name="toolbar_main">Hauptsächlich</string>
+    <string name="toolbar_news">Nachrichten</string>
     <string name="toolbar_twitter">Twitter</string>
-    <string name="toolbar_wallpaper">Wallpaper</string>
-    <string name="toolbar_donate">Donate</string>
-    <string name="toolbar_about">About</string>
+    <string name="toolbar_wallpaper">Hintergrund</string>
+    <string name="toolbar_donate">Spenden</string>
+    <string name="toolbar_about">Über</string>
     <string name="title_activity_my_application">MyApplication</string>
 
     <!-- Donate buttons -->
     <string name="donate_button_one">Bronze</string>
-    <string name="donate_button_two">Silver</string>
+    <string name="donate_button_two">Silber</string>
     <string name="donate_button_three">Gold</string>
-    <string name="donate_button_four">Diamond</string>
+    <string name="donate_button_four">Diamant</string>
 
     <!-- News link -->
-    <string name="news_link">https://www.ea.com/games/apex-legends/news</string>
+    <string name="news_link">https://www.ea.com/de-de/games/apex-legends/news</string>
 
     <!-- Wallpaper -->
-    <string name="wallpaper_set">Set</string>
-    <string name="wallpaper_downloading">Downloading ...</string>
-    <string name="wallpaper_loaded">Loaded</string>
+    <string name="wallpaper_set">Satz</string>
+    <string name="wallpaper_downloading">Wird heruntergeladen ...</string>
+    <string name="wallpaper_loaded">Geladen</string>
 
     <!--
     This string is used for square devices and overridden by hello_world in

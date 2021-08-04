@@ -19,45 +19,45 @@
     <!-- Text donate tab -->
     <string name="donate_text">
     <![CDATA[
-       <font color=#712123>Hi! Support the app with a donation!</font><br><br>
-        Apex Assistant is completely free and supported only by your donations.<br><br>
-        If you liked the application, support it with a donation, it motivates us to further improve.
+       <font color=#712123>안녕! 기부로 앱을 지원하세요!</font><br><br>
+        Apex Assistant는 완전 무료이며 귀하의 기부에 의해서만 지원됩니다.<br><br>
+        응용 프로그램이 마음에 들었다면 기부로 지원해 주시면 더욱 발전할 수 있도록 동기를 부여합니다.
     ]]>
     </string>
 
     <!-- Text about tab -->
     <string name="about_text">
     <![CDATA[
-        This application is not a product of Electronic Arts.<br><br>
-        The app contains information about the game Apex Legends<br><br>
-        <font color=#712123>Legal notice</font><br><br>
-        Privacy Policy <a href="https://edgenews.ru/android/apexlegends/privacy/privacy_policy.html">read.</a><br><br>
-        The copyright of the images and materials contained is owned by Electronic Arts and is the intellectual property of Electronic Arts: © 2021 Electronic Arts. All rights reserved.<br><br>
-        Apex Legends and the Apex Legends logo are registered trademarks or trademarks of Electronic Arts.<br><br>
-        <font color=#712123>Additional information</font><br><br>
-        - Current version: 2.1.2<br>
-        - Developer: RB dev.<br>
-        - Contact: ram219219@gmail.com
+     이 응용 프로그램은 Electronic Arts의 제품이 아닙니다.<br><br>
+        앱에는 Apex 레전드 게임에 대한 정보가 포함되어 있습니다.<br><br>
+        <font color=#712123>법적 고지</font><br><br>
+        개인 정보 정책<a href="https://edgenews.ru/android/apexlegends/privacy/privacy_policy.html">읽다.</a><br><br>
+        포함된 이미지 및 자료의 저작권은 Electronic Arts에 있으며 Electronic Arts의 지적 재산입니다. © 2021 Electronic Arts. 판권 소유.<br><br>
+       Apex 레전드 및 Apex 레전드 로고는 Electronic Arts의 등록 상표 또는 상표입니다.<br><br>
+        <font color=#712123>추가 정보</font><br><br>
+        - 현재 버전: 2.1.2<br>
+        - 개발자: RB dev.<br>
+        - 연락처 : ram219219@gmail.com
     ]]>
     </string>
 
     <!-- Tollbar menu -->
-    <string name="toolbar_main">Main</string>
-    <string name="toolbar_news">News</string>
-    <string name="toolbar_twitter">Twitter</string>
-    <string name="toolbar_wallpaper">Wallpaper</string>
-    <string name="toolbar_donate">Donate</string>
-    <string name="toolbar_about">About</string>
+    <string name="toolbar_main">기본</string>
+    <string name="toolbar_news">소식</string>
+    <string name="toolbar_twitter">트위터</string>
+    <string name="toolbar_wallpaper">벽지</string>
+    <string name="toolbar_donate">기부</string>
+    <string name="toolbar_about">에 대한</string>
     <string name="title_activity_my_application">MyApplication</string>
 
     <!-- Donate buttons -->
-    <string name="donate_button_one">Bronze</string>
-    <string name="donate_button_two">Silver</string>
-    <string name="donate_button_three">Gold</string>
-    <string name="donate_button_four">Diamond</string>
+    <string name="donate_button_one">청동</string>
+    <string name="donate_button_two">은</string>
+    <string name="donate_button_three">금</string>
+    <string name="donate_button_four">다이아몬드</string>
 
     <!-- News link -->
-    <string name="news_link">https://www.ea.com/games/apex-legends/news</string>
+    <string name="news_link">https://www.ea.com/ko-kr/games/apex-legends/news</string>
 
     <!-- Wallpaper -->
     <string name="wallpaper_set">Set</string>

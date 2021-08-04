@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements MoPubInterstitial
     public DataDbHelper dbHelper;
     MoPubInterstitial moPubInterstitial;
     // public static String AD_INTERSTITIAL_ID = "24534e1901884e398f1253216226017e";
-    // public static String AD_INTERSTITIAL_ID = "5464a093fe214524afd97bc94b408a6c";
     public static String AD_INTERSTITIAL_ID = "a51cf41cb09d40f3b9cad9837a74ccfc";
     public static final String APP_PREFERENCES = "settings";
     public static final String APP_PREFERENCES_VERSION = "version";
@@ -68,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements MoPubInterstitial
         toolbar.setTitle(getResources().getString(R.string.toolbar_news));
         setSupportActionBar(toolbar);
 
-        /*
         final SdkConfiguration.Builder configBuilder = new SdkConfiguration.Builder(AD_INTERSTITIAL_ID);
         configBuilder.withLogLevel(MoPubLog.LogLevel.DEBUG);
 
@@ -80,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements MoPubInterstitial
         };
 
         MoPub.initializeSdk(this, configBuilder.build(), sdkInitializationListener);
-        */
 
         // Open connection to db
         dbHelper = new DataDbHelper(this);
@@ -259,7 +256,7 @@ public class MainActivity extends AppCompatActivity implements MoPubInterstitial
 
     @Override
     public void onInterstitialLoaded(MoPubInterstitial moPubInterstitial) {
-        // showMopubInterstitial();
+        showMopubInterstitial();
     }
 
     @Override

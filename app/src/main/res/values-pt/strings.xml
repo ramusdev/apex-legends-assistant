@@ -19,50 +19,50 @@
     <!-- Text donate tab -->
     <string name="donate_text">
     <![CDATA[
-       <font color=#712123>Hi! Support the app with a donation!</font><br><br>
-        Apex Assistant is completely free and supported only by your donations.<br><br>
-        If you liked the application, support it with a donation, it motivates us to further improve.
+       <font color=#712123> Olá! Apoie o aplicativo com uma doação! </font> <br><br>
+         O Apex Assistant é totalmente gratuito e suportado apenas por suas doações. <br><br>
+         Se você gostou do aplicativo, apoie-o com uma doação, isso nos motiva a melhorar ainda mais.
     ]]>
     </string>
 
     <!-- Text about tab -->
     <string name="about_text">
     <![CDATA[
-        This application is not a product of Electronic Arts.<br><br>
-        The app contains information about the game Apex Legends<br><br>
-        <font color=#712123>Legal notice</font><br><br>
-        Privacy Policy <a href="https://edgenews.ru/android/apexlegends/privacy/privacy_policy.html">read.</a><br><br>
-        The copyright of the images and materials contained is owned by Electronic Arts and is the intellectual property of Electronic Arts: © 2021 Electronic Arts. All rights reserved.<br><br>
-        Apex Legends and the Apex Legends logo are registered trademarks or trademarks of Electronic Arts.<br><br>
-        <font color=#712123>Additional information</font><br><br>
-        - Current version: 2.1.2<br>
-        - Developer: RB dev.<br>
-        - Contact: ram219219@gmail.com
+        Este aplicativo não é um produto da Electronic Arts. <br><br>
+         O aplicativo contém informações sobre o jogo Apex Legends <br><br>
+         <font color=#712123> Aviso legal </font> <br><br>
+         Política de privacidade <a href="https://edgenews.ru/android/apexlegends/privacy/privacy_policy.html"> lida. </a><br><br>
+         Os direitos autorais das imagens e materiais contidos são propriedade da Electronic Arts e são propriedade intelectual da Electronic Arts: © 2021 Electronic Arts. Todos os direitos reservados. <br><br>
+         Apex Legends e o logotipo Apex Legends são marcas registradas ou marcas comerciais da Electronic Arts. <br><br>
+         <font color=#712123> Informações adicionais </font> <br><br>
+         - Versão atual: 2.1.2 <br>
+         - Desenvolvedor: RB dev. <br>
+         - Contato: ram219219@gmail.com
     ]]>
     </string>
 
     <!-- Tollbar menu -->
-    <string name="toolbar_main">Main</string>
-    <string name="toolbar_news">News</string>
+    <string name="toolbar_main">Principal</string>
+    <string name="toolbar_news">Notícia</string>
     <string name="toolbar_twitter">Twitter</string>
-    <string name="toolbar_wallpaper">Wallpaper</string>
-    <string name="toolbar_donate">Donate</string>
-    <string name="toolbar_about">About</string>
+    <string name="toolbar_wallpaper">Papel de parede</string>
+    <string name="toolbar_donate">Doar</string>
+    <string name="toolbar_about">Cerca de</string>
     <string name="title_activity_my_application">MyApplication</string>
 
     <!-- Donate buttons -->
     <string name="donate_button_one">Bronze</string>
-    <string name="donate_button_two">Silver</string>
-    <string name="donate_button_three">Gold</string>
-    <string name="donate_button_four">Diamond</string>
+    <string name="donate_button_two">Prata</string>
+    <string name="donate_button_three">Ouro</string>
+    <string name="donate_button_four">Diamante</string>
 
     <!-- News link -->
-    <string name="news_link">https://www.ea.com/games/apex-legends/news</string>
+    <string name="news_link">https://www.ea.com/pt-br/games/apex-legends/news</string>
 
     <!-- Wallpaper -->
-    <string name="wallpaper_set">Set</string>
-    <string name="wallpaper_downloading">Downloading ...</string>
-    <string name="wallpaper_loaded">Loaded</string>
+    <string name="wallpaper_set">Definir</string>
+    <string name="wallpaper_downloading">Baixando ...</string>
+    <string name="wallpaper_loaded">Carregado</string>
 
     <!--
     This string is used for square devices and overridden by hello_world in

@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">Apex Assistant</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_web_second">WebActivitySecond</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_main2">MainActivity</string>
+
+    <!-- Text donate tab -->
+    <string name="donate_text">
+    <![CDATA[
+       <font color=#712123>你好！ 通過捐款支持該應用程序！</font><br><br>
+        Apex 助手是完全免費的，並且僅由您的捐款支持。<br><br>
+        如果您喜歡該應用程序，請通過捐贈支持它，它會激勵我們進一步改進。
+    ]]>
+    </string>
+
+    <!-- Text about tab -->
+    <string name="about_text">
+    <![CDATA[
+        此應用程序不是 Electronic Arts 的產品。<br><br>
+        該應用程序包含有關 Apex Legends 遊戲的信息<br><br>
+        <font color=#712123>法律聲明</font><br><br>
+        隱私政策<a href="https://edgenews.ru/android/apexlegends/privacy/privacy_policy.html">讀。</a><br><br>
+        包含的圖像和材料的版權歸 Electronic Arts 所有，並且是 Electronic Arts 的知識產權：© 2021 Electronic Arts。 保留所有權利。<br><br>
+        Apex Legends 和 Apex Legends 徽標是 Electronic Arts 的註冊商標或商標。<br><br>
+        <font color=#712123>附加信息</font><br><br>
+        - 當前版本：2.1.2<br>
+        - 開發商：RB dev.<br>
+        - 聯繫人：ram219219@gmail.com
+    ]]>
+    </string>
+
+    <!-- Tollbar menu -->
+    <string name="toolbar_main">主要的</string>
+    <string name="toolbar_news">消息</string>
+    <string name="toolbar_twitter">推特</string>
+    <string name="toolbar_wallpaper">牆紙</string>
+    <string name="toolbar_donate">捐</string>
+    <string name="toolbar_about">關於</string>
+    <string name="title_activity_my_application">MyApplication</string>
+
+    <!-- Donate buttons -->
+    <string name="donate_button_one">青銅</string>
+    <string name="donate_button_two">銀</string>
+    <string name="donate_button_three">金子</string>
+    <string name="donate_button_four">鑽石</string>
+
+    <!-- News link -->
+    <string name="news_link">https://www.ea.com/zh-tw/games/apex-legends/news</string>
+
+    <!-- Wallpaper -->
+    <string name="wallpaper_set">放</string>
+    <string name="wallpaper_downloading">正在下載...</string>
+    <string name="wallpaper_loaded">已加載</string>
+
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

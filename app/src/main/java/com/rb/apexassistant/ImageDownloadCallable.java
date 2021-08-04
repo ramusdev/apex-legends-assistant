@@ -69,10 +69,10 @@ public class ImageDownloadCallable implements Callable<String> {
 
         wallpaperManager.suggestDesiredDimensions(screenWidth, screenHeight);
 
-        int wallpaperWidth = wallpaperManager.getDesiredMinimumWidth();
-        int wallpaperHeight = wallpaperManager.getDesiredMinimumHeight();
+        // int wallpaperWidth = wallpaperManager.getDesiredMinimumWidth();
+        // int wallpaperHeight = wallpaperManager.getDesiredMinimumHeight();
 
-        Bitmap bitmapWallpaper = Bitmap.createScaledBitmap(bitmap, wallpaperWidth, wallpaperHeight, true);
+        Bitmap bitmapWallpaper = Bitmap.createScaledBitmap(bitmap, screenWidth, screenHeight, true);
 
         try {
             wallpaperManager.setBitmap(bitmapWallpaper);
