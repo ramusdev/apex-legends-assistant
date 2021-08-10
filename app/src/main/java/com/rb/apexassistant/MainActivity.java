@@ -21,24 +21,15 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
-
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.navigation.NavigationView;
-import com.mopub.common.MoPub;
-import com.mopub.common.SdkConfiguration;
-import com.mopub.common.SdkInitializationListener;
-import com.mopub.common.logging.MoPubLog;
-import com.mopub.mobileads.MoPubErrorCode;
-import com.mopub.mobileads.MoPubInterstitial;
 import com.rb.apexassistant.data.DataDbHelper;
-
 import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
-
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -46,15 +37,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class MainActivity extends AppCompatActivity implements MoPubInterstitial.InterstitialAdListener {
+public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     public DataDbHelper dbHelper;
-    MoPubInterstitial moPubInterstitial;
     // public static String AD_INTERSTITIAL_ID = "24534e1901884e398f1253216226017e";
-    public static String AD_INTERSTITIAL_ID = "a51cf41cb09d40f3b9cad9837a74ccfc";
+    // public static String AD_INTERSTITIAL_ID = "a51cf41cb09d40f3b9cad9837a74ccfc";
     public static final String APP_PREFERENCES = "settings";
     public static final String APP_PREFERENCES_VERSION = "version";
+    private static final String ADMOB_INTERSTITIAL_ID = "ca-app-pub-4140002463111288/1213456548";
+    // private static final String ADMOB_INTERSTITIAL_ID = "ca-app-pub-3940256099942544/1033173712";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,21 +55,18 @@ public class MainActivity extends AppCompatActivity implements MoPubInterstitial
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        AdmobInterstitialAd admobInterstitialAd = new AdmobInterstitialAd.Builder()
+                .show(true)
+                .activity(this)
+                .testMode(false)
+                .adId(ADMOB_INTERSTITIAL_ID)
+                .build();
+
+        admobInterstitialAd.show();
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(getResources().getString(R.string.toolbar_news));
         setSupportActionBar(toolbar);
-
-        final SdkConfiguration.Builder configBuilder = new SdkConfiguration.Builder(AD_INTERSTITIAL_ID);
-        configBuilder.withLogLevel(MoPubLog.LogLevel.DEBUG);
-
-        SdkInitializationListener sdkInitializationListener = new SdkInitializationListener() {
-            @Override
-            public void onInitializationFinished() {
-                loadAdInterstitial();
-            }
-        };
-
-        MoPub.initializeSdk(this, configBuilder.build(), sdkInitializationListener);
 
         // Open connection to db
         dbHelper = new DataDbHelper(this);
@@ -240,42 +229,5 @@ public class MainActivity extends AppCompatActivity implements MoPubInterstitial
         }
 
         return versionName;
-    }
-
-    public void showMopubInterstitial() {
-        if (moPubInterstitial.isReady()) {
-            moPubInterstitial.show();
-        }
-    }
-
-    public void loadAdInterstitial() {
-        moPubInterstitial = new MoPubInterstitial(this, AD_INTERSTITIAL_ID);
-        moPubInterstitial.setInterstitialAdListener(this);
-        moPubInterstitial.load();
-    }
-
-    @Override
-    public void onInterstitialLoaded(MoPubInterstitial moPubInterstitial) {
-        showMopubInterstitial();
-    }
-
-    @Override
-    public void onInterstitialFailed(MoPubInterstitial moPubInterstitial, MoPubErrorCode moPubErrorCode) {
-
-    }
-
-    @Override
-    public void onInterstitialShown(MoPubInterstitial moPubInterstitial) {
-
-    }
-
-    @Override
-    public void onInterstitialClicked(MoPubInterstitial moPubInterstitial) {
-
-    }
-
-    @Override
-    public void onInterstitialDismissed(MoPubInterstitial moPubInterstitial) {
-
     }
 }
