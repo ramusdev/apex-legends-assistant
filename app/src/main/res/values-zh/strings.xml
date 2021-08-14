@@ -45,6 +45,7 @@
     <string name="toolbar_main">主要的</string>
     <string name="toolbar_news">消息</string>
     <string name="toolbar_twitter">推特</string>
+    <string name="toolbar_legend">傳奇</string>
     <string name="toolbar_wallpaper">牆紙</string>
     <string name="toolbar_donate">捐</string>
     <string name="toolbar_about">關於</string>

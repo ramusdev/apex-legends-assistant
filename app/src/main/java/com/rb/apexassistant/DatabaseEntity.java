@@ -11,11 +11,13 @@ import com.google.gson.reflect.TypeToken;
 import com.rb.apexassistant.data.DataContract;
 import com.rb.apexassistant.data.DataDbHelper;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import androidx.annotation.RequiresApi;
@@ -23,7 +25,7 @@ import androidx.annotation.RequiresApi;
 public class DatabaseEntity<T> {
 
     public T[] data;
-    Class<T> classTyped;
+    public Class<T> classTyped;
 
     public DatabaseEntity(Class<T> classTyped) {
         this.classTyped = classTyped;
@@ -32,6 +34,7 @@ public class DatabaseEntity<T> {
     public void insert(T[] data) {
         this.data = data;
 
+        Log.d("MyTag", "Insert");
         String className = classTyped.getSimpleName();
         String tableName = className.toLowerCase() + "s";
         Field[] fields = classTyped.getDeclaredFields();
@@ -116,9 +119,12 @@ public class DatabaseEntity<T> {
 
         for (int k = 0; k < fields.length; ++k) {
             try {
+                // Log.d("MyTag", "adapter name");
                 Field field = fields[k];
                 String name = field.getName();
+                // Log.d("MyTag", name);
                 Object value = field.get(someClass);
+                // Log.d("MyTag", value.toString());
 
                 if (value instanceof String) {
                     contentValues.put(name, (String) value);
@@ -126,9 +132,11 @@ public class DatabaseEntity<T> {
                     contentValues.put(name, (int) value);
                 }
 
-            } catch (IllegalAccessException e) {
+           } catch (IllegalAccessException e) {
                 Log.d("MyTag", e.getMessage());
-            }
+           }
+
+
         }
 
         return contentValues;

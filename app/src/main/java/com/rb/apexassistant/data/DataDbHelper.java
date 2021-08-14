@@ -8,7 +8,7 @@ import android.util.Log;
 public class DataDbHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "apexlegends.db";
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 5;
 
     public DataDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -39,10 +39,18 @@ public class DataDbHelper extends SQLiteOpenHelper {
                 + DataContract.WallpaperEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + DataContract.WallpaperEntry.COLUMN_IMAGE + " TEXT);";
 
+        String SQL_CREATE_LEGENDS_TABLE = "CREATE TABLE " + DataContract.LegendsEntry.TABLE_NAME + " ("
+                + DataContract.LegendsEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + DataContract.LegendsEntry.COLUMN_NAME + " TEXT NOT NULL, "
+                + DataContract.LegendsEntry.COLUMN_IMAGE + " TEXT NOT NULL, "
+                + DataContract.LegendsEntry.COLUMN_LINK + " TEXT NOT NULL, "
+                + DataContract.LegendsEntry.COLUMN_TAGLINE + " TEXT NOT NULL, "
+                + DataContract.LegendsEntry.COLUMN_DESCRIPTION + " TEXT NOT NULL);";
 
         sqLiteDatabase.execSQL(SQL_CREATE_NEWS_TABLE);
         sqLiteDatabase.execSQL(SQL_CREATE_TWEETS_TABLE);
         sqLiteDatabase.execSQL(SQL_CREATE_WALLPAPER_TABLE);
+        sqLiteDatabase.execSQL(SQL_CREATE_LEGENDS_TABLE);
     }
 
     @Override
@@ -52,6 +60,7 @@ public class DataDbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + DataContract.NewsEntry.TABLE_NAME);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + DataContract.TweetsEntry.TABLE_NAME);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + DataContract.WallpaperEntry.TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + DataContract.LegendsEntry.TABLE_NAME);
         onCreate(sqLiteDatabase);
     }
 }

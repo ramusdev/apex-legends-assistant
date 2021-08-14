@@ -14,6 +14,10 @@
             android:icon="@drawable/menu_twitter2"
             android:title="@string/toolbar_twitter" />
         <item
+            android:id="@+id/nav_item_legends"
+            android:icon="@drawable/menu_twitter2"
+            android:title="@string/toolbar_legend" />
+        <item
             android:id="@+id/nav_item_wallpaper"
             android:icon="@drawable/menu_wallpaper4"
             android:title="@string/toolbar_wallpaper" />

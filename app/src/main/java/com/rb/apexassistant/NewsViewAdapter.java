@@ -3,7 +3,6 @@ package com.rb.apexassistant;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +28,7 @@ public class NewsViewAdapter extends RecyclerView.Adapter<NewsViewAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_item, parent, false);
+                .inflate(R.layout.news_item, parent, false);
         return new ViewHolder(view);
     }
 

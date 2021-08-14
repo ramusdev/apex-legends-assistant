@@ -45,6 +45,7 @@
     <string name="toolbar_main">기본</string>
     <string name="toolbar_news">소식</string>
     <string name="toolbar_twitter">트위터</string>
+    <string name="toolbar_legend">전설</string>
     <string name="toolbar_wallpaper">벽지</string>
     <string name="toolbar_donate">기부</string>
     <string name="toolbar_about">에 대한</string>

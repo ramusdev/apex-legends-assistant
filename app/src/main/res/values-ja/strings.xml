@@ -45,6 +45,7 @@
     <string name="toolbar_main">主要</string>
     <string name="toolbar_news">ニュース</string>
     <string name="toolbar_twitter">ツイッター</string>
+    <string name="toolbar_legend">伝説</string>
     <string name="toolbar_wallpaper">壁紙</string>
     <string name="toolbar_donate">寄付</string>
     <string name="toolbar_about">約</string>

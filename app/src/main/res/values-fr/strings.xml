@@ -45,6 +45,7 @@
     <string name="toolbar_main">Сardinal</string>
     <string name="toolbar_news">Тouvelles</string>
     <string name="toolbar_twitter">Twitter</string>
+    <string name="toolbar_legend">Légendes</string>
     <string name="toolbar_wallpaper">Fond d\'écran</string>
     <string name="toolbar_donate">Faire un don</string>
     <string name="toolbar_about">À propos de</string>

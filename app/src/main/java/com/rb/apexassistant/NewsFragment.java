@@ -52,7 +52,7 @@ public class NewsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_item_list, container, false);
+        View view = inflater.inflate(R.layout.news_list, container, false);
 
         // Toolbar
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);

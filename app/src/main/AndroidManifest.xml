@@ -37,6 +37,10 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.ApexLegendsAssistant.NoActionBar" />
         <activity
+            android:name="com.rb.apexassistant.LegendsWebActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.ApexLegendsAssistant.NoActionBar" />
+        <activity
             android:name="com.rb.apexassistant.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.ApexLegendsAssistant.NoActionBar" >

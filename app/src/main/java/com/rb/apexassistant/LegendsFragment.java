@@ -2,21 +2,22 @@ package com.rb.apexassistant;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import java.util.List;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.List;
 
 /**
  * A fragment representing a list of Items.
  */
-public class TweetsFragment extends Fragment {
+public class LegendsFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -27,13 +28,13 @@ public class TweetsFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public TweetsFragment() {
+    public LegendsFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static NewsFragment newInstance(int columnCount) {
-        NewsFragment fragment = new NewsFragment();
+    public static LegendsFragment newInstance(int columnCount) {
+        LegendsFragment fragment = new LegendsFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -56,10 +57,10 @@ public class TweetsFragment extends Fragment {
 
         // Toolbar
         Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
-        toolbar.setTitle(getResources().getString(R.string.toolbar_twitter));
+        toolbar.setTitle(getResources().getString(R.string.toolbar_legend));
 
-        TweetsLoader tweetsLoader = new TweetsLoader(getContext());
-        List<Tweet> tweetsArray = tweetsLoader.loadThen().convertDateToView();
+        DatabaseEntity<Legend> databaseEntity = new DatabaseEntity<Legend>(Legend.class);
+        List<Legend> legends = databaseEntity.load();
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -72,7 +73,7 @@ public class TweetsFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
 
-            TweetsViewAdapter adapter = new TweetsViewAdapter(getContext(), tweetsArray);
+            LegendsViewAdapter adapter = new LegendsViewAdapter(getContext(), legends);
             recyclerView.setAdapter(adapter);
         }
         return view;

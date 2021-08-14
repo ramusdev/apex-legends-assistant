@@ -2,10 +2,6 @@ package com.rb.apexassistant;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
@@ -13,7 +9,10 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
-public class WebActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+public class LegendsWebActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +23,7 @@ public class WebActivity extends AppCompatActivity {
 
         // Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(getResources().getString(R.string.toolbar_news));
+        toolbar.setTitle(getResources().getString(R.string.toolbar_legend));
         setSupportActionBar(toolbar);
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         this.getSupportActionBar().setHomeButtonEnabled(true);
@@ -44,11 +43,10 @@ public class WebActivity extends AppCompatActivity {
         webView.getSettings().setAllowFileAccess(true);
         webView.setWebChromeClient(new WebChromeClient());
 
-        String text = getIntent().getStringExtra("BUNDLE_TEXT");
-        String title = getIntent().getStringExtra("BUNDLE_TITLE");
-        String titleHtml = "<div class=\"main_title\">" + title + "</div>";
+        String link = getIntent().getStringExtra("BUNDLE_LINK");
 
         // Style after move to parser
+        /*
         String style = "<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"https://edgenews.ru/android/apexlegends/legends/static/style.css\">";
         StringBuilder stringBuilder = new StringBuilder(text)
             .insert(0, "<html>")
@@ -56,7 +54,9 @@ public class WebActivity extends AppCompatActivity {
             .append(style)
             .append("</html>");
 
-        webView.loadDataWithBaseURL(null, stringBuilder.toString(), "text/html", "utf-8", "");
+        */
+
+        webView.loadUrl(link);
     }
 
     @Override

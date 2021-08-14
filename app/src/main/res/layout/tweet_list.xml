@@ -11,4 +11,4 @@
     android:paddingTop="15dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".NewsFragment"
-    tools:listitem="@layout/fragment_item" />
+    tools:listitem="@layout/news_item" />

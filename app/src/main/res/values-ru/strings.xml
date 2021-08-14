@@ -45,6 +45,7 @@
     <string name="toolbar_main">Главная</string>
     <string name="toolbar_news">Новости</string>
     <string name="toolbar_twitter">Твиттер</string>
+    <string name="toolbar_legend">Легенды</string>
     <string name="toolbar_wallpaper">Обои</string>
     <string name="toolbar_donate">Донат</string>
     <string name="toolbar_about">О приложении</string>

@@ -38,4 +38,15 @@ public final class DataContract {
         public static final String _ID = BaseColumns._ID;
         public static final String COLUMN_IMAGE = "image";
     }
+
+    public static final class LegendsEntry implements BaseColumns {
+        public final static String TABLE_NAME = "legends";
+
+        public static final String _ID = BaseColumns._ID;
+        public static final String COLUMN_NAME = "name";
+        public static final String COLUMN_IMAGE = "image";
+        public static final String COLUMN_LINK = "link";
+        public static final String COLUMN_TAGLINE = "tagline";
+        public static final String COLUMN_DESCRIPTION = "description";
+    }
 }

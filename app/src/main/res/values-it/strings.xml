@@ -45,6 +45,7 @@
     <string name="toolbar_main">Principale</string>
     <string name="toolbar_news">Notizia</string>
     <string name="toolbar_twitter">Twitter</string>
+    <string name="toolbar_legend">Leggende</string>
     <string name="toolbar_wallpaper">Sfondo</string>
     <string name="toolbar_donate">Donare</string>
     <string name="toolbar_about">Di</string>
