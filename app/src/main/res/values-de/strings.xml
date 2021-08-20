@@ -48,6 +48,7 @@
     <string name="toolbar_legend">Legenden</string>
     <string name="toolbar_wallpaper">Hintergrund</string>
     <string name="toolbar_donate">Spenden</string>
+    <string name="toolbar_settings">Einstellungen</string>
     <string name="toolbar_about">Über</string>
     <string name="title_activity_my_application">MyApplication</string>
 
@@ -57,6 +58,16 @@
     <string name="donate_button_three">Gold</string>
     <string name="donate_button_four">Diamant</string>
 
+    <!-- Settings -->
+    <string name="settings_text">
+         <![CDATA[
+            <font color=#712123>Premium-Funktion.</font><br><br>
+             Möchten Sie Werbung für 24 Stunden in der App deaktivieren? Bitte Video anschauen!
+         ]]>
+     </string>
+    <string name="settings_button">Anzeigen für 24 Stunden deaktivieren</string>
+    <string name="settings_message">Anzeigen für 24 Stunden deaktiviert</string>
+
     <!-- News link -->
     <string name="news_link">https://www.ea.com/de-de/games/apex-legends/news</string>
 
@@ -64,6 +75,9 @@
     <string name="wallpaper_set">Satz</string>
     <string name="wallpaper_downloading">Wird heruntergeladen ...</string>
     <string name="wallpaper_loaded">Geladen</string>
+    
+    <!-- Legend -->
+    <string name="legends_json_dir">Legends/en/legends_en.json</string>
 
     <!--
     This string is used for square devices and overridden by hello_world in

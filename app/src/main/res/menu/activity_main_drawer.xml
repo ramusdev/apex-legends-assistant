@@ -26,6 +26,10 @@
             android:icon="@drawable/menu_donate"
             android:title="@string/toolbar_donate" />
         <item
+            android:id="@+id/nav_item_settings"
+            android:icon="@drawable/menu_about3"
+            android:title="@string/toolbar_settings" />
+        <item
             android:id="@+id/nav_item_about"
             android:icon="@drawable/menu_about3"
             android:title="@string/toolbar_about" />

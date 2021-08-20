@@ -50,12 +50,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        /*
         AdmobInterstitialAd admobInterstitialAd = new AdmobInterstitialAd.Builder()
                 .show(true)
                 .activity(this)
                 .testMode(false)
                 .adId(ADMOB_INTERSTITIAL_ID)
                 .build();
+
+        */
 
         // admobInterstitialAd.show();
 
@@ -143,6 +146,18 @@ public class MainActivity extends AppCompatActivity {
                     }, 275);
                 }
 
+                if (item.getItemId() == R.id.nav_item_settings) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            item.setChecked(true);
+                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                            transaction.replace(R.id.nav_host_fragment, SettingsFragment.class, null).commit();
+                        }
+                    }, 275);
+                }
+
                 if (item.getItemId() == R.id.nav_item_legends) {
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -199,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
             Callable populatorWallapeper = new DatabasePopulatorCallable<Wallpaper>("Wallpapers/wallpapers.json", Wallpaper.class);
             taskRunner.executeAsync(populatorWallapeper);
 
-            Callable populatorLegend = new DatabasePopulatorCallable<Legend>("Legends/legends.json", Legend.class);
+            Callable populatorLegend = new DatabasePopulatorCallable<Legend>(getResources().getString(R.string.legends_json_dir), Legend.class);
             taskRunner.executeAsync(populatorLegend);
 
             SharedPreferences.Editor editor = sharedPreferences.edit();

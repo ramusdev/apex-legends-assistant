@@ -2,6 +2,8 @@ package com.rb.apexassistant;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -21,9 +23,9 @@ import androidx.lifecycle.OnLifecycleEvent;
 import androidx.lifecycle.ProcessLifecycleOwner;
 
 public class AppOpenManager implements LifecycleObserver, Application.ActivityLifecycleCallbacks {
-    private static String LOG_TAG = "MyTag";
+    private static final String LOG_TAG = "MyTag";
     // private static String AD_UNIT_ID = "ca-app-pub-3940256099942544/3419835294";
-    private static String AD_UNIT_ID = "ca-app-pub-4140002463111288/6250480639";
+    private static final String AD_UNIT_ID = "ca-app-pub-4140002463111288/6250480639";
     // private final int TIME_FOR_AD_LOAD = 10000;
     private AppOpenAd appOpenAd = null;
     private AppOpenAd.AppOpenAdLoadCallback loadCallback;
@@ -31,6 +33,9 @@ public class AppOpenManager implements LifecycleObserver, Application.ActivityLi
     private Activity currentActivity;
     private static boolean isShowingAd = false;
     private long loadTime = 0;
+    public static final String APP_PREFERENCES = "settings";
+    public static final String APP_PREFERENCES_DATE = "date";
+    public static final String APP_PREFERENCES_ISHOW = "isshow";
 
     public AppOpenManager(MyApplication myApplication) {
         this.myApplication = myApplication;
@@ -64,8 +69,9 @@ public class AppOpenManager implements LifecycleObserver, Application.ActivityLi
 
     // Show ad
     public void showAdIfAvailable() {
-        if (!isShowingAd && isAdAvailable()) {
-            Log.d(LOG_TAG, "AppOpenManager: Show ad");
+        Log.d(LOG_TAG, "AppOpenManager: Show ad");
+        if (!isShowingAd && isAdAvailable() && isInterstitialAllowed()) {
+            Log.d(LOG_TAG, "AppOpenManager: Show ad inside");
 
             FullScreenContentCallback fullScreenContentCallback = new FullScreenContentCallback() {
                 @Override
@@ -87,13 +93,25 @@ public class AppOpenManager implements LifecycleObserver, Application.ActivityLi
             };
 
             // appOpenAd.show(currentActivity, fullScreenContentCallback);
-            appOpenAd.show(currentActivity);
             appOpenAd.setFullScreenContentCallback(fullScreenContentCallback);
+            appOpenAd.show(currentActivity);
 
         } else {
             Log.d(LOG_TAG, "AppOpenManager: Can not show ad");
             // fetchAd();
         }
+    }
+
+    public boolean isInterstitialAllowed() {
+        SharedPreferences sharedPreferences = MyApplicationContext.getAppContext().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
+        long dateTime = sharedPreferences.getLong(APP_PREFERENCES_DATE, 0);
+        long currentDateTime = (new Date()).getTime();
+        long dateDifference = currentDateTime - dateTime;
+        long numMilliSecondsPerHour = 3600000;
+        long hoursInDay = 24;
+        long numMilliSecondsInDay = numMilliSecondsPerHour * hoursInDay;
+
+        return dateDifference > numMilliSecondsInDay;
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
@@ -104,22 +122,6 @@ public class AppOpenManager implements LifecycleObserver, Application.ActivityLi
             showAdIfAvailable();
         } else {
             fetchAd();
-
-            // Intent intent = new Intent(myApplication.getApplicationContext(), SplashActivity.class);
-            // intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            // myApplication.getApplicationContext().startActivity(intent);
-
-            /*
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Log.d(LOG_TAG, "AppOpenManager: after load show");
-                    showAdIfAvailable();
-                }
-            }, TIME_FOR_AD_LOAD);
-            */
-
-            // Log.d(LOG_TAG, "AppOpenManager: after intend");
         }
     }
 
@@ -136,7 +138,7 @@ public class AppOpenManager implements LifecycleObserver, Application.ActivityLi
 
     // Utility that checks if ad exists and can be shown
     public boolean isAdAvailable() {
-        return appOpenAd != null && wasLoadTimeLessThanHoursAgo(4);
+        return appOpenAd != null && wasLoadTimeLessThanHoursAgo(1);
     }
 
     @Override

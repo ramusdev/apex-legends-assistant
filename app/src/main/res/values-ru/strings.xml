@@ -48,6 +48,7 @@
     <string name="toolbar_legend">Легенды</string>
     <string name="toolbar_wallpaper">Обои</string>
     <string name="toolbar_donate">Донат</string>
+    <string name="toolbar_settings">Настройки</string>
     <string name="toolbar_about">О приложении</string>
     <string name="title_activity_my_application">MyApplication</string>
 
@@ -57,6 +58,16 @@
     <string name="donate_button_three">Золото</string>
     <string name="donate_button_four">Алмаз</string>
 
+    <!-- Settings -->
+    <string name="settings_text">
+        <![CDATA[
+           <font color=#712123> Премиум функция.</font><br><br>
+            Отключи рекламу на 24 часа. Посмотри видео!
+        ]]>
+    </string>
+    <string name="settings_button">Откючить рекламу на 24 часа</string>
+    <string name="settings_message">Реклама отключена на 24 часa</string>
+
     <!-- News link -->
     <string name="news_link">https://www.ea.com/ru-ru/games/apex-legends/news</string>
 
@@ -64,6 +75,9 @@
     <string name="wallpaper_set">Установить</string>
     <string name="wallpaper_downloading">Загрузка ...</string>
     <string name="wallpaper_loaded">Загружено</string>
+
+    <!-- Legend -->
+    <string name="legends_json_dir">Legends/ru/legends_ru.json</string>
 
     <!--
     This string is used for square devices and overridden by hello_world in

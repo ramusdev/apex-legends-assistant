@@ -8,6 +8,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import android.os.Handler;
 import android.text.Spanned;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +17,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.android.billingclient.api.AcknowledgePurchaseParams;
+import com.android.billingclient.api.AcknowledgePurchaseResponseListener;
 import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.BillingClientStateListener;
 import com.android.billingclient.api.BillingFlowParams;
@@ -26,11 +31,14 @@ import com.android.billingclient.api.PurchasesUpdatedListener;
 import com.android.billingclient.api.SkuDetails;
 import com.android.billingclient.api.SkuDetailsParams;
 import com.android.billingclient.api.SkuDetailsResponseListener;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DonateFragment extends Fragment implements View.OnClickListener {
+public class DonateFragment extends Fragment implements View.OnClickListener, PurchasesUpdatedListener {
+
+    // https://programtown.com/how-to-make-in-app-purchase-in-android-using-google-play-billing-library/
 
     private DonateViewModel mViewModel;
     View view;
@@ -159,6 +167,24 @@ public class DonateFragment extends Fragment implements View.OnClickListener {
         billingClient.consumeAsync(consumeParams, consumeResponseListener);
     }
 
+    public void handlePurchases(List<Purchase> purchases) {
+        for (Purchase purchase : purchases) {
+            if (purchase.getPurchaseState() == Purchase.PurchaseState.PURCHASED) {
+                if (!purchase.isAcknowledged()) {
+                    AcknowledgePurchaseParams acknowledgePurchaseParams = AcknowledgePurchaseParams.newBuilder()
+                            .setPurchaseToken(purchase.getPurchaseToken())
+                            .build();
+                    billingClient.acknowledgePurchase(acknowledgePurchaseParams, new AcknowledgePurchaseResponseListener() {
+                        @Override
+                        public void onAcknowledgePurchaseResponse(@NonNull BillingResult billingResult) {
+
+                        }
+                    });
+                }
+            }
+        }
+    }
+
     @Override
     public void onClick(View v) {
         Log.d("MyTag", "Donate: onclick");
@@ -216,5 +242,56 @@ public class DonateFragment extends Fragment implements View.OnClickListener {
         } catch (NullPointerException e) {
             Log.d("MyTag", "SKU null pointer");
         }
+    }
+
+    @Override
+    public void onPurchasesUpdated(@NonNull BillingResult billingResult, @Nullable List<Purchase> purchases) {
+        if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK && purchases != null) {
+            showMessageSuccess();
+            handlePurchases(purchases);
+        } else if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.USER_CANCELED) {
+            showMessageCancel();
+        } else {
+            showMessageError();
+        }
+    }
+
+    public void showMessageSuccess() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                String text = "Спасибо за донат! Нам важна ваша поддержка.";
+                Snackbar snackbar = Snackbar.make(view, text, Snackbar.LENGTH_LONG);
+                snackbar.setBackgroundTint(getResources().getColor(R.color.red));
+                snackbar.show();
+            }
+        }, 1000);
+    }
+
+    public void showMessageCancel() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                String text = "Производится отмена доната.";
+                Snackbar snackbar = Snackbar.make(view, text, Snackbar.LENGTH_LONG);
+                snackbar.setBackgroundTint(getResources().getColor(R.color.red));
+                snackbar.show();
+            }
+        }, 1000);
+    }
+
+    public void showMessageError() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                String text = "Произошла ошибка! Попробуйте повторить позже.";
+                Snackbar snackbar = Snackbar.make(view, text, Snackbar.LENGTH_LONG);
+                snackbar.setBackgroundTint(getResources().getColor(R.color.red));
+                snackbar.show();
+            }
+        }, 1000);
     }
 }

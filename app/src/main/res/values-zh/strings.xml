@@ -48,6 +48,7 @@
     <string name="toolbar_legend">傳奇</string>
     <string name="toolbar_wallpaper">牆紙</string>
     <string name="toolbar_donate">捐</string>
+    <string name="toolbar_settings">設置</string>
     <string name="toolbar_about">關於</string>
     <string name="title_activity_my_application">MyApplication</string>
 
@@ -57,6 +58,16 @@
     <string name="donate_button_three">金子</string>
     <string name="donate_button_four">鑽石</string>
 
+    <!-- 設置-->
+    <string name="settings_text">
+         <![CDATA[
+            <font color=#712123> 高級功能。</font><br><br>
+             想要在應用中關閉 24 小時的廣告？ 請觀看視頻！
+         ]]>
+     </string>
+    <string name="settings_button">禁用廣告 24 小時</string>
+    <string name="settings_message">廣告停用 24 小時</string>
+
     <!-- News link -->
     <string name="news_link">https://www.ea.com/zh-tw/games/apex-legends/news</string>
 
@@ -64,6 +75,9 @@
     <string name="wallpaper_set">放</string>
     <string name="wallpaper_downloading">正在下載...</string>
     <string name="wallpaper_loaded">已加載</string>
+
+    <!-- Legend -->
+    <string name="legends_json_dir">Legends/en/legends_en.json</string>
 
     <!--
     This string is used for square devices and overridden by hello_world in
