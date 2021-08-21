@@ -15,7 +15,7 @@
             android:title="@string/toolbar_twitter" />
         <item
             android:id="@+id/nav_item_legends"
-            android:icon="@drawable/menu_twitter2"
+            android:icon="@drawable/menu_legends"
             android:title="@string/toolbar_legend" />
         <item
             android:id="@+id/nav_item_wallpaper"
@@ -27,7 +27,7 @@
             android:title="@string/toolbar_donate" />
         <item
             android:id="@+id/nav_item_settings"
-            android:icon="@drawable/menu_about3"
+            android:icon="@drawable/menu_settings"
             android:title="@string/toolbar_settings" />
         <item
             android:id="@+id/nav_item_about"
