@@ -41,7 +41,6 @@
                 android:id="@+id/button_show"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 app:backgroundTint="@null"

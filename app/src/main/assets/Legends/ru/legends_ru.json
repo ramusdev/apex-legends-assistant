@@ -68,5 +68,61 @@
     "image": "legend_revenant",
     "tagline": "Рукотворный кошмар",
     "description": "Когда-то Ревенант был человеком. Наёмным убийцей Синдиката, лучшим из лучших."
+  },
+  {
+    "name": "Бангалор",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/ru/legend_bangalore_ru.html",
+    "image": "legend_bangalore",
+    "tagline": "Профессиональный солдат",
+    "description": "Бангалор родилась в семье военных. Как и ее родители и четыре старших брата, она служила в IMC и была превосходным солдатом всю свою жизнь."
+  },
+  {
+    "name": "Бладхаунд",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/ru/legend_bloodhound_ru.html",
+    "image": "legend_bloodhound",
+    "tagline": "Техноследопыт",
+    "description": "Во Внешних землях Бладхаунд знают как одного из величайших охотников на всем Фронтире."
+  },
+  {
+    "name": "Каустик",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/ru/legend_caustic_ru.html",
+    "image": "legend_caustic",
+    "tagline": "Ловчий-отравитель",
+    "description": "Когда-то Александр Нокс был одним из самых выдающихся ученых в компании «Хамберт Лабс», ведущем производителе газов-пестицидов Фронтира."
+  },
+  {
+    "name": "Крипто",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/ru/legend_crypto_ru.html",
+    "image": "legend_crypto",
+    "tagline": "Эксперт по разведке",
+    "description": "Специальность Крипто — секреты. Этот гениальный хакер и мастер шифрования использует свои воздушные дроны для слежки за противниками на арене Apex, оставаясь в тени."
+  },
+  {
+    "name": "Гибралтар",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/ru/legend_gibraltar_ru.html",
+    "image": "legend_gibraltar",
+    "tagline": "Неприступная крепость",
+    "description": "Гибралтар — кроткий великан, в котором есть и дикая сторона."
+  },
+  {
+    "name": "Валькирия",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/ru/legend_valkyrie_ru.html",
+    "image": "legend_valkyrie",
+    "tagline": "Крылатый мститель",
+    "description": "Смелая, дерзкая, пылкая и свирепая Кайри Имахара не гнушается давать взятки и преступать закон. В детстве она украла Титана."
+  },
+  {
+    "name": "Ваттсон",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/ru/legend_wattson_ru.html",
+    "image": "legend_wattson",
+    "tagline": "Незыблемый защитник",
+    "description": "Натали Ваттсон Пэкетт хорошо знают на Играх Apex, но по несколько другим причинам, нежели большую часть бойцов."
+  },
+  {
+    "name": "Рэйф",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/ru/legend_wraith_ru.html",
+    "image": "legend_wraith",
+    "tagline": "Межпространственный боец",
+    "description": "Рэйф — боец-вихрь, способный проводить смертоносные атаки, а также манипулировать пространством-временем, создавая разломы в ткани реальности."
   }
 ]

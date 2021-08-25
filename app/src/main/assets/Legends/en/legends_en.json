@@ -68,5 +68,61 @@
     "image": "legend_revenant",
     "tagline": "Synthetic Nightmare",
     "description": "Revenant used to be human. He used to be the greatest hitman the Mercenary Syndicate ever had."
+  },
+  {
+    "name": "Bangalore",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/en/legend_bangalore_en.html",
+    "image": "legend_bangalore",
+    "tagline": "Professional Soldier",
+    "description": "Born into a military family where she, her parents, and her four older brothers all served with the IMC, Bangalore has been an exceptional soldier her whole life."
+  },
+  {
+    "name": "Bloodhound",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/en/legend_bloodhound_en.html",
+    "image": "legend_bloodhound",
+    "tagline": "Technological Tracker",
+    "description": "Bloodhound is known across the Outlands as one of the greatest game hunters the Frontier has ever seen."
+  },
+  {
+    "name": "Caustic",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/en/legend_caustic_en.html",
+    "image": "legend_caustic",
+    "tagline": "Toxic Trapper",
+    "description": "Alexander Nox used to be one of the brightest scientists in the employ of Humbert Labs, the Frontier’s leading manufacturer of pesticide gases."
+  },
+  {
+    "name": "Crypto",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/en/legend_crypto_en.html",
+    "image": "legend_crypto",
+    "tagline": "Surveillance Expert",
+    "description": "Crypto specializes in secrets. A brilliant hacker and encryption expert, he uses aerial drones to spy on his opponents in the Apex Arena without being seen."
+  },
+  {
+    "name": "Gibraltar",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/en/legend_gibraltar_en.html",
+    "image": "legend_gibraltar",
+    "tagline": "Shielded Fortress",
+    "description": "Gibraltar is a gentle giant with a wild side. The son of two SARAS (Search and Rescue Association of Solace) volunteers"
+  },
+  {
+    "name": "Valkyrie",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/en/legend_valkyrie_en.html",
+    "image": "legend_valkyrie",
+    "tagline": "Winged Avenger",
+    "description": "Bold, brash, fiery and fierce, Kairi Imahara isn’t above greasing palms and bending the law. When she was a child, she stole a Titan."
+  },
+  {
+    "name": "Wattson",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/en/legend_wattson_en.html",
+    "image": "legend_wattson",
+    "tagline": "Static Defender",
+    "description": "Natalie “Wattson” Paquette is a familiar face in the Apex Games, though for a different reason than most."
+  },
+  {
+    "name": "Wraith",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/en/legend_wraith_en.html",
+    "image": "legend_wraith",
+    "tagline": "Interdimensional Skirmisher",
+    "description": "Wraith is a whirlwind fighter, able to execute deadly attacks and manipulate spacetime by opening rifts in the fabric of reality — but those abilities came at a price. "
   }
 ]
