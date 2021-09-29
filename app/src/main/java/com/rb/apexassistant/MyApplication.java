@@ -11,6 +11,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import androidx.annotation.NonNull;
 import androidx.work.WorkInfo;
 import androidx.work.WorkManager;
 
@@ -24,18 +25,19 @@ public class MyApplication extends Application {
 
         MyApplicationContext myApplicationContext = new MyApplicationContext(this);
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+        MobileAds.initialize(MyApplicationContext.getAppContext(), new OnInitializationCompleteListener() {
             @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+                appOpenManager = new AppOpenManager(MyApplication.this);
             }
         });
 
-        appOpenManager = new AppOpenManager(this);
+        // appOpenManager = new AppOpenManager(this);
 
         // Work manager
         Log.d("MyTag", "my application start class --->");
         WorkManager workManager = WorkManager.getInstance(this);
-        ListenableFuture<List<WorkInfo>> statuses = workManager.getWorkInfosByTag("task_worker6");
+        ListenableFuture<List<WorkInfo>> statuses = workManager.getWorkInfosByTag("task_worker7");
 
         try {
             List<WorkInfo> workInfoList = statuses.get();

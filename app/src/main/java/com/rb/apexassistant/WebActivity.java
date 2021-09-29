@@ -20,7 +20,6 @@ public class WebActivity extends AppCompatActivity {
         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_second);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         // Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);

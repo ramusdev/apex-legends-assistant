@@ -1,5 +1,7 @@
 package com.rb.apexassistant;
 
+import android.app.Activity;
+import android.app.Application;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -25,6 +27,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Callable;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -48,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         /*
         AdmobInterstitialAd admobInterstitialAd = new AdmobInterstitialAd.Builder()
@@ -146,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
                     }, 275);
                 }
 
+                /*
                 if (item.getItemId() == R.id.nav_item_settings) {
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -157,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }, 275);
                 }
+                */
 
                 if (item.getItemId() == R.id.nav_item_legends) {
                     new Handler().postDelayed(new Runnable() {
