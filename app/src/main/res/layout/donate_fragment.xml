@@ -52,7 +52,7 @@
                 android:textSize="15sp" />
 
             <Button
-                android:id="@+id/button_donate_lvl_two"
+                android:id="@+id/button_donate_lvl_four"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="10dp"
@@ -84,7 +84,7 @@
                 android:textSize="15sp" />
 
             <Button
-                android:id="@+id/button_donate_lvl_four"
+                android:id="@+id/button_donate_lvl_two"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="10dp"

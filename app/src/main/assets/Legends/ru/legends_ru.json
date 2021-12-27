@@ -1,5 +1,12 @@
 [
   {
+    "name": "Эш",
+    "image": "legend_ash",
+    "link": "https://edgenews.ru/android/apexlegends/legends/data/ru/legend_ash_ru.html",
+    "tagline": "Злобный провокатор",
+    "description": "Доктор Эшли Рид, рожденная в беспощадном Фронтире, еще человеком поняла, что лишь она одна готова о себе заботиться и больше никто. "
+  },
+  {
     "name": "Сиар",
     "image": "legend_seer",
     "link": "https://edgenews.ru/android/apexlegends/legends/data/ru/legend_seer_ru.html",
