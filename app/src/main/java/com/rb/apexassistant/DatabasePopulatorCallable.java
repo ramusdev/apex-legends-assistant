@@ -15,8 +15,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Callable;
 
-import kotlin.jvm.internal.TypeParameterReference;
-
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 public class DatabasePopulatorCallable<T> implements Callable<Integer> {
