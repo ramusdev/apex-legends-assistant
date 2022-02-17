@@ -22,6 +22,7 @@ import android.view.WindowManager;
 
 import com.google.android.material.navigation.NavigationView;
 import com.rb.apexassistant.data.DataDbHelper;
+import com.rb.apexassistant.tasks.StatsTask;
 
 import java.util.Arrays;
 import java.util.List;
@@ -175,6 +176,20 @@ public class MainActivity extends AppCompatActivity {
                     }, 275);
                 }
 
+                if (item.getItemId() == R.id.nav_item_stats) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            item.setChecked(true);
+                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                            transaction.replace(R.id.nav_host_fragment, StatsFragment.class, null).commit();
+                        }
+                    }, 275);
+                }
+
+
+
                 return false;
             }
         });
@@ -193,14 +208,17 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("MyTag", "create task -->");
 
-        NewsLoader newsLoader = new NewsLoader(this.getApplicationContext());
-        List<News> news = newsLoader.load();
+        // NewsLoader newsLoader = new NewsLoader(this.getApplicationContext());
+        // List<News> news = newsLoader.load();
 
-        TweetsLoader tweetsLoader = new TweetsLoader(this.getApplicationContext());
-        List<Tweet> tweets = tweetsLoader.load();
+        // TweetsLoader tweetsLoader = new TweetsLoader(this.getApplicationContext());
+        // List<Tweet> tweets = tweetsLoader.load();
 
-        TaskRunner<Integer> taskRunner = new TaskRunner<Integer>();
+        // TaskRunner<Integer> taskRunner = new TaskRunner<Integer>();
+        // Callable statsTask = new StatsTask();
+        // taskRunner.executeAsync(statsTask);
 
+        /*
         if (news.size() <= 0) {
             Callable callable = new NewsUpdateCallable(5);
             taskRunner.executeAsync(callable);
@@ -211,6 +229,9 @@ public class MainActivity extends AppCompatActivity {
             taskRunner.executeAsync(callable);
         }
 
+         */
+
+        /*
         SharedPreferences sharedPreferences = MyApplicationContext.getAppContext().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         String currentVersion = sharedPreferences.getString(APP_PREFERENCES_VERSION, "");
 
@@ -228,6 +249,8 @@ public class MainActivity extends AppCompatActivity {
 
             Log.d("MyTag", "Save new version name");
         }
+
+         */
 
     }
 

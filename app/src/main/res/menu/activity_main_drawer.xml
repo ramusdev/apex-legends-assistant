@@ -22,6 +22,10 @@
             android:icon="@drawable/menu_wallpaper4"
             android:title="@string/toolbar_wallpaper" />
         <item
+            android:id="@+id/nav_item_stats"
+            android:icon="@drawable/menu_legends"
+            android:title="@string/toolbar_stats" />
+        <item
             android:id="@+id/nav_item_donate"
             android:icon="@drawable/menu_donate"
             android:title="@string/toolbar_donate" />

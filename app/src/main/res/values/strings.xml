@@ -47,6 +47,7 @@
     <string name="toolbar_twitter">Twitter</string>
     <string name="toolbar_legend">Legends</string>
     <string name="toolbar_wallpaper">Wallpapers</string>
+    <string name="toolbar_stats" translatable="false">Stats</string>
     <string name="toolbar_donate">Donate</string>
     <string name="toolbar_settings">Settings</string>
     <string name="toolbar_about">About</string>
