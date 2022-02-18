@@ -18,13 +18,14 @@ import androidx.lifecycle.ViewModelProviders;
 import com.rb.apexassistant.model.PlayerStatsEntity;
 import com.rb.apexassistant.viewmodel.StatisticFragmentView;
 
-public class StatsFragment extends Fragment {
+public class StatisticFragment extends Fragment {
 
+    private static final String BUNDLE_ID = "bundle_id";
     private AboutViewModel mViewModel;
     private View view;
 
-    public static StatsFragment newInstance() {
-        return new StatsFragment();
+    public static StatisticFragment newInstance() {
+        return new StatisticFragment();
     }
 
     @Override
@@ -43,9 +44,10 @@ public class StatsFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        long playerId = getArguments().getLong(BUNDLE_ID);
 
         StatisticFragmentView statisticFragmentView = ViewModelProviders.of(getActivity()).get(StatisticFragmentView.class);
-        LiveData<PlayerStatsEntity> playerStatsEntityLiveData = statisticFragmentView.getPlayerStatsEntity();
+        LiveData<PlayerStatsEntity> playerStatsEntityLiveData = statisticFragmentView.getPlayerStatsEntity(playerId);
         playerStatsEntityLiveData.observe(getViewLifecycleOwner(), new Observer<PlayerStatsEntity>() {
             @Override
             public void onChanged(PlayerStatsEntity playerStatsEntity) {

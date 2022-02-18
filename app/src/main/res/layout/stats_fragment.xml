@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red"
+    android:background="@color/dark_red"
     android:fillViewport="true">
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,6 +27,7 @@
                 android:textColor="@color/yellow"
                 android:textSize="35sp"
                 android:textStyle="bold" />
+
             <ImageView
                 android:id="@+id/user_image"
                 android:layout_width="38dp"

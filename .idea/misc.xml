@@ -9,10 +9,27 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Apex/app/src/main/res/layout/donate_fragment.xml" value="0.25" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable-mdpi/button_add_click.xml" value="0.3035" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable-mdpi/cursor_drawable.xml" value="0.3035" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable-mdpi/text_add_pressed.xml" value="0.3035" />
         <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable-xxxhdpi/background_bar.xml" value="0.3675" />
         <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable-xxxhdpi/stats_dots.xml" value="0.3675" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable/button_delete_click.xml" value="0.3035" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable/button_delete_default.xml" value="0.3035" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable/button_delete_pressed.xml" value="0.3035" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable/button_donate_click.xml" value="0.3035" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable/button_info_click.xml" value="0.3035" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable/button_info_default.xml" value="0.3035" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable/button_info_pressed.xml" value="0.3035" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable/input_backgorund.xml" value="0.3035" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable/statssetting_inputfield.xml" value="0.3035" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable/text_delete_pressed.xml" value="0.3035" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/drawable/text_info_pressed.xml" value="0.3035" />
         <entry key="..\:/ApexLegendsAssistant/app/src/main/res/layout/about_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/layout/fragment_statsoptions.xml" value="0.36666666666666664" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/layout/player_block.xml" value="0.5" />
         <entry key="..\:/ApexLegendsAssistant/app/src/main/res/layout/stats_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/ApexLegendsAssistant/app/src/main/res/layout/statsoptions_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/ApexLegendsAssistant/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
         <entry key="..\:/ApexLegendsAssistant/app/src/main/res/menu/main.xml" value="0.36666666666666664" />
       </map>

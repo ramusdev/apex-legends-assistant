@@ -37,6 +37,7 @@ public class ApiClient extends ApiClientAbstract {
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(typeToken, new StatsDeserializer.PlayerDeserializer());
 
+
         Gson gson = gsonBuilder.create();
         PlayerStatsEntity playerStatsEntity = gson.fromJson(response.get("response"), typeToken);
         playerStatsEntity.setName(playerName);

@@ -36,7 +36,7 @@
         Apex Legends and the Apex Legends logo are registered trademarks or trademarks of Electronic Arts.<br><br>
         <font color=#712123>Additional information</font><br><br>
         - Current version: 2.1.2<br>
-        - Developer: RB dev.<br>
+        - Developer: RB.<br>
         - Contact: ram219219@gmail.com
     ]]>
     </string>
@@ -48,6 +48,7 @@
     <string name="toolbar_legend">Legends</string>
     <string name="toolbar_wallpaper">Wallpapers</string>
     <string name="toolbar_stats" translatable="false">Stats</string>
+    <string name="toolbar_statsoptions" translatable="false">Options</string>
     <string name="toolbar_donate">Donate</string>
     <string name="toolbar_settings">Settings</string>
     <string name="toolbar_about">About</string>
