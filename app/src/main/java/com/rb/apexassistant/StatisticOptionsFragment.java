@@ -13,13 +13,13 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.rb.apexassistant.service.StatisticOptionsService;
 
-public class StatsOptionsFragment extends Fragment {
+public class StatisticOptionsFragment extends Fragment {
 
     private View view;
     private static final String BUNDLE_ID = "bundle_id";
 
-    public static StatsOptionsFragment newInstance() {
-        return new StatsOptionsFragment();
+    public static StatisticOptionsFragment newInstance() {
+        return new StatisticOptionsFragment();
     }
 
     @Override
@@ -44,15 +44,4 @@ public class StatsOptionsFragment extends Fragment {
     }
 
 
-
-
-
-
-
-    private void showSubmitMessage(String message) {
-        Snackbar snackbar = Snackbar.make(view, message, Snackbar.LENGTH_LONG);
-        snackbar.setBackgroundTint(getResources().getColor(R.color.red));
-        snackbar.setTextColor(getResources().getColor(R.color.white));
-        snackbar.show();
-    }
 }

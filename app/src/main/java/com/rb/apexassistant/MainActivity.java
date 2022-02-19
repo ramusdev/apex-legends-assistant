@@ -18,6 +18,9 @@ import android.view.WindowManager;
 
 import com.google.android.material.navigation.NavigationView;
 import com.rb.apexassistant.data.DataDbHelper;
+import com.rb.apexassistant.database.AppDatabase;
+import com.rb.apexassistant.database.PlayerStatsDao;
+import com.rb.apexassistant.model.PlayerStatsEntity;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.fragment.app.FragmentTransaction;
@@ -173,9 +176,9 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             item.setChecked(true);
-                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                            transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                            transaction.replace(R.id.nav_host_fragment, StatisticFragment.class, null).commit();
+
+                            isFirstPlayerInBd();
+
                         }
                     }, 275);
                 }
@@ -187,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
                             item.setChecked(true);
                             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                             transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-                            transaction.replace(R.id.nav_host_fragment, StatsOptionsFragment.class, null).commit();
+                            transaction.replace(R.id.nav_host_fragment, StatisticOptionsFragment.class, null).commit();
                         }
                     }, 275);
                 }
@@ -206,6 +209,31 @@ public class MainActivity extends AppCompatActivity {
         window.setNavigationBarColor(this.getResources().getColor(R.color.red));
 
         getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, NewsFragment.class, null).commit();
+    }
+
+    public void isFirstPlayerInBd() {
+        AppDatabase appDatabase = MyApplication.getInstance().getDatabase();
+        PlayerStatsDao playerStatsDao = appDatabase.PlayerStatsDao();
+
+        TaskRunner<PlayerStatsEntity> taskRunner = new TaskRunner<PlayerStatsEntity>();
+        taskRunner.executeAsync(new Callable<PlayerStatsEntity>() {
+            @Override
+            public PlayerStatsEntity call() throws InterruptedException {
+                return playerStatsDao.getFirstPlayer();
+            }
+        }, new TaskRunner.TaskRunnerCallback<PlayerStatsEntity>() {
+            @Override
+            public void execute(PlayerStatsEntity playerStatsEntity) {
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+
+                if (playerStatsEntity == null) {
+                    transaction.replace(R.id.nav_host_fragment, StatisticOptionsFragment.class, null).commit();
+                } else {
+                    transaction.replace(R.id.nav_host_fragment, StatisticFragment.class, null).commit();
+                }
+            }
+        });
     }
 
     public void createTasks() {

@@ -1,6 +1,7 @@
 package com.rb.apexassistant.database;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
@@ -21,4 +22,10 @@ public abstract class PlayerStatsDao {
 
     @Insert
     public abstract long insert(PlayerStatsEntity playerStatsEntity);
+
+    @Delete
+    public abstract void delete(PlayerStatsEntity playerStatsEntity);
+
+    @Query("SELECT * FROM stats LIMIT 1")
+    public abstract PlayerStatsEntity getFirstPlayer();
 }

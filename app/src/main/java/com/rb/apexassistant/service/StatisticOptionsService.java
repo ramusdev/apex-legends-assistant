@@ -17,10 +17,13 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.rb.apexassistant.MyApplication;
 import com.rb.apexassistant.MyApplicationContext;
 import com.rb.apexassistant.R;
 import com.rb.apexassistant.StatisticFragment;
 import com.rb.apexassistant.TaskRunner;
+import com.rb.apexassistant.database.AppDatabase;
+import com.rb.apexassistant.database.PlayerStatsDao;
 import com.rb.apexassistant.model.PlayerStatsEntity;
 import com.rb.apexassistant.tasks.StatsTask;
 import com.rb.apexassistant.viewmodel.StatisticOptionsView;
@@ -43,7 +46,7 @@ public class StatisticOptionsService {
         playerStatsEntityMutableLiveData.observe(fragment.getViewLifecycleOwner(), new Observer<List<PlayerStatsEntity>>() {
             @Override
             public void onChanged(List<PlayerStatsEntity> playerStatsEntities) {
-                // clearPlayerView();
+                clearPlayerView();
                 updatePlayerView(playerStatsEntities);
             }
         });
@@ -58,12 +61,21 @@ public class StatisticOptionsService {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("MyTag", "on click button");
+                Log.d("MyTag", "on click button --->");
+
+                Button button = fragment.getView().findViewById(R.id.button_submit);
                 EditText editText = fragment.getView().findViewById(R.id.edit_text);
                 String playerName = editText.getText().toString();
 
                 InputMethodManager inputMethodManager = (InputMethodManager) MyApplicationContext.getAppContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                 inputMethodManager.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+                button.setEnabled(false);
+
+                if (playerName.trim().isEmpty()) {
+                    button.setEnabled(true);
+                    showSubmitMessage("ERROR FIELD IS EMPTY");
+                    return;
+                }
 
                 getCallToApi(playerName);
             }
@@ -78,10 +90,13 @@ public class StatisticOptionsService {
             public void execute(Integer status) {
                 if (status == 200) {
                     statisticOptionsView.loadData();
-                    showSubmitMessage("Player added");
+                    showSubmitMessage("PLAYER ADDED");
                 } else {
-                    showSubmitMessage("Player not found");
+                    showSubmitMessage("PLAYER NOT FOUND");
                 }
+
+                Button button = fragment.getView().findViewById(R.id.button_submit);
+                button.setEnabled(true);
             }
         });
     }
@@ -104,15 +119,14 @@ public class StatisticOptionsService {
             Button buttonInfo = viewBlock.findViewById(R.id.player_info);
             buttonInfo.setOnClickListener(infoButtonListener(id));
 
-            // Button buttonDelete = viewBlock.findViewById(R.id.player_delete);
-            // buttonDelete.setOnClickListener(deleteButtonListener(id, playersBlock, viewBlock));
+            Button buttonDelete = viewBlock.findViewById(R.id.player_delete);
+            buttonDelete.setOnClickListener(deleteButtonListener(id));
         }
     }
 
     private void clearPlayerView() {
         LinearLayout playersBlock = fragment.getView().findViewById(R.id.players_block);
         playersBlock.removeAllViews();
-
     }
 
     private View.OnClickListener infoButtonListener(long id) {
@@ -125,8 +139,6 @@ public class StatisticOptionsService {
 
                 Bundle bundle = new Bundle();
                 bundle.putLong(BUNDLE_ID, id);
-                Log.d("MyTag", "id item --->");
-                Log.d("MyTag", String.valueOf(id));
 
                 StatisticFragment statisticFragment = new StatisticFragment();
                 statisticFragment.setArguments(bundle);
@@ -134,6 +146,32 @@ public class StatisticOptionsService {
                 FragmentTransaction transaction = fragment.getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                 transaction.replace(R.id.nav_host_fragment, statisticFragment).commit();
+            }
+        };
+    }
+
+    private View.OnClickListener deleteButtonListener(long id) {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppDatabase appDatabase = MyApplication.getInstance().getDatabase();
+                PlayerStatsDao playerStatsDao = appDatabase.PlayerStatsDao();
+
+                TaskRunner<Integer> taskRunner = new TaskRunner<Integer>();
+                taskRunner.executeAsync(new Callable<Integer>() {
+                    @Override
+                    public Integer call() throws InterruptedException {
+                        PlayerStatsEntity playerStatsEntity = new PlayerStatsEntity();
+                        playerStatsEntity.setId(id);
+                        playerStatsDao.delete(playerStatsEntity);
+                        return 1;
+                    }
+                }, new TaskRunner.TaskRunnerCallback<Integer>() {
+                    @Override
+                    public void execute(Integer data) {
+                        statisticOptionsView.loadData();
+                    }
+                });
             }
         };
     }

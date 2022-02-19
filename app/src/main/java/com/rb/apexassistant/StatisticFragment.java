@@ -16,12 +16,11 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.rb.apexassistant.model.PlayerStatsEntity;
+import com.rb.apexassistant.service.StatisticFragmentService;
 import com.rb.apexassistant.viewmodel.StatisticFragmentView;
 
 public class StatisticFragment extends Fragment {
 
-    private static final String BUNDLE_ID = "bundle_id";
-    private AboutViewModel mViewModel;
     private View view;
 
     public static StatisticFragment newInstance() {
@@ -44,66 +43,9 @@ public class StatisticFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        long playerId = getArguments().getLong(BUNDLE_ID);
 
-        Log.d("MyTag", "Inside stats");
-        Log.d("MyTag", String.valueOf(playerId));
+        StatisticFragmentService statisticFragmentService = new StatisticFragmentService(this);
+        statisticFragmentService.showData();
 
-
-        StatisticFragmentView statisticFragmentView = ViewModelProviders.of(getActivity()).get(StatisticFragmentView.class);
-        LiveData<PlayerStatsEntity> playerStatsEntityLiveData = statisticFragmentView.getPlayerStatsEntity(playerId);
-        playerStatsEntityLiveData.observe(getViewLifecycleOwner(), new Observer<PlayerStatsEntity>() {
-            @Override
-            public void onChanged(PlayerStatsEntity playerStatsEntity) {
-                updateData(playerStatsEntity);
-                Log.d("MyTag", "on change --->");
-            }
-        });
-
-
-        // tatsFragmentService statsFragmentService = new StatsFragmentService();
-        // PlayerStatsEntity playerStatsEntity = statsFragmentService.loadStats();
-
-        // mViewModel = new ViewModelProvider(this).get(AboutViewModel.class);
-        // final TextView textView = view.findViewById(R.id.main_text);
-        // textView.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
-
-        /*
-        mViewModel.getText().observe(getViewLifecycleOwner(), new Observer<Spanned>() {
-            @Override
-            public void onChanged(Spanned s) {
-                textView.setText(s);
-            }
-        });
-        */
     }
-
-    public void updateData(PlayerStatsEntity playerStatsEntity) {
-        TextView userName = view.findViewById(R.id.user_name);
-        TextView gamesPlayed = view.findViewById(R.id.data_gamesplayed);
-        TextView creepingBarrageDamage = view.findViewById(R.id.data_creepingbarragedamage);
-        TextView topThree = view.findViewById(R.id.data_topthree);
-        TextView damage = view.findViewById(R.id.data_damage);
-        TextView droppedItems = view.findViewById(R.id.data_droppeditems);
-        TextView beaconsScanned = view.findViewById(R.id.data_beaconsscanned);
-        TextView kills = view.findViewById(R.id.data_kills);
-        TextView pistolKills = view.findViewById(R.id.data_pistolkills);
-        TextView arKills = view.findViewById(R.id.data_arkills);
-        TextView beastOfTheHuntKills = view.findViewById(R.id.data_beastofthehuntkills);
-        TextView kd = view.findViewById(R.id.data_kd);
-
-        userName.setText(playerStatsEntity.getName());
-        gamesPlayed.setText(String.valueOf(playerStatsEntity.getGamesPlayed()));
-        creepingBarrageDamage.setText(String.valueOf(playerStatsEntity.getBarrageDamage()));
-        topThree.setText(String.valueOf(playerStatsEntity.getBarrageDamage()));
-        damage.setText(String.valueOf(playerStatsEntity.getBarrageDamage()));
-        droppedItems.setText(String.valueOf(playerStatsEntity.getDroppedItems()));
-        beaconsScanned.setText(String.valueOf(playerStatsEntity.getDroppedItems()));
-        kills.setText(String.valueOf(playerStatsEntity.getKills()));
-        pistolKills.setText(String.valueOf(playerStatsEntity.getPistolKills()));
-        arKills.setText(String.valueOf(playerStatsEntity.getArKills()));
-        beastOfTheHuntKills.setText(String.valueOf(playerStatsEntity.getHuntKills()));
-        kd.setText(String.valueOf(playerStatsEntity.getKd()));
-    }
-
 }
