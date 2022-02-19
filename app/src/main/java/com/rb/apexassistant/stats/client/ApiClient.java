@@ -1,5 +1,7 @@
 package com.rb.apexassistant.stats.client;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -30,13 +32,17 @@ public class ApiClient extends ApiClientAbstract {
         parameters.add(new BasicNameValuePair("player", playerName));
 
         Map<String, String> response = super.makeGetCall(url, parameters);
+        Log.d("MyTag", "Status --->");
+        Log.d("MyTag", String.valueOf(response.get("code")));
 
+        if (! response.get("code").equals("200")) {
+            return null;
+        }
 
         Type typeToken = new TypeToken<PlayerStatsEntity>() {}.getType();
 
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(typeToken, new StatsDeserializer.PlayerDeserializer());
-
 
         Gson gson = gsonBuilder.create();
         PlayerStatsEntity playerStatsEntity = gson.fromJson(response.get("response"), typeToken);

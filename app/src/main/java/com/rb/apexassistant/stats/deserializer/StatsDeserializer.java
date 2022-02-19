@@ -16,57 +16,61 @@ public class StatsDeserializer {
             JsonElement jsonElementMain = json.getAsJsonObject().get("total");
             PlayerStatsEntity playerStatsEntity = new PlayerStatsEntity();
 
-            if (! jsonElementMain.getAsJsonObject().get("kills").isJsonNull()) {
+            if (jsonElementMain.getAsJsonObject().get("kills") != null) {
                 JsonElement jsonElement = jsonElementMain.getAsJsonObject().get("kills");
                 int value = jsonElement.getAsJsonObject().get("value").getAsInt();
                 playerStatsEntity.setKills(value);
             }
-            if (! jsonElementMain.getAsJsonObject().get("games_played").isJsonNull()) {
+            if (jsonElementMain.getAsJsonObject().get("games_played") != null) {
                 JsonElement jsonElement = jsonElementMain.getAsJsonObject().get("games_played");
                 int value = jsonElement.getAsJsonObject().get("value").getAsInt();
                 playerStatsEntity.setGamesPlayed(value);
             }
-            if (! jsonElementMain.getAsJsonObject().get("creeping_barrage_damage").isJsonNull()) {
+            if (jsonElementMain.getAsJsonObject().get("creeping_barrage_damage") != null) {
                 JsonElement jsonElement = jsonElementMain.getAsJsonObject().get("creeping_barrage_damage");
                 int value  = jsonElement.getAsJsonObject().get("value").getAsInt();
                 playerStatsEntity.setBarrageDamage(value );
             }
-            if (! jsonElementMain.getAsJsonObject().get("beast_of_the_hunt_kills").isJsonNull()) {
+            if (jsonElementMain.getAsJsonObject().get("beast_of_the_hunt_kills") != null) {
                 JsonElement jsonElement = jsonElementMain.getAsJsonObject().get("beast_of_the_hunt_kills");
                 int value  = jsonElement.getAsJsonObject().get("value").getAsInt();
                 playerStatsEntity.setHuntKills(value);
             }
-            if (! jsonElementMain.getAsJsonObject().get("pistol_kills").isJsonNull()) {
+            if (jsonElementMain.getAsJsonObject().get("pistol_kills") != null) {
                 JsonElement jsonElement = jsonElementMain.getAsJsonObject().get("pistol_kills");
                 int value = jsonElement.getAsJsonObject().get("value").getAsInt();
                 playerStatsEntity.setPistolKills(value);
             }
-            if (! jsonElementMain.getAsJsonObject().get("dropped_items_for_squadmates").isJsonNull()) {
+            if (jsonElementMain.getAsJsonObject().get("dropped_items_for_squadmates") != null) {
                 JsonElement jsonElement = jsonElementMain.getAsJsonObject().get("dropped_items_for_squadmates");
                 int value = jsonElement.getAsJsonObject().get("value").getAsInt();
                 playerStatsEntity.setDroppedItems(value);
             }
-            if (! jsonElementMain.getAsJsonObject().get("beacons_scanned").isJsonNull()) {
+            if (jsonElementMain.getAsJsonObject().get("beacons_scanned") != null) {
                 JsonElement jsonElement = jsonElementMain.getAsJsonObject().get("beacons_scanned");
                 int value = jsonElement.getAsJsonObject().get("value").getAsInt();
                 playerStatsEntity.setBeaconsScanned(value);
             }
-            if (! jsonElementMain.getAsJsonObject().get("ar_kills").isJsonNull()) {
+            if (jsonElementMain.getAsJsonObject().get("ar_kills") != null) {
                 JsonElement jsonElement = jsonElementMain.getAsJsonObject().get("ar_kills");
                 int value = jsonElement.getAsJsonObject().get("value").getAsInt();
                 playerStatsEntity.setArKills(value);
             }
-
-            JsonElement jsonElementTopThree = jsonElementMain.getAsJsonObject().get("top_3");
-            int topThree = jsonElementTopThree.getAsJsonObject().get("value").getAsInt();
-            JsonElement jsonElementDamage = jsonElementMain.getAsJsonObject().get("damage");
-            int damage = jsonElementDamage.getAsJsonObject().get("value").getAsInt();
-            JsonElement jsonElementKd = jsonElementMain.getAsJsonObject().get("kd");
-            double kd = jsonElementKd.getAsJsonObject().get("value").getAsDouble();
-
-            playerStatsEntity.setTopThree(topThree);
-            playerStatsEntity.setDamage(damage);
-            playerStatsEntity.setKd(kd);
+            if (jsonElementMain.getAsJsonObject().get("top_3") != null) {
+                JsonElement jsonElement = jsonElementMain.getAsJsonObject().get("top_3");
+                int value = jsonElement.getAsJsonObject().get("value").getAsInt();
+                playerStatsEntity.setTopThree(value);
+            }
+            if (jsonElementMain.getAsJsonObject().get("damage") != null) {
+                JsonElement jsonElement = jsonElementMain.getAsJsonObject().get("damage");
+                int value = jsonElement.getAsJsonObject().get("value").getAsInt();
+                playerStatsEntity.setDamage(value);
+            }
+            if (jsonElementMain.getAsJsonObject().get("kd") != null) {
+                JsonElement jsonElement = jsonElementMain.getAsJsonObject().get("kd");
+                double value = jsonElement.getAsJsonObject().get("value").getAsDouble();
+                playerStatsEntity.setKd(value);
+            }
 
             return playerStatsEntity;
         }

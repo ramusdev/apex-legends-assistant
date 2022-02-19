@@ -28,13 +28,12 @@ public class StatsTask implements Callable<Integer> {
         PlayerStatsEntity playerStatsEntity = apiClient.getPlayerInfo(this.playerName);
         Log.d("MyTag", "After call --->");
 
-
         if (playerStatsEntity == null) {
             Log.d("MyTag", "404 --->");
             return 404;
         }
 
-        // playerStatsDao.insert(playerStatsEntity);
+        playerStatsDao.insert(playerStatsEntity);
         Log.d("MyTag", "200 --->");
 
         return 200;

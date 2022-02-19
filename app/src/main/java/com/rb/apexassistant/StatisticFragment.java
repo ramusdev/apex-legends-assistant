@@ -46,6 +46,10 @@ public class StatisticFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         long playerId = getArguments().getLong(BUNDLE_ID);
 
+        Log.d("MyTag", "Inside stats");
+        Log.d("MyTag", String.valueOf(playerId));
+
+
         StatisticFragmentView statisticFragmentView = ViewModelProviders.of(getActivity()).get(StatisticFragmentView.class);
         LiveData<PlayerStatsEntity> playerStatsEntityLiveData = statisticFragmentView.getPlayerStatsEntity(playerId);
         playerStatsEntityLiveData.observe(getViewLifecycleOwner(), new Observer<PlayerStatsEntity>() {
@@ -99,7 +103,7 @@ public class StatisticFragment extends Fragment {
         pistolKills.setText(String.valueOf(playerStatsEntity.getPistolKills()));
         arKills.setText(String.valueOf(playerStatsEntity.getArKills()));
         beastOfTheHuntKills.setText(String.valueOf(playerStatsEntity.getHuntKills()));
-        kd.setText(String.valueOf(String.valueOf(playerStatsEntity.getKd())));
+        kd.setText(String.valueOf(playerStatsEntity.getKd()));
     }
 
 }

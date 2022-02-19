@@ -13,16 +13,19 @@ import java.util.concurrent.Callable;
 
 public class StatisticFragmentView extends ViewModel {
     private MutableLiveData<PlayerStatsEntity> playerStatsEntityMutableLiveData;
+    // private MutableLiveData<Integer> playerId;
 
-    public MutableLiveData<PlayerStatsEntity> getPlayerStatsEntity(long playerId) {
+    public MutableLiveData<PlayerStatsEntity> getPlayerStatsEntity(long playerIdNew) {
         if (playerStatsEntityMutableLiveData == null) {
             this.playerStatsEntityMutableLiveData = new MutableLiveData<PlayerStatsEntity>();
-            loadData(playerId);
-            Log.d("MyTag", "if null --->");
+            loadData(playerIdNew);
+            return playerStatsEntityMutableLiveData;
+        } else if (playerStatsEntityMutableLiveData.getValue().getId() == playerIdNew) {
+            return playerStatsEntityMutableLiveData;
+        } else {
+            loadData(playerIdNew);
+            return playerStatsEntityMutableLiveData;
         }
-
-        Log.d("MyTag", "near return --->");
-        return playerStatsEntityMutableLiveData;
     }
 
     public void loadData(long playerId) {

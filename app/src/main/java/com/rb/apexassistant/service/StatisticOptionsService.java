@@ -1,8 +1,10 @@
 package com.rb.apexassistant.service;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -14,6 +16,8 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.google.android.material.snackbar.Snackbar;
+import com.rb.apexassistant.MyApplicationContext;
 import com.rb.apexassistant.R;
 import com.rb.apexassistant.StatisticFragment;
 import com.rb.apexassistant.TaskRunner;
@@ -27,17 +31,19 @@ import java.util.concurrent.Callable;
 public class StatisticOptionsService {
     private static final String BUNDLE_ID = "bundle_id";
     public Fragment fragment;
+    StatisticOptionsView statisticOptionsView;
 
     public StatisticOptionsService(Fragment fragment) {
         this.fragment = fragment;
     }
 
     public void showPlayers() {
-        StatisticOptionsView statisticOptionsView = ViewModelProviders.of(fragment).get(StatisticOptionsView.class);
+        statisticOptionsView = ViewModelProviders.of(fragment).get(StatisticOptionsView.class);
         MutableLiveData<List<PlayerStatsEntity>> playerStatsEntityMutableLiveData = statisticOptionsView.getPlayerStatsEntity();
         playerStatsEntityMutableLiveData.observe(fragment.getViewLifecycleOwner(), new Observer<List<PlayerStatsEntity>>() {
             @Override
             public void onChanged(List<PlayerStatsEntity> playerStatsEntities) {
+                // clearPlayerView();
                 updatePlayerView(playerStatsEntities);
             }
         });
@@ -53,9 +59,11 @@ public class StatisticOptionsService {
             @Override
             public void onClick(View view) {
                 Log.d("MyTag", "on click button");
-
                 EditText editText = fragment.getView().findViewById(R.id.edit_text);
                 String playerName = editText.getText().toString();
+
+                InputMethodManager inputMethodManager = (InputMethodManager) MyApplicationContext.getAppContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputMethodManager.hideSoftInputFromWindow(editText.getWindowToken(), 0);
 
                 getCallToApi(playerName);
             }
@@ -67,12 +75,18 @@ public class StatisticOptionsService {
         Callable callable = new StatsTask(playerName);
         taskRunner.executeAsync(callable, new TaskRunner.TaskRunnerCallback<Integer>() {
             @Override
-            public void execute(Integer taskAfterDone) {
-                Log.d("MyTag", "Call to api --->");
-                // Log.d("MyTag", String.valueOf(taskAfterDone));
+            public void execute(Integer status) {
+                if (status == 200) {
+                    statisticOptionsView.loadData();
+                    showSubmitMessage("Player added");
+                } else {
+                    showSubmitMessage("Player not found");
+                }
             }
         });
     }
+
+
 
     private void updatePlayerView(List<PlayerStatsEntity> playerStatsEntities) {
         LinearLayout playersBlock = fragment.getView().findViewById(R.id.players_block);
@@ -95,6 +109,12 @@ public class StatisticOptionsService {
         }
     }
 
+    private void clearPlayerView() {
+        LinearLayout playersBlock = fragment.getView().findViewById(R.id.players_block);
+        playersBlock.removeAllViews();
+
+    }
+
     private View.OnClickListener infoButtonListener(long id) {
         return new View.OnClickListener() {
             @Override
@@ -105,6 +125,8 @@ public class StatisticOptionsService {
 
                 Bundle bundle = new Bundle();
                 bundle.putLong(BUNDLE_ID, id);
+                Log.d("MyTag", "id item --->");
+                Log.d("MyTag", String.valueOf(id));
 
                 StatisticFragment statisticFragment = new StatisticFragment();
                 statisticFragment.setArguments(bundle);
@@ -114,6 +136,13 @@ public class StatisticOptionsService {
                 transaction.replace(R.id.nav_host_fragment, statisticFragment).commit();
             }
         };
+    }
+
+    private void showSubmitMessage(String message) {
+        Snackbar snackbar = Snackbar.make(fragment.getView(), message, Snackbar.LENGTH_LONG);
+        snackbar.setBackgroundTint(fragment.getResources().getColor(R.color.red));
+        snackbar.setTextColor(fragment.getResources().getColor(R.color.white));
+        snackbar.show();
     }
 
 }
