@@ -46,6 +46,8 @@
     <string name="toolbar_news">ニュース</string>
     <string name="toolbar_twitter">ツイッター</string>
     <string name="toolbar_legend">伝説</string>
+    <string name="toolbar_stats">統計</string>
+    <string name="toolbar_statsoptions">オプション</string>
     <string name="toolbar_wallpaper">壁紙</string>
     <string name="toolbar_donate">寄付</string>
     <string name="toolbar_settings">設定</string>
@@ -61,12 +63,23 @@
     <!-- Settings -->
     <string name="settings_text">
          <![CDATA[
-            <font color =＃712123>プレミアム機能。</ font> <br> <br>
+            <font color=＃712123>プレミアム機能。</font> <br><br>
     アプリで24時間広告をオフにしたいですか？ ビデオをご覧ください！
     ]]>
     </string>
     <string name="settings_button"> 24時間広告を無効にする</string>
     <string name="settings_message">広告は24時間無効になっています</string>
+
+    <string name="statisticoptions_text">
+         <![CDATA[統計を追跡するには、プレーヤー名を入力します。<br> <br>
+         統計は10時間ごとに更新されます。 複数のプレーヤーの追跡をサポートします。<br> <br>
+         入力の例：<font color=＃712123> HeyImLifeline </font>
+         ]]>
+     </string>
+    <string name="statisticoptions_title_stats">統計</string>
+    <string name="statisticoptions_title_players">プレーヤー</string>
+    <string name="statisticoptions_button_add">追加</string>
+    <string name="statisticoptions_player">プレーヤー名</string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/ja-jp/games/apex-legends/news</string>

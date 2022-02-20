@@ -39,6 +39,7 @@ public class StatisticOptionsFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         StatisticOptionsService statisticOptionsService = new StatisticOptionsService(this);
+        statisticOptionsService.setTextView();
         statisticOptionsService.showPlayers();
         statisticOptionsService.handleSubmitButton();
     }

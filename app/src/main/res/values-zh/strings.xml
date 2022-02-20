@@ -46,6 +46,8 @@
     <string name="toolbar_news">消息</string>
     <string name="toolbar_twitter">推特</string>
     <string name="toolbar_legend">傳奇</string>
+    <string name="toolbar_stats">統計數據</string>
+    <string name="toolbar_statsoptions">選項</string>
     <string name="toolbar_wallpaper">牆紙</string>
     <string name="toolbar_donate">捐</string>
     <string name="toolbar_settings">設置</string>
@@ -67,6 +69,17 @@
      </string>
     <string name="settings_button">禁用廣告 24 小時</string>
     <string name="settings_message">廣告停用 24 小時</string>
+
+    <string name="statisticoptions_text">
+         <![CDATA[要跟踪統計數據，請輸入玩家姓名。<br><br>
+         統計數據每 10 小時更新一次。 支持跟踪多個玩家。<br><br>
+         輸入示例：<font color=#712123>HeyImLifeline</font>
+         ]]>
+     </string>
+    <string name="statisticoptions_title_stats">統計數據</string>
+    <string name="statisticoptions_title_players">球員</string>
+    <string name="statisticoptions_button_add">添加</string>
+    <string name="statisticoptions_player">玩家姓名</string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/zh-tw/games/apex-legends/news</string>

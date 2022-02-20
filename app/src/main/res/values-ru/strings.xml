@@ -46,6 +46,8 @@
     <string name="toolbar_news">Новости</string>
     <string name="toolbar_twitter">Твиттер</string>
     <string name="toolbar_legend">Легенды</string>
+    <string name="toolbar_stats">Статистика</string>
+    <string name="toolbar_statsoptions">Настройки</string>
     <string name="toolbar_wallpaper">Обои</string>
     <string name="toolbar_donate">Донат</string>
     <string name="toolbar_settings">Настройки</string>
@@ -67,6 +69,18 @@
     </string>
     <string name="settings_button">Откючить рекламу на 24 часа</string>
     <string name="settings_message">Реклама отключена на 24 часa</string>
+
+    <!-- Settings -->
+    <string name="statisticoptions_text">
+         <![CDATA[Для отслеживания статистики введите имя игрока.<br><br>
+         Статистика обновляется каждые 10 часов. Поддерживает отслеживание для нескольких игроков.<br><br>
+         Пример ввода: <font color=#712123>HeyImLifeline</font>
+         ]]>
+     </string>
+    <string name="statisticoptions_title_stats">СТАТИСТИКА</string>
+    <string name="statisticoptions_title_players">ИГРОКИ</string>
+    <string name="statisticoptions_button_add">ДОБАВИТЬ</string>
+    <string name="statisticoptions_player">ИМЯ ИГРОКА</string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/ru-ru/games/apex-legends/news</string>

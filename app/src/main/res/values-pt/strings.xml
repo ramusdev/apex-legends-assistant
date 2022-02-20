@@ -46,6 +46,8 @@
     <string name="toolbar_news">Notícia</string>
     <string name="toolbar_twitter">Twitter</string>
     <string name="toolbar_legend">Legendas</string>
+    <string name="toolbar_stats">Estatísticas</string>
+    <string name="toolbar_statsoptions">Opções</string>
     <string name="toolbar_wallpaper">Papel de parede</string>
     <string name="toolbar_donate">Doar</string>
     <string name="toolbar_settings">Definições</string>
@@ -67,6 +69,18 @@
     </string>
     <string name="settings_button"> Desativar anúncios por 24 horas </string>
     <string name="settings_message"> Anúncios desativados por 24 horas </string>
+
+    <string name="statisticoptions_text">
+         <![CDATA[Para acompanhar as estatísticas, digite o nome do jogador.<br><br>
+         As estatísticas são atualizadas a cada 10 horas. Suporta rastreamento para vários jogadores.<br><br>
+         Exemplo para entrada: <font color=#712123>HeyImLifeline</font>
+         ]]>
+     </string>
+    <string name="statisticoptions_title_stats">STATÍSTICAS</string>
+    <string name="statisticoptions_title_players">JOGADORES</string>
+    <string name="statisticoptions_button_add">ADICIONAR</string>
+    <string name="statisticoptions_player">NOME DO JOGADOR</string>
+
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/pt-br/games/apex-legends/news</string>

@@ -2,6 +2,7 @@ package com.rb.apexassistant.service;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -52,6 +53,12 @@ public class StatisticOptionsService {
         });
     }
 
+    public void setTextView() {
+        final TextView textView = fragment.getView().findViewById(R.id.statistics_text);
+        String text = MyApplicationContext.getAppContext().getResources().getString(R.string.statisticoptions_text);
+        textView.setText(Html.fromHtml(text));
+    }
+
     public void handleSubmitButton() {
         final Button submitButton = fragment.getView().findViewById(R.id.button_submit);
         submitButton.setOnClickListener(submitButtonListener());
@@ -73,6 +80,7 @@ public class StatisticOptionsService {
 
                 if (playerName.trim().isEmpty()) {
                     button.setEnabled(true);
+                    editText.setText("");
                     showSubmitMessage("ERROR FIELD IS EMPTY");
                     return;
                 }
@@ -83,6 +91,8 @@ public class StatisticOptionsService {
     }
 
     public void getCallToApi(String playerName) {
+        EditText editText = fragment.getView().findViewById(R.id.edit_text);
+
         TaskRunner<Integer> taskRunner = new TaskRunner();
         Callable callable = new StatsTask(playerName);
         taskRunner.executeAsync(callable, new TaskRunner.TaskRunnerCallback<Integer>() {
@@ -90,6 +100,7 @@ public class StatisticOptionsService {
             public void execute(Integer status) {
                 if (status == 200) {
                     statisticOptionsView.loadData();
+                    editText.setText("");
                     showSubmitMessage("PLAYER ADDED");
                 } else {
                     showSubmitMessage("PLAYER NOT FOUND");

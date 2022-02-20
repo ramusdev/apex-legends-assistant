@@ -18,7 +18,7 @@
             android:layout_marginBottom="15dp">
             <EditText
                 android:id="@+id/edit_text"
-                android:hint="PLAYER NAME"
+                android:hint="@string/statisticoptions_player"
                 android:textColorHint="@color/grey_dark"
                 android:textCursorDrawable="@drawable/cursor_drawable"
                 android:textColor="@color/grey_dark"
@@ -40,7 +40,7 @@
                 app:backgroundTint="@null"
                 android:background="@drawable/button_add_click"
                 android:textColor="@drawable/text_add_pressed"
-                android:text="ADD"
+                android:text="@string/statisticoptions_button_add"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -49,9 +49,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="15dp"
             android:layout_marginBottom="15dp"
             android:fillViewport="true"
             android:orientation="vertical"
@@ -68,23 +65,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="STATISTICS"
-                    android:textColor="@color/grey_dark"
-                    android:textSize="18sp" />
+                    android:text="@string/statisticoptions_title_stats"
+                    android:textColor="@color/dark_red"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </RelativeLayout>
             <TextView
                 android:id="@+id/statistics_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="For add player"
-                android:textStyle="normal"
-                android:fontFamily="sans-serif-medium"
-                android:textColor="@color/grey_dark"
-                android:textSize="15sp" />
+                android:text="Text for stats"
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/players_block"
+            android:id="@+id/players_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
@@ -94,28 +89,28 @@
             android:layout_marginBottom="20dp"
             android:fillViewport="true"
             android:orientation="vertical"
+            android:gravity="center"
             android:background="@drawable/background_bar">
-            <RelativeLayout
+            <TextView
+                android:id="@+id/data_mode20"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:layout_marginBottom="15dp">
-
-                <TextView
-                    android:id="@+id/data_mode20"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="PLAYERS"
-                    android:textColor="@color/grey_dark"
-                    android:textSize="18sp" />
-            </RelativeLayout>
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/statisticoptions_title_players"
+                android:textColor="@color/dark_red"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
         </LinearLayout>
 
-
-
-
+        <LinearLayout
+            android:id="@+id/players_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fillViewport="true"
+            android:orientation="vertical"
+            android:background="@drawable/background_bar">
+        </LinearLayout>
 
 
     </LinearLayout>

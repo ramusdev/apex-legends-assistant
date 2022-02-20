@@ -48,6 +48,8 @@
     <string name="toolbar_legend">전설</string>
     <string name="toolbar_wallpaper">벽지</string>
     <string name="toolbar_donate">기부</string>
+    <string name="toolbar_stats">통계</string>
+    <string name="toolbar_statsoptions">옵션</string>
     <string name="toolbar_settings">설정</string>
     <string name="toolbar_about">에 대한</string>
     <string name="title_activity_my_application">MyApplication</string>
@@ -67,6 +69,17 @@
     </string>
     <string name="settings_button">24시간 동안 광고 비활성화</string>
     <string name="settings_message">24시간 동안 광고 비활성화</string>
+
+    <string name="statisticoptions_text">
+        <![CDATA[통계를 추적하려면 플레이어 이름을 입력하십시오.<br><br>
+         통계는 10시간마다 업데이트됩니다. 여러 플레이어에 대한 추적을 지원합니다.<br><br>
+         입력의 예: <font color=#712123>HeyImLifeline</font>
+         ]]>
+    </string>
+    <string name="statisticoptions_title_stats">통계</string>
+    <string name="statisticoptions_title_players">플레이어</string>
+    <string name="statisticoptions_button_add">추가</string>
+    <string name="statisticoptions_player">선수 이름</string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/ko-kr/games/apex-legends/news</string>
