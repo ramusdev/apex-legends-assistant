@@ -80,6 +80,25 @@
     <string name="statisticoptions_title_players">プレーヤー</string>
     <string name="statisticoptions_button_add">追加</string>
     <string name="statisticoptions_player">プレーヤー名</string>
+    <string name="statisticoptions_field_empty">フィールドが空です</string>
+    <string name="statisticoptions_field_added">プレーヤーが追加されました</string>
+    <string name="statisticoptions_field_notfound">プレーヤーが見つかりません</string>
+    <string name="statisticoptions_player_info">情報</string>
+    <string name="statisticoptions_player_delete"> 消去 </string>
+
+    <string name="statistics_title_overall">全体</string>
+    <string name="statistics_title_kills">キル</string>
+    <string name="statistics_gamesplayed">ゲームがプレイされました</string>
+    <string name="statistics_creepingbarragedamage">クリーピングバラージダメージ</string>
+    <string name="statistics_topthree">トップ3 </string>
+    <string name="statistics_damage">ダメージ</string>
+    <string name="statistics_droppeditems">ドロップされたアイテム</string>
+    <string name="statistics_beaconsscanned">ビーコンスキャン</string>
+    <string name="statistics_pistolkills">ピストルキル</string>
+    <string name="statistics_kills">キル</string>
+    <string name="statistics_arkills"> ライフルキル </string>
+    <string name="statistics_killsdeaths"> 殺害/死 </string>
+    <string name="statistics_beasthuntkills"> ビーストハントキル </string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/ja-jp/games/apex-legends/news</string>

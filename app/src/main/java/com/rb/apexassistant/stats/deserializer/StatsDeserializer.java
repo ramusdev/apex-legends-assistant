@@ -13,8 +13,13 @@ public class StatsDeserializer {
 
         @Override
         public PlayerStatsEntity deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-            JsonElement jsonElementMain = json.getAsJsonObject().get("total");
             PlayerStatsEntity playerStatsEntity = new PlayerStatsEntity();
+
+            JsonElement jsonElementMain = null;
+
+            if (json.getAsJsonObject().get("total") != null) {
+                jsonElementMain = json.getAsJsonObject().get("total");
+            }
 
             if (jsonElementMain.getAsJsonObject().get("kills") != null) {
                 JsonElement jsonElement = jsonElementMain.getAsJsonObject().get("kills");

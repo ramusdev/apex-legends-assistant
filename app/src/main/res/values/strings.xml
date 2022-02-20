@@ -81,6 +81,28 @@
     <string name="statisticoptions_title_players">PLAYERS</string>
     <string name="statisticoptions_button_add">ADD</string>
     <string name="statisticoptions_player">PLAYER NAME</string>
+    <string name="statisticoptions_field_empty">FIELD EMPTY</string>
+    <string name="statisticoptions_field_added">PLAYER ADDED</string>
+    <string name="statisticoptions_field_notfound">PLAYER NOT FOUND</string>
+
+    <string name="statisticoptions_player_info">INFO</string>
+    <string name="statisticoptions_player_delete">DELETE</string>
+
+    <!-- Statistics -->
+    <string name="statistics_title_overall">OVERALL</string>
+    <string name="statistics_title_kills">KILLS</string>
+    <string name="statistics_gamesplayed">GAMES PLAYED</string>
+    <string name="statistics_creepingbarragedamage">CREEPING BARAGE DAMAGE</string>
+    <string name="statistics_topthree">TOP 3</string>
+    <string name="statistics_damage">DAMAGE</string>
+    <string name="statistics_droppeditems">DROPPED ITEMS</string>
+    <string name="statistics_beaconsscanned">BEACONS SCANNED</string>
+    <string name="statistics_pistolkills">PISTOL</string>
+    <string name="statistics_kills">KILLS</string>
+    <string name="statistics_arkills">RIFLE</string>
+    <string name="statistics_killsdeaths">KILLS / DEATHS</string>
+    <string name="statistics_beasthuntkills">HUNT</string>
+
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/games/apex-legends/news</string>

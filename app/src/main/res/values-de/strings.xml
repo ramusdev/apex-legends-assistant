@@ -80,6 +80,27 @@
     <string name="statisticoptions_title_players">SPIELER</string>
     <string name="statisticoptions_button_add">HINZUFÜGEN</string>
     <string name="statisticoptions_player">SPIELERNAME</string>
+    <string name="statisticoptions_field_empty">FELD LEER</string>
+    <string name="statisticoptions_field_added">SPIELER HINZUGEFÜGT</string>
+    <string name="statisticoptions_field_notfound">SPIELER NICHT GEFUNDEN</string>
+
+    <string name="statisticoptions_player_info">INFO</string>
+    <string name="statisticoptions_player_delete">LÖSCHEN</string>
+
+    <!-- Statistik -->
+    <string name="statistics_title_overall">GESAMT</string>
+    <string name="statistics_title_kills">KILLS</string>
+    <string name="statistics_gamesplayed">SPIELE GESPIELT</string>
+    <string name="statistics_creepingbarragedamage">SCHLECHENDE DURCHFLUSSSCHÄDEN</string>
+    <string name="statistics_topthree">TOP 3</string>
+    <string name="statistics_damage">SCHADEN</string>
+    <string name="statistics_droppeditems">FALLEN GELASSENE GEGENSTÄNDE</string>
+    <string name="statistics_beaconsscanned">BEACONS GESCANNT</string>
+    <string name="statistics_pistolkills">PISTOLENKILLS</string>
+    <string name="statistics_kills">KILLS</string>
+    <string name="statistics_arkills">GEWEHR TÖTET</string>
+    <string name="statistics_killsdeaths">TÖTUNGEN / TODE</string>
+    <string name="statistics_beasthuntkills">TIEREJAGDKILLS</string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/de-de/games/apex-legends/news</string>

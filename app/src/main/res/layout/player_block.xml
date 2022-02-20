@@ -49,7 +49,7 @@
             app:backgroundTint="@null"
             android:background="@drawable/button_info_click"
             android:textColor="@drawable/text_info_pressed"
-            android:text="Info"
+            android:text="@string/statisticoptions_player_info"
             android:textSize="15sp" />
         <Button
             android:id="@+id/player_delete"
@@ -65,7 +65,7 @@
             app:backgroundTint="@null"
             android:background="@drawable/button_delete_click"
             android:textColor="@drawable/text_delete_pressed"
-            android:text="Delete"
+            android:text="@string/statisticoptions_player_delete"
             android:textSize="15sp" />
     </LinearLayout>
 </LinearLayout>

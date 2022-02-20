@@ -7,11 +7,11 @@
         <item
             android:id="@+id/nav_item_news"
             android:checked="true"
-            android:icon="@drawable/menu_news4"
+            android:icon="@drawable/ic_picture"
             android:title="@string/toolbar_news" />
         <item
             android:id="@+id/nav_item_twitter"
-            android:icon="@drawable/menu_twitter2"
+            android:icon="@drawable/menu_twitter3"
             android:title="@string/toolbar_twitter" />
         <item
             android:id="@+id/nav_item_legends"
@@ -19,29 +19,23 @@
             android:title="@string/toolbar_legend" />
         <item
             android:id="@+id/nav_item_wallpaper"
-            android:icon="@drawable/menu_wallpaper4"
+            android:icon="@drawable/ic_wallpapper"
             android:title="@string/toolbar_wallpaper" />
         <item
             android:id="@+id/nav_item_stats"
-            android:icon="@drawable/menu_legends"
+            android:icon="@drawable/ic_statistics2"
             android:title="@string/toolbar_stats" />
         <item
+            android:id="@+id/nav_item_donate"
+            android:icon="@drawable/ic_donate"
+            android:title="@string/toolbar_donate" />
+        <item
             android:id="@+id/nav_item_statsoptions"
-            android:icon="@drawable/menu_legends"
+            android:icon="@drawable/ic_settings2"
             android:title="@string/toolbar_statsoptions" />
         <item
-            android:id="@+id/nav_item_donate"
-            android:icon="@drawable/menu_donate"
-            android:title="@string/toolbar_donate" />
-        <!--
-        <item
-            android:id="@+id/nav_item_settings"
-            android:icon="@drawable/menu_settings"
-            android:title="@string/toolbar_settings" />
-        -->
-        <item
             android:id="@+id/nav_item_about"
-            android:icon="@drawable/menu_about3"
+            android:icon="@drawable/ic_info"
             android:title="@string/toolbar_about" />
     </group>
 </menu>

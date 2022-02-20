@@ -81,7 +81,7 @@ public class StatisticOptionsService {
                 if (playerName.trim().isEmpty()) {
                     button.setEnabled(true);
                     editText.setText("");
-                    showSubmitMessage("ERROR FIELD IS EMPTY");
+                    showSubmitMessage(MyApplicationContext.getAppContext().getResources().getString(R.string.statisticoptions_field_empty));
                     return;
                 }
 
@@ -101,9 +101,9 @@ public class StatisticOptionsService {
                 if (status == 200) {
                     statisticOptionsView.loadData();
                     editText.setText("");
-                    showSubmitMessage("PLAYER ADDED");
+                    showSubmitMessage(MyApplicationContext.getAppContext().getResources().getString(R.string.statisticoptions_field_added));
                 } else {
-                    showSubmitMessage("PLAYER NOT FOUND");
+                    showSubmitMessage(MyApplicationContext.getAppContext().getResources().getString(R.string.statisticoptions_field_notfound));
                 }
 
                 Button button = fragment.getView().findViewById(R.id.button_submit);

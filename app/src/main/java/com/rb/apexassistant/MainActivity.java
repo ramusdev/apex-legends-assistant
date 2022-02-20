@@ -2,6 +2,7 @@ package com.rb.apexassistant;
 
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String APP_PREFERENCES = "settings";
     public static final String APP_PREFERENCES_VERSION = "version";
     private static final String ADMOB_INTERSTITIAL_ID = "ca-app-pub-4140002463111288/1213456548";
+    public NavigationView navigationView;
     // private static final String ADMOB_INTERSTITIAL_ID = "ca-app-pub-3940256099942544/1033173712";
 
     @Override
@@ -72,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         createTasks();
 
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.navigation_view);
+        navigationView = findViewById(R.id.navigation_view);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -175,10 +177,9 @@ public class MainActivity extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            item.setChecked(true);
+                            // item.setChecked(true);
 
                             isFirstPlayerInBd();
-
                         }
                     }, 275);
                 }
@@ -187,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            item.setChecked(true);
+                            // item.setChecked(true);
                             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                             transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
                             transaction.replace(R.id.nav_host_fragment, StatisticOptionsFragment.class, null).commit();
@@ -260,12 +261,10 @@ public class MainActivity extends AppCompatActivity {
             taskRunner.executeAsync(callable);
         }
 
-        /*
         SharedPreferences sharedPreferences = MyApplicationContext.getAppContext().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         String currentVersion = sharedPreferences.getString(APP_PREFERENCES_VERSION, "");
 
         if (! currentVersion.equals(getVersionName())) {
-
             Callable populatorWallapeper = new DatabasePopulatorCallable<Wallpaper>("Wallpapers/wallpapers.json", Wallpaper.class);
             taskRunner.executeAsync(populatorWallapeper);
 
@@ -275,10 +274,7 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString(APP_PREFERENCES_VERSION, getVersionName());
             editor.apply();
-
-            Log.d("MyTag", "Save new version name");
         }
-        */
 
     }
 

@@ -81,6 +81,27 @@
     <string name="statisticoptions_title_players">ИГРОКИ</string>
     <string name="statisticoptions_button_add">ДОБАВИТЬ</string>
     <string name="statisticoptions_player">ИМЯ ИГРОКА</string>
+    <string name="statisticoptions_field_empty">ПОЛЕ ПУСТОЕ</string>
+    <string name="statisticoptions_field_added">ИГРОК ДОБАВЛЕН</string>
+    <string name="statisticoptions_field_notfound">ИГРОК НЕ НАЙДЕН</string>
+
+    <string name="statisticoptions_player_info">СТАТИСТИКА</string>
+    <string name="statisticoptions_player_delete">УДАЛИТЬ</string>
+
+    <!-- Statistics -->
+    <string name="statistics_title_overall">ВСЕГО</string>
+    <string name="statistics_title_kills">УБИЙСТВ</string>
+    <string name="statistics_gamesplayed">СЫГРАНО ИГР</string>
+    <string name="statistics_creepingbarragedamage">ПОЛЗУЩИЙ УРОН</string>
+    <string name="statistics_topthree">ТОП 3</string>
+    <string name="statistics_damage">УРОН</string>
+    <string name="statistics_droppeditems">CБРОШЕННЫЕ ПРЕДМЕТЫ</string>
+    <string name="statistics_beaconsscanned">ПРОВЕРЕНО МАЯКОВ</string>
+    <string name="statistics_pistolkills">ПИСТОЛЕТОМ</string>
+    <string name="statistics_kills">УБИЙСТВ</string>
+    <string name="statistics_arkills">ВИНТОВКОЙ</string>
+    <string name="statistics_killsdeaths">УБИЙСТВ / СМЕРТЕЙ</string>
+    <string name="statistics_beasthuntkills">НА ОХОТЕ</string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/ru-ru/games/apex-legends/news</string>

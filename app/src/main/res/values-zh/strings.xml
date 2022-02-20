@@ -80,6 +80,27 @@
     <string name="statisticoptions_title_players">球員</string>
     <string name="statisticoptions_button_add">添加</string>
     <string name="statisticoptions_player">玩家姓名</string>
+    <string name="statisticoptions_field_empty">字段為空</string>
+    <string name="statisticoptions_field_added">玩家添加</string>
+    <string name="statisticoptions_field_notfound">找不到玩家</string>
+
+    <string name="statisticoptions_player_info">信息</string>
+    <string name="statisticoptions_player_delete">刪除</string>
+
+    <!-- 統計數據 -->
+    <string name="statistics_title_overall">總體</string>
+    <string name="statistics_title_kills">殺戮</string>
+    <string name="statistics_gamesplayed">玩過的遊戲</string>
+    <string name="statistics_creepingbarragedamage">爬行彈幕傷害</string>
+    <string name="statistics_topthree">TOP 3</string>
+    <string name="statistics_damage">傷害</string>
+    <string name="statistics_droppeditems">刪除的項目</string>
+    <string name="statistics_beaconsscanned">信標掃描</string>
+    <string name="statistics_pistolkills">手槍殺人</string>
+    <string name="statistics_kills">殺死</string>
+    <string name="statistics_arkills">步槍殺傷</string>
+    <string name="statistics_killsdeaths">殺死/死亡</string>
+    <string name="statistics_beasthuntkills">BEAST HUNT KILLS</string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/zh-tw/games/apex-legends/news</string>

@@ -80,6 +80,27 @@
     <string name="statisticoptions_title_players">JUGADORES</string>
     <string name="statisticoptions_button_add">AGREGAR</string>
     <string name="statisticoptions_player">NOMBRE DEL JUGADOR</string>
+    <string name="statisticoptions_field_empty">CAMPO VACÍO</string>
+    <string name="statisticoptions_field_added">JUGADOR AÑADIDO</string>
+    <string name="statisticoptions_field_notfound">JUGADOR NO ENCONTRADO</string>
+    <string name="statisticoptions_player_info">INFORMACIÓN</string>
+    <string name="statisticoptions_player_delete">ELIMINAR</string>
+
+    <!-- Estadísticas -->
+    <string name="statistics_title_overall">GENERAL</string>
+    <string name="statistics_title_kills">MATANZAS</string>
+    <string name="statistics_gamesplayed">JUEGOS JUGADOS</string>
+    <string name="statistics_creepingbarragedamage">DAÑO DE BARRERA PROGRESIVA</string>
+    <string name="statistics_topthree">TOP 3</string>
+    <string name="statistics_damage">DAÑO</string>
+    <string name="statistics_droppeditems">ARTÍCULOS ABANDONADOS</string>
+    <string name="statistics_beaconsscanned">BALIZAS ESCANEADAS</string>
+    <string name="statistics_pistolkills">MUERTOS CON PISTOLA</string>
+    <string name="statistics_kills">MUERTOS</string>
+    <string name="statistics_arkills">MATA CON RIFLE</string>
+    <string name="statistics_killsdeaths">MUERTES / MUERTES</string>
+    <string name="statistics_beasthuntkills">BEAST HUNT MATA</string>
+
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/es-es/games/apex-legends/news</string>

@@ -29,6 +29,6 @@
             android:textColorLink="@color/dark_red"
             android:autoLink="none"
             android:text="Привет! Поддержи приложение донатом!"
-            android:textSize="15sp" />
+            android:textSize="16sp" />
     </LinearLayout>
 </ScrollView>

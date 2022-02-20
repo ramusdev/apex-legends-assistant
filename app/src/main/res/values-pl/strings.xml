@@ -80,6 +80,27 @@
     <string name="statisticoptions_title_players">PLAYERS</string>
     <string name="statisticoptions_button_add">DODAJ</string>
     <string name="statisticoptions_player">NAZWA GRACZA</string>
+    <string name="statisticoptions_field_empty">PUSTE POLE</string>
+    <string name="statisticoptions_field_added">DODANO GRACZA</string>
+    <string name="statisticoptions_field_notfound">NIE ZNALEZIONO GRACZA</string>
+
+    <string name="statisticoptions_player_info">INFO</string>
+    <string name="statisticoptions_player_delete">USUŃ</string>
+
+    <!-- Statystyki -->
+    <string name="statistics_title_overall">OGÓLNIE</string>
+    <string name="statistics_title_kills">ZABICIA</string>
+    <string name="statistics_gamesplayed">GRY OGRANE</string>
+    <string name="statistics_creepingbarragedamage">PRASZCZAJĄCE OBRAŻENIA SZARĄ</string>
+    <string name="statistics_topthree">TOP 3</string>
+    <string name="statistics_damage">USZKODZENIA</string>
+    <string name="statistics_droppeditems">UPUSZCZONE ELEMENTY</string>
+    <string name="statistics_beaconsscanned">SKANOWANE SYGNALIZATORY</string>
+    <string name="statistics_pistolkills">ZABIJANIA PISTOLETAMI</string>
+    <string name="statistics_kills">ZABICIA</string>
+    <string name="statistics_arkills">ZABICIA Z KARABINU</string>
+    <string name="statistics_killsdeaths">ZABÓJ / ZGRYWANIE</string>
+    <string name="statistics_beasthuntkills">Polowanie na bestie ZABIJA</string>
 
 
     <!-- News link -->

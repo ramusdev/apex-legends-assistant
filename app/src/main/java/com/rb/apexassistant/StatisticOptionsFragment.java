@@ -2,6 +2,7 @@ package com.rb.apexassistant;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -10,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.rb.apexassistant.service.StatisticOptionsService;
 
@@ -37,6 +39,10 @@ public class StatisticOptionsFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        // Navigation
+        NavigationView navigationView = this.getActivity().findViewById(R.id.navigation_view);
+        MenuItem menuItem = navigationView.getMenu().findItem(R.id.nav_item_statsoptions);
+        menuItem.setChecked(true);
 
         StatisticOptionsService statisticOptionsService = new StatisticOptionsService(this);
         statisticOptionsService.setTextView();

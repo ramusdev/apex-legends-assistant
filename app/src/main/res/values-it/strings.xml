@@ -80,6 +80,26 @@
     <string name="statisticoptions_title_players">GIOCATORI</string>
     <string name="statisticoptions_button_add">AGGIUNGI</string>
     <string name="statisticoptions_player">NOME GIOCATORE</string>
+    <string name="statisticoptions_field_empty">CAMPO VUOTO</string>
+    <string name="statisticoptions_field_added">GIOCATORE AGGIUNTO</string>
+    <string name="statisticoptions_field_notfound">GIOCATORE NON TROVATO</string>
+    <string name="statisticoptions_player_info">INFO</string>
+    <string name="statisticoptions_player_delete">CANCELLA</string>
+
+    <!-- Statistiche -->
+    <string name="statistics_title_overall">IN GENERALE</string>
+    <string name="statistics_title_kills">UCCISCE</string>
+    <string name="statistics_gamesplayed">GIOCHI GIOCATI</string>
+    <string name="statistics_creepingbarragedamage">DANNI DA BARAGE SCINTILLANTE</string>
+    <string name="statistics_topthree">PRIMI 3</string>
+    <string name="statistics_damage">DANNO</string>
+    <string name="statistics_droppeditems">ARTICOLI PERDUTI</string>
+    <string name="statistics_beaconsscanned">BEACONS SCANSIONATI</string>
+    <string name="statistics_pistolkills">PISTOL KILLS</string>
+    <string name="statistics_kills">UCCISCE</string>
+    <string name="statistics_arkills">IL FUCILE UCCIDE</string>
+    <string name="statistics_killsdeaths">UCCISIONE / MORTE</string>
+    <string name="statistics_beasthuntkills">CACCIA ALLE BESTIE UCCIDI</string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/it-it/games/apex-legends/news</string>

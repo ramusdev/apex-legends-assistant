@@ -80,6 +80,28 @@
     <string name="statisticoptions_title_players">JOGADORES</string>
     <string name="statisticoptions_button_add">ADICIONAR</string>
     <string name="statisticoptions_player">NOME DO JOGADOR</string>
+    <string name="statisticoptions_field_empty">CAMPO VAZIO</string>
+    <string name="statisticoptions_field_added">JOGADOR ADICIONADO</string>
+    <string name="statisticoptions_field_notfound">JOGADOR NÃO ENCONTRADO</string>
+
+    <string name="statisticoptions_player_info">INFO</string>
+    <string name="statisticoptions_player_delete">EXCLUIR</string>
+
+    <!-- Estatísticas -->
+    <string name="statistics_title_overall">GERAL</string>
+    <string name="statistics_title_kills">MATANÇAS</string>
+    <string name="statistics_gamesplayed">JOGOS JOGADOS</string>
+    <string name="statistics_creepingbarragedamage">DANO DE BARAGEM RASTEJANTE</string>
+    <string name="statistics_topthree">3 PRINCIPAIS</string>
+    <string name="statistics_damage">DANO</string>
+    <string name="statistics_droppeditems">ITENS DESCARTADOS</string>
+    <string name="statistics_beaconsscanned">BEACONS VERIFICADOS</string>
+    <string name="statistics_pistolkills">MATANÇAS DE PISTOLA</string>
+    <string name="statistics_kills">MATANÇAS</string>
+    <string name="statistics_arkills">MATANÇAS DE RIFLE</string>
+    <string name="statistics_killsdeaths">MORTES/MORTES</string>
+    <string name="statistics_beasthuntkills">MATANÇAS DE CAÇA À BEAST</string>
+
 
 
     <!-- News link -->

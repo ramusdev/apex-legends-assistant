@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginBottom="20dp"
-                    android:text="OVERALL"
+                    android:text="@string/statistics_title_overall"
                     android:textColor="@color/dark_red"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -80,7 +80,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:text="GAMES PLAYED"
+                    android:text="@string/statistics_gamesplayed"
                     android:textColor="@color/red"
                     android:textSize="15sp" />
 
@@ -105,13 +105,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
+
                 <TextView
                     android:id="@+id/title_creepingbarragedamage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:text="CREEPING BARAGE DAMAGE"
+                    android:text="@string/statistics_creepingbarragedamage"
                     android:textColor="@color/red"
                     android:textSize="15sp" />
 
@@ -136,13 +137,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
+
                 <TextView
                     android:id="@+id/title_topthree"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:text="TOP 3"
+                    android:text="@string/statistics_topthree"
                     android:textColor="@color/red"
                     android:textSize="15sp" />
 
@@ -167,13 +169,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
+
                 <TextView
                     android:id="@+id/title_damage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:text="DAMAGE"
+                    android:text="@string/statistics_damage"
                     android:textColor="@color/red"
                     android:textSize="15sp" />
 
@@ -198,13 +201,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
+
                 <TextView
                     android:id="@+id/title_droppeditems"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:text="DROPPED ITEMS"
+                    android:text="@string/statistics_droppeditems"
                     android:textColor="@color/red"
                     android:textSize="15sp" />
 
@@ -229,13 +233,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
+
                 <TextView
                     android:id="@+id/title_beaconsscanned"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:text="BEACONS SCANNED"
+                    android:text="@string/statistics_beaconsscanned"
                     android:textColor="@color/red"
                     android:textSize="15sp" />
 
@@ -285,7 +290,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginBottom="20dp"
-                        android:text="KILLS"
+                        android:text="@string/statistics_title_kills"
                         android:textColor="@color/dark_red"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -301,6 +306,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:gravity="center"
                     android:fillViewport="true"
                     android:orientation="vertical">
                     <TextView
@@ -323,7 +329,7 @@
                         android:id="@+id/title_pistolkills"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="PISTOL KILLS"
+                        android:text="@string/statistics_pistolkills"
                         android:layout_gravity="center"
                         android:textColor="@color/red"
                         android:textSize="15sp" />
@@ -333,6 +339,7 @@
                     android:layout_height="wrap_content"
                     android:fillViewport="true"
                     android:layout_gravity="center"
+                    android:gravity="center"
                     android:orientation="vertical">
                     <TextView
                         android:id="@+id/data_arkills"
@@ -354,7 +361,7 @@
                         android:id="@+id/title_arkills"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="AR KILLS"
+                        android:text="@string/statistics_arkills"
                         android:layout_gravity="center"
                         android:textColor="@color/red"
                         android:textSize="15sp" />
@@ -369,6 +376,7 @@
                     android:layout_height="wrap_content"
                     android:layout_span="2"
                     android:layout_gravity="center"
+                    android:gravity="center"
                     android:fillViewport="true"
                     android:orientation="vertical">
                     <TextView
@@ -383,7 +391,7 @@
                         android:textStyle="bold" />
                     <View
                         android:id="@+id/divider5"
-                        android:layout_width="50dp"
+                        android:layout_width="100dp"
                         android:layout_height="1dp"
                         android:layout_marginBottom="5dp"
                         android:background="@color/red" />
@@ -392,7 +400,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="KILLS"
+                        android:text="@string/statistics_kills"
                         android:textColor="@color/red"
                         android:textSize="15sp" />
                 </LinearLayout>
@@ -405,6 +413,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fillViewport="true"
+                    android:gravity="center"
                     android:orientation="vertical">
                     <TextView
                         android:id="@+id/data_kd"
@@ -418,7 +427,7 @@
                         android:textStyle="bold" />
                     <View
                         android:id="@+id/divider15"
-                        android:layout_width="120dp"
+                        android:layout_width="100dp"
                         android:layout_height="1dp"
                         android:layout_marginBottom="5dp"
                         android:background="@color/red" />
@@ -426,7 +435,7 @@
                         android:id="@+id/title_kd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="KILLS / DEATHS"
+                        android:text="@string/statistics_killsdeaths"
                         android:layout_gravity="center"
                         android:textColor="@color/red"
                         android:textSize="15sp" />
@@ -436,6 +445,7 @@
                     android:layout_height="wrap_content"
                     android:fillViewport="true"
                     android:layout_gravity="center"
+                    android:gravity="center"
                     android:orientation="vertical">
                     <TextView
                         android:id="@+id/data_beastofthehuntkills"
@@ -449,7 +459,7 @@
                         android:textStyle="bold" />
                     <View
                         android:id="@+id/divider10"
-                        android:layout_width="120dp"
+                        android:layout_width="100dp"
                         android:layout_height="1dp"
                         android:layout_marginBottom="5dp"
                         android:background="@color/red" />
@@ -457,7 +467,7 @@
                         android:id="@+id/title_beastofthehuntkills"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="BEAST HUNT KILLS"
+                        android:text="@string/statistics_beasthuntkills"
                         android:layout_gravity="center"
                         android:textColor="@color/red"
                         android:textSize="15sp" />
