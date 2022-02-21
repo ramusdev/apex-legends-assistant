@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.rb.apexassistant.model.PlayerStatsEntity;
 
@@ -28,4 +29,7 @@ public abstract class PlayerStatsDao {
 
     @Query("SELECT * FROM stats LIMIT 1")
     public abstract PlayerStatsEntity getFirstPlayer();
+
+    @Update
+    public abstract void update(PlayerStatsEntity playerStatsEntity);
 }

@@ -31,13 +31,13 @@
             android:screenOrientation="portrait"
             android:label="@string/app_name"
             android:theme="@style/Theme.ApexLegendsAssistant.NoActionBar"
-            android:exported="true"/>
+            android:exported="false"/>
         <activity
             android:name="com.rb.apexassistant.LegendsWebActivity"
             android:screenOrientation="portrait"
             android:label="@string/app_name"
             android:theme="@style/Theme.ApexLegendsAssistant.NoActionBar"
-            android:exported="true"/>
+            android:exported="false"/>
         <activity
             android:name="com.rb.apexassistant.MainActivity"
             android:screenOrientation="portrait"

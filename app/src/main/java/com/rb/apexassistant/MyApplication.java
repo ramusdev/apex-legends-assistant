@@ -36,7 +36,6 @@ public class MyApplication extends Application {
 
         MyApplicationContext myApplicationContext = new MyApplicationContext(this);
 
-        /*
         MobileAds.initialize(MyApplicationContext.getAppContext(), new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
@@ -44,16 +43,12 @@ public class MyApplication extends Application {
             }
         });
 
-         */
+        appOpenManager = new AppOpenManager(this);
 
-        // appOpenManager = new AppOpenManager(this);
+        Log.d("MyTag", "My application start class --->");
+        WorkManager workManager = WorkManager.getInstance(this);
+        ListenableFuture<List<WorkInfo>> statuses = workManager.getWorkInfosByTag("task_worker7");
 
-
-        Log.d("MyTag", "my application start class --->");
-        // WorkManager workManager = WorkManager.getInstance(this);
-        // ListenableFuture<List<WorkInfo>> statuses = workManager.getWorkInfosByTag("task_worker7");
-
-        /*
         try {
             List<WorkInfo> workInfoList = statuses.get();
 
@@ -64,11 +59,7 @@ public class MyApplication extends Application {
         } catch(ExecutionException | InterruptedException e) {
             Log.d("MyTag", e.getMessage());
         }
-
-         */
     }
-
-
 
     public static MyApplication getInstance() {
         return instance;

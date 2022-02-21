@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
+import com.rb.apexassistant.tasks.StatsUpdateTask;
+
 public class PeriodicWork extends Worker {
 
     private Context context;
@@ -24,7 +26,7 @@ public class PeriodicWork extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        Log.d("MyTag", "periodic work class -->");
+        Log.d("MyTag", "Periodic work class -->");
 
         TaskRunner<Integer> taskRunner = new TaskRunner<Integer>();
 
@@ -42,6 +44,9 @@ public class PeriodicWork extends Worker {
 
         Callable tweetsClearCallable = new TweetsClearCallable();
         taskRunner.executeAsync(tweetsClearCallable);
+
+        Callable statsUpdateCallable = new StatsUpdateTask();
+        taskRunner.executeAsync(statsUpdateCallable);
 
         return Result.success();
     }
