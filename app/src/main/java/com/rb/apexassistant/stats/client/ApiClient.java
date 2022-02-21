@@ -7,6 +7,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.rb.apexassistant.model.PlayerStatsEntity;
 import com.rb.apexassistant.stats.deserializer.StatsDeserializer;
+import com.rb.apexassistant.stats.model.ErrorCode;
 import com.rb.apexassistant.stats.model.PlayerStats;
 import com.rb.apexassistant.stats.settings.ApiConfiguration;
 import org.apache.hc.core5.http.NameValuePair;
@@ -32,19 +33,22 @@ public class ApiClient extends ApiClientAbstract {
         parameters.add(new BasicNameValuePair("player", playerName));
 
         Map<String, String> response = super.makeGetCall(url, parameters);
-        Log.d("MyTag", "Status --->");
-        Log.d("MyTag", String.valueOf(response.get("code")));
+
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        Gson gson = gsonBuilder.create();
+        ErrorCode errorCode = gson.fromJson(response.get("response"), ErrorCode.class);
 
         if (! response.get("code").equals("200")) {
             return null;
         }
 
-        Type typeToken = new TypeToken<PlayerStatsEntity>() {}.getType();
+        if (errorCode.getError() != null) {
+            return null;
+        }
 
-        GsonBuilder gsonBuilder = new GsonBuilder();
+        Type typeToken = new TypeToken<PlayerStatsEntity>() {}.getType();
         gsonBuilder.registerTypeAdapter(typeToken, new StatsDeserializer.PlayerDeserializer());
 
-        Gson gson = gsonBuilder.create();
         PlayerStatsEntity playerStatsEntity = gson.fromJson(response.get("response"), typeToken);
         playerStatsEntity.setName(playerName);
 
