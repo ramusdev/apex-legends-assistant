@@ -95,10 +95,10 @@ public class StatisticFragmentService {
         userName.setText(playerStatsEntity.getName());
         gamesPlayed.setText(String.valueOf(playerStatsEntity.getGamesPlayed()));
         creepingBarrageDamage.setText(String.valueOf(playerStatsEntity.getBarrageDamage()));
-        topThree.setText(String.valueOf(playerStatsEntity.getBarrageDamage()));
-        damage.setText(String.valueOf(playerStatsEntity.getBarrageDamage()));
+        topThree.setText(String.valueOf(playerStatsEntity.getTopThree()));
+        damage.setText(String.valueOf(playerStatsEntity.getDamage()));
         droppedItems.setText(String.valueOf(playerStatsEntity.getDroppedItems()));
-        beaconsScanned.setText(String.valueOf(playerStatsEntity.getDroppedItems()));
+        beaconsScanned.setText(String.valueOf(playerStatsEntity.getBeaconsScanned()));
         kills.setText(String.valueOf(playerStatsEntity.getKills()));
         pistolKills.setText(String.valueOf(playerStatsEntity.getPistolKills()));
         arKills.setText(String.valueOf(playerStatsEntity.getArKills()));

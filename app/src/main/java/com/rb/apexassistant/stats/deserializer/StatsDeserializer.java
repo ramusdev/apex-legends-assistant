@@ -1,10 +1,13 @@
 package com.rb.apexassistant.stats.deserializer;
 
+import android.util.Log;
+
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 import com.rb.apexassistant.model.PlayerStatsEntity;
+import com.rb.apexassistant.stats.model.PlayerStats;
 
 import java.lang.reflect.Type;
 
@@ -15,16 +18,13 @@ public class StatsDeserializer {
         public PlayerStatsEntity deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
             PlayerStatsEntity playerStatsEntity = new PlayerStatsEntity();
 
-            JsonElement jsonElementMain = null;
-
-            if (json.getAsJsonObject().get("total") != null) {
-                jsonElementMain = json.getAsJsonObject().get("total");
-            }
+            JsonElement jsonElementMain = json.getAsJsonObject().get("total");
 
             if (jsonElementMain.getAsJsonObject().get("kills") != null) {
-                JsonElement jsonElement = jsonElementMain.getAsJsonObject().get("kills");
-                int value = jsonElement.getAsJsonObject().get("value").getAsInt();
-                playerStatsEntity.setKills(value);
+                Log.d("MyTag", "Inside deserializer");
+                JsonElement jsonElement1 = jsonElementMain.getAsJsonObject().get("kills");
+                int value1 = jsonElement1.getAsJsonObject().get("value").getAsInt();
+                playerStatsEntity.setKills(value1);
             }
             if (jsonElementMain.getAsJsonObject().get("games_played") != null) {
                 JsonElement jsonElement = jsonElementMain.getAsJsonObject().get("games_played");
