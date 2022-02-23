@@ -41,39 +41,31 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingBottom="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="15dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:fillViewport="true"
             android:orientation="vertical"
             android:background="@drawable/background_bar"
             android:layout_marginBottom="15dp">
-            <RelativeLayout
+            <TextView
+                android:id="@+id/data_mode20"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="20dp"
+                android:text="@string/statistics_title_overall"
+                android:textColor="@color/dark_red"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/data_mode20"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginBottom="20dp"
-                    android:text="@string/statistics_title_overall"
-                    android:textColor="@color/dark_red"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
-
                 <TextView
                     android:id="@+id/title_gamesplayed"
                     android:layout_width="wrap_content"
@@ -99,6 +91,7 @@
                 android:id="@+id/divider20"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/stats_dots" />
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -131,6 +124,7 @@
                 android:id="@+id/divider41"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/stats_dots" />
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -163,6 +157,7 @@
                 android:id="@+id/divider50"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/stats_dots" />
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -195,13 +190,13 @@
                 android:id="@+id/divider40"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/stats_dots" />
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
-
                 <TextView
                     android:id="@+id/title_droppeditems"
                     android:layout_width="wrap_content"
@@ -227,6 +222,7 @@
                 android:id="@+id/divider52"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/stats_dots" />
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -262,222 +258,213 @@
                 android:background="@drawable/stats_dots" />
         </LinearLayout>
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:stretchColumns="0,1,2,3"
-            android:divider="@color/grey_dark"
-            android:dividerPadding="40dp"
-            android:paddingTop="15dp"
-            android:paddingBottom="20dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        android:background="@drawable/background_bar"
+        android:layout_marginBottom="15dp">
+        <TextView
+            android:id="@+id/title_main3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginBottom="15dp"
+            android:text="@string/statistics_title_kills"
+            android:textColor="@color/dark_red"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
             android:background="@drawable/background_bar"
-            android:layout_height="wrap_content">
-            <TableRow
+            android:layout_marginBottom="15dp">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <LinearLayout
-                    android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/data_pistolkills"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_span="2"
                     android:layout_gravity="center"
-                    android:fillViewport="true"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/title_main2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginBottom="20dp"
-                        android:text="@string/statistics_title_kills"
-                        android:textColor="@color/dark_red"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="15dp">
-
-                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:text="0"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <View
+                    android:id="@+id/divider100"
+                    android:layout_width="80dp"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/red" />
+                <TextView
+                    android:id="@+id/title_pistolkills"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fillViewport="true"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/data_pistolkills"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="5dp"
-                        android:text="0"
-                        android:textColor="@color/red"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <View
-                        android:id="@+id/divider2"
-                        android:layout_width="100dp"
-                        android:layout_height="1dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@color/red" />
-
-                    <TextView
-                        android:id="@+id/title_pistolkills"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/statistics_pistolkills"
-                        android:textColor="@color/red"
-                        android:textSize="15sp" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fillViewport="true"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/data_arkills"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textColor="@color/red"
-                        android:textSize="18sp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_gravity="center"
-                        android:textStyle="bold" />
-                    <View
-                        android:id="@+id/divider3"
-                        android:layout_width="100dp"
-                        android:layout_height="1dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@color/red" />
-                    <TextView
-                        android:id="@+id/title_arkills"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/statistics_arkills"
-                        android:layout_gravity="center"
-                        android:textColor="@color/red"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </TableRow>
-            <TableRow
+                    android:layout_gravity="center"
+                    android:text="@string/statistics_pistolkills"
+                    android:textColor="@color/red"
+                    android:textSize="15sp" />
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="15dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/data_arkills"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_span="2"
+                    android:text="0"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"
                     android:layout_gravity="center"
-                    android:gravity="center"
-                    android:fillViewport="true"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/data_kills"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textColor="@color/red"
-                        android:textSize="18sp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_gravity="center"
-                        android:textStyle="bold" />
-                    <View
-                        android:id="@+id/divider5"
-                        android:layout_width="100dp"
-                        android:layout_height="1dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@color/red" />
-                    <TextView
-                        android:id="@+id/title_kills"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/statistics_kills"
-                        android:textColor="@color/red"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </TableRow>
-            <TableRow
+                    android:textStyle="bold" />
+                <View
+                    android:id="@+id/divider200"
+                    android:layout_width="80dp"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/red" />
+                <TextView
+                    android:id="@+id/title_arkills"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/statistics_arkills"
+                    android:layout_gravity="center"
+                    android:textColor="@color/red"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginBottom="15dp">
+            <TextView
+                android:id="@+id/data_kills"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:text="0"
+                android:textColor="@color/red"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <View
+                android:id="@+id/divider210"
+                android:layout_width="80dp"
+                android:layout_height="1dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/red" />
+            <TextView
+                android:id="@+id/title_kills"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/statistics_kills"
+                android:textColor="@color/red"
+                android:textSize="15sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="@drawable/background_bar">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-                <LinearLayout
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/data_kd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:fillViewport="true"
-                    android:gravity="center"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/data_kd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textColor="@color/red"
-                        android:textSize="18sp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_gravity="center"
-                        android:textStyle="bold" />
-                    <View
-                        android:id="@+id/divider15"
-                        android:layout_width="100dp"
-                        android:layout_height="1dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@color/red" />
-                    <TextView
-                        android:id="@+id/title_kd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/statistics_killsdeaths"
-                        android:layout_gravity="center"
-                        android:textColor="@color/red"
-                        android:textSize="15sp" />
-                </LinearLayout>
-                <LinearLayout
+                    android:layout_marginBottom="5dp"
+                    android:text="0"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <View
+                    android:id="@+id/divider211"
+                    android:layout_width="80dp"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/red" />
+                <TextView
+                    android:id="@+id/title_kd"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fillViewport="true"
                     android:layout_gravity="center"
-                    android:gravity="center"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/data_beastofthehuntkills"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="5dp"
-                        android:text="0"
-                        android:textColor="@color/red"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-                    <View
-                        android:id="@+id/divider10"
-                        android:layout_width="100dp"
-                        android:layout_height="1dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="@color/red" />
-                    <TextView
-                        android:id="@+id/title_beastofthehuntkills"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/statistics_beasthuntkills"
-                        android:layout_gravity="center"
-                        android:textColor="@color/red"
-                        android:textSize="15sp" />
-                </LinearLayout>
-            </TableRow>
-        </TableLayout>
+                    android:text="@string/statistics_killsdeaths"
+                    android:textColor="@color/red"
+                    android:textSize="15sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/data_beastofthehuntkills"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    android:textStyle="bold" />
+                <View
+                    android:id="@+id/divider220"
+                    android:layout_width="80dp"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/red" />
+                <TextView
+                    android:id="@+id/title_beastofthehuntkills"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/statistics_beasthuntkills"
+                    android:layout_gravity="center"
+                    android:textColor="@color/red"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
 
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
     </LinearLayout>
 </ScrollView>
