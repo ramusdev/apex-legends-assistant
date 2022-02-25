@@ -83,11 +83,9 @@
     <string name="statisticoptions_field_empty">필드가 비어 있음</string>
     <string name="statisticoptions_field_added">추가된 선수</string>
     <string name="statisticoptions_field_notfound">선수를 찾을 수 없음</string>
-
     <string name="statisticoptions_player_info">정보</string>
     <string name="statisticoptions_player_delete">삭제</string>
 
-    <!-- 통계 -->
     <string name="statistics_title_overall">전체</string>
     <string name="statistics_title_kills">사살</string>
     <string name="statistics_gamesplayed">플레이한 게임</string>
@@ -101,6 +99,7 @@
     <string name="statistics_arkills">소총 사살</string>
     <string name="statistics_killsdeaths">죽음/죽음</string>
     <string name="statistics_beasthuntkills">야수 사냥 처치</string>
+    <string name="statistics_headshots">헤드샷</string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/ko-kr/games/apex-legends/news</string>

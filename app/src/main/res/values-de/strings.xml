@@ -101,6 +101,7 @@
     <string name="statistics_arkills">GEWEHR TÖTET</string>
     <string name="statistics_killsdeaths">TÖTUNGEN / TODE</string>
     <string name="statistics_beasthuntkills">TIEREJAGDKILLS</string>
+    <string name="statistics_headshots">KOPFSCHÜSSE</string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/de-de/games/apex-legends/news</string>

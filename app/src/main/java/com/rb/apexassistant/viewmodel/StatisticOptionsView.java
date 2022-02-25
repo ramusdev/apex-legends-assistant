@@ -9,17 +9,17 @@ import com.rb.apexassistant.MyApplication;
 import com.rb.apexassistant.TaskRunner;
 import com.rb.apexassistant.database.AppDatabase;
 import com.rb.apexassistant.database.PlayerStatsDao;
-import com.rb.apexassistant.model.PlayerStatsEntity;
+import com.rb.apexassistant.model.PlayerEntity;
 
 import java.util.List;
 import java.util.concurrent.Callable;
 
 public class StatisticOptionsView extends ViewModel {
-    private MutableLiveData<List<PlayerStatsEntity>> playerStatsEntityMutableLiveData;
+    private MutableLiveData<List<PlayerEntity>> playerStatsEntityMutableLiveData;
 
-    public MutableLiveData<List<PlayerStatsEntity>> getPlayerStatsEntity() {
+    public MutableLiveData<List<PlayerEntity>> getPlayerStatsEntity() {
         if (playerStatsEntityMutableLiveData == null) {
-            this.playerStatsEntityMutableLiveData = new MutableLiveData<List<PlayerStatsEntity>>();
+            this.playerStatsEntityMutableLiveData = new MutableLiveData<List<PlayerEntity>>();
             loadData();
             Log.d("MyTag", "if null --->");
         }
@@ -33,15 +33,15 @@ public class StatisticOptionsView extends ViewModel {
         AppDatabase appDatabase = MyApplication.getInstance().getDatabase();
         PlayerStatsDao playerStatsDao = appDatabase.PlayerStatsDao();
 
-        TaskRunner<List<PlayerStatsEntity>> taskRunner = new TaskRunner<List<PlayerStatsEntity>>();
-        taskRunner.executeAsync(new Callable<List<PlayerStatsEntity>>() {
+        TaskRunner<List<PlayerEntity>> taskRunner = new TaskRunner<List<PlayerEntity>>();
+        taskRunner.executeAsync(new Callable<List<PlayerEntity>>() {
             @Override
-            public List<PlayerStatsEntity> call() throws InterruptedException {
+            public List<PlayerEntity> call() throws InterruptedException {
                 return playerStatsDao.getAll();
             }
-        }, new TaskRunner.TaskRunnerCallback<List<PlayerStatsEntity>>() {
+        }, new TaskRunner.TaskRunnerCallback<List<PlayerEntity>>() {
             @Override
-            public void execute(List<PlayerStatsEntity> data) {
+            public void execute(List<PlayerEntity> data) {
                 playerStatsEntityMutableLiveData.postValue(data);
             }
         });

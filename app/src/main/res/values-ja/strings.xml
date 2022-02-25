@@ -99,6 +99,7 @@
     <string name="statistics_arkills"> ライフルキル </string>
     <string name="statistics_killsdeaths"> 殺害/死 </string>
     <string name="statistics_beasthuntkills"> ビーストハントキル </string>
+    <string name="statistics_headshots">ヘッドショット</string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/ja-jp/games/apex-legends/news</string>

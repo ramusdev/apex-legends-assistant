@@ -21,7 +21,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.rb.apexassistant.data.DataDbHelper;
 import com.rb.apexassistant.database.AppDatabase;
 import com.rb.apexassistant.database.PlayerStatsDao;
-import com.rb.apexassistant.model.PlayerStatsEntity;
+import com.rb.apexassistant.model.PlayerEntity;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.fragment.app.FragmentTransaction;
@@ -216,19 +216,19 @@ public class MainActivity extends AppCompatActivity {
         AppDatabase appDatabase = MyApplication.getInstance().getDatabase();
         PlayerStatsDao playerStatsDao = appDatabase.PlayerStatsDao();
 
-        TaskRunner<PlayerStatsEntity> taskRunner = new TaskRunner<PlayerStatsEntity>();
-        taskRunner.executeAsync(new Callable<PlayerStatsEntity>() {
+        TaskRunner<PlayerEntity> taskRunner = new TaskRunner<PlayerEntity>();
+        taskRunner.executeAsync(new Callable<PlayerEntity>() {
             @Override
-            public PlayerStatsEntity call() throws InterruptedException {
+            public PlayerEntity call() throws InterruptedException {
                 return playerStatsDao.getFirstPlayer();
             }
-        }, new TaskRunner.TaskRunnerCallback<PlayerStatsEntity>() {
+        }, new TaskRunner.TaskRunnerCallback<PlayerEntity>() {
             @Override
-            public void execute(PlayerStatsEntity playerStatsEntity) {
+            public void execute(PlayerEntity playerEntity) {
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
 
-                if (playerStatsEntity == null) {
+                if (playerEntity == null) {
                     transaction.replace(R.id.nav_host_fragment, StatisticOptionsFragment.class, null).commit();
                 } else {
                     transaction.replace(R.id.nav_host_fragment, StatisticFragment.class, null).commit();

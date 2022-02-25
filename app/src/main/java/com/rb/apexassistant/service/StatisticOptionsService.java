@@ -25,7 +25,7 @@ import com.rb.apexassistant.StatisticFragment;
 import com.rb.apexassistant.TaskRunner;
 import com.rb.apexassistant.database.AppDatabase;
 import com.rb.apexassistant.database.PlayerStatsDao;
-import com.rb.apexassistant.model.PlayerStatsEntity;
+import com.rb.apexassistant.model.PlayerEntity;
 import com.rb.apexassistant.tasks.StatsTask;
 import com.rb.apexassistant.viewmodel.StatisticOptionsView;
 
@@ -43,10 +43,10 @@ public class StatisticOptionsService {
 
     public void showPlayers() {
         statisticOptionsView = ViewModelProviders.of(fragment).get(StatisticOptionsView.class);
-        MutableLiveData<List<PlayerStatsEntity>> playerStatsEntityMutableLiveData = statisticOptionsView.getPlayerStatsEntity();
-        playerStatsEntityMutableLiveData.observe(fragment.getViewLifecycleOwner(), new Observer<List<PlayerStatsEntity>>() {
+        MutableLiveData<List<PlayerEntity>> playerStatsEntityMutableLiveData = statisticOptionsView.getPlayerStatsEntity();
+        playerStatsEntityMutableLiveData.observe(fragment.getViewLifecycleOwner(), new Observer<List<PlayerEntity>>() {
             @Override
-            public void onChanged(List<PlayerStatsEntity> playerStatsEntities) {
+            public void onChanged(List<PlayerEntity> playerStatsEntities) {
                 clearPlayerView();
                 updatePlayerView(playerStatsEntities);
             }
@@ -114,15 +114,15 @@ public class StatisticOptionsService {
 
 
 
-    private void updatePlayerView(List<PlayerStatsEntity> playerStatsEntities) {
+    private void updatePlayerView(List<PlayerEntity> playerStatsEntities) {
         LinearLayout playersBlock = fragment.getView().findViewById(R.id.players_block);
 
-        for (PlayerStatsEntity playerStatsEntity : playerStatsEntities) {
+        for (PlayerEntity playerEntity : playerStatsEntities) {
             LinearLayout viewBlock = (LinearLayout) fragment.getLayoutInflater().inflate(R.layout.player_block, null);
             playersBlock.addView(viewBlock);
 
-            String name = playerStatsEntity.getName();
-            long id = playerStatsEntity.getId();
+            String name = playerEntity.getName();
+            long id = playerEntity.getId();
 
             TextView textView = viewBlock.findViewById(R.id.player_name);
             textView.setText(name);
@@ -172,9 +172,9 @@ public class StatisticOptionsService {
                 taskRunner.executeAsync(new Callable<Integer>() {
                     @Override
                     public Integer call() throws InterruptedException {
-                        PlayerStatsEntity playerStatsEntity = new PlayerStatsEntity();
-                        playerStatsEntity.setId(id);
-                        playerStatsDao.delete(playerStatsEntity);
+                        PlayerEntity playerEntity = new PlayerEntity();
+                        playerEntity.setId(id);
+                        playerStatsDao.delete(playerEntity);
                         return 1;
                     }
                 }, new TaskRunner.TaskRunnerCallback<Integer>() {

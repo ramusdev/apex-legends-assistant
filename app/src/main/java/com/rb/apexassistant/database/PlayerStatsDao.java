@@ -4,32 +4,56 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Transaction;
 import androidx.room.Update;
 
-import com.rb.apexassistant.model.PlayerStatsEntity;
+import com.rb.apexassistant.model.LegendEntity;
+import com.rb.apexassistant.model.PlayerEntity;
+import com.rb.apexassistant.model.PlayerLegend;
 
 import java.util.List;
 
 @Dao
 public abstract class PlayerStatsDao {
     @Query("SELECT * FROM stats WHERE name = :name")
-    public abstract PlayerStatsEntity getByName(String name);
+    public abstract PlayerEntity getByName(String name);
 
     @Query("SELECT * FROM stats WHERE id = :playerId")
-    public abstract PlayerStatsEntity getById(long playerId);
+    public abstract PlayerEntity getById(long playerId);
 
     @Query("SELECT * FROM stats")
-    public abstract List<PlayerStatsEntity> getAll();
+    public abstract List<PlayerEntity> getAll();
 
     @Insert
-    public abstract long insert(PlayerStatsEntity playerStatsEntity);
+    public abstract long insertPlayer(PlayerEntity playerEntity);
+
+    @Insert
+    public abstract void insertAllLegends(List<LegendEntity> legends);
 
     @Delete
-    public abstract void delete(PlayerStatsEntity playerStatsEntity);
+    public abstract void delete(PlayerEntity playerEntity);
 
     @Query("SELECT * FROM stats LIMIT 1")
-    public abstract PlayerStatsEntity getFirstPlayer();
+    public abstract PlayerEntity getFirstPlayer();
 
     @Update
-    public abstract void update(PlayerStatsEntity playerStatsEntity);
+    public abstract void update(PlayerEntity playerEntity);
+
+    @Transaction
+    @Query("SELECT * FROM stats WHERE id = :id")
+    public abstract PlayerLegend getPlayerLegendById(long id);
+
+    @Transaction
+    @Query("SELECT * FROM stats LIMIT 1")
+    public abstract PlayerLegend getFirstPlayerLegend();
+
+    public void insertPlayerAndLegends(PlayerEntity player, List<LegendEntity> legends) {
+        long id = this.insertPlayer(player);
+
+        for (LegendEntity legend : legends) {
+            legend.setPlayerId(id);
+        }
+
+        this.insertAllLegends(legends);
+    }
 }

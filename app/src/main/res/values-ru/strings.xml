@@ -35,8 +35,8 @@
         Авторские права содержащихся изображений и материалов принадлежат компании Electronic Arts и являются интеллектуальной собственностью Electronic Arts: © 2021 Electronic Arts. Все права защищены.<br><br>
         Apex Legends и логотип Apex Legends являются зарегистрированными товарными знаками или товарными знаками Electronic Arts.<br><br>
         <font color=#712123>Дополнительная информация</font><br><br>
-        - Текущая версия: 2.1.2<br>
-        - Разработчик: RB dev.<br>
+        - Текущая версия: 2.5.1<br>
+        - Разработчик: RB.<br>
         - Связаться: ram219219@gmail.com
     ]]>
     </string>
@@ -102,6 +102,7 @@
     <string name="statistics_arkills">ВИНТОВКОЙ</string>
     <string name="statistics_killsdeaths">УБИЙСТВ / СМЕРТЕЙ</string>
     <string name="statistics_beasthuntkills">НА ОХОТЕ</string>
+    <string name="statistics_headshots">В ГОЛОВУ</string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/ru-ru/games/apex-legends/news</string>

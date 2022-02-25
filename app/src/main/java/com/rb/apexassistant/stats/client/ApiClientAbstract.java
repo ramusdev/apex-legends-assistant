@@ -1,7 +1,11 @@
 package com.rb.apexassistant.stats.client;
 
-import com.rb.apexassistant.model.PlayerStatsEntity;
-import com.rb.apexassistant.stats.model.PlayerStats;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.rb.apexassistant.model.LegendEntity;
+import com.rb.apexassistant.model.PlayerEntity;
+import com.rb.apexassistant.stats.model.ErrorCode;
+import com.rb.apexassistant.stats.settings.ApiConfiguration;
 
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.config.RequestConfig;
@@ -20,6 +24,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public abstract class ApiClientAbstract {
@@ -87,5 +92,31 @@ public abstract class ApiClientAbstract {
         return response;
     }
 
-    public abstract PlayerStatsEntity getPlayerInfo(String playerName);
+    public String getResponse(String playerName) {
+        String url = ApiConfiguration.API_ENDPOINT;
+
+        ArrayList<NameValuePair> parameters = new ArrayList<>();
+        parameters.add(new BasicNameValuePair("version", "5"));
+        parameters.add(new BasicNameValuePair("platform", "PC"));
+        parameters.add(new BasicNameValuePair("player", playerName));
+
+        Map<String, String> response = this.makeGetCall(url, parameters);
+
+        GsonBuilder gsonBuilderError = new GsonBuilder();
+        Gson gsonError = gsonBuilderError.create();
+        ErrorCode errorCode = gsonError.fromJson(response.get("response"), ErrorCode.class);
+
+        if (! response.get("code").equals("200")) {
+            return null;
+        }
+
+        if (errorCode.getError() != null) {
+            return null;
+        }
+
+        return response.get("response");
+    }
+
+    public abstract PlayerEntity getPlayerInfo(String json, String playerName);
+    public abstract List<LegendEntity> getPlayerLegends(String json, String playerName);
 }

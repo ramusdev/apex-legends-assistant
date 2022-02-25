@@ -1,14 +1,14 @@
 package com.rb.apexassistant.tasks;
 
-import android.util.Log;
-
 import com.rb.apexassistant.MyApplication;
 import com.rb.apexassistant.database.AppDatabase;
 import com.rb.apexassistant.database.PlayerStatsDao;
-import com.rb.apexassistant.model.PlayerStatsEntity;
+import com.rb.apexassistant.model.LegendEntity;
+import com.rb.apexassistant.model.PlayerEntity;
 import com.rb.apexassistant.stats.client.ApiClient;
-import com.rb.apexassistant.stats.model.PlayerStats;
 import com.rb.apexassistant.stats.settings.ApiConfiguration;
+
+import java.util.List;
 import java.util.concurrent.Callable;
 
 public class StatsTask implements Callable<Integer> {
@@ -25,13 +25,16 @@ public class StatsTask implements Callable<Integer> {
         PlayerStatsDao playerStatsDao = appDatabase.PlayerStatsDao();
 
         ApiClient apiClient = new ApiClient(ApiConfiguration.AUTH_KEY);
-        PlayerStatsEntity playerStatsEntity = apiClient.getPlayerInfo(this.playerName);
+        String json = apiClient.getResponse(this.playerName);
 
-        if (playerStatsEntity == null) {
+        if (json == null) {
             return 404;
         }
 
-        playerStatsDao.insert(playerStatsEntity);
+        PlayerEntity playerEntity = apiClient.getPlayerInfo(json, this.playerName);
+        List<LegendEntity> legendEntities = apiClient.getPlayerLegends(json, this.playerName);
+
+        playerStatsDao.insertPlayerAndLegends(playerEntity, legendEntities);
 
         return 200;
     }

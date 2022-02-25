@@ -35,7 +35,7 @@
         The copyright of the images and materials contained is owned by Electronic Arts and is the intellectual property of Electronic Arts: © 2021 Electronic Arts. All rights reserved.<br><br>
         Apex Legends and the Apex Legends logo are registered trademarks or trademarks of Electronic Arts.<br><br>
         <font color=#712123>Additional information</font><br><br>
-        - Current version: 2.1.2<br>
+        - Current version: 2.5.1<br>
         - Developer: RB.<br>
         - Contact: ram219219@gmail.com
     ]]>
@@ -102,6 +102,7 @@
     <string name="statistics_arkills">RIFLE</string>
     <string name="statistics_killsdeaths">KILLS / DEATHS</string>
     <string name="statistics_beasthuntkills">HUNT</string>
+    <string name="statistics_headshots">HEADSHOTS</string>
 
 
     <!-- News link -->

@@ -100,6 +100,7 @@
     <string name="statistics_arkills">IL FUCILE UCCIDE</string>
     <string name="statistics_killsdeaths">UCCISIONE / MORTE</string>
     <string name="statistics_beasthuntkills">CACCIA ALLE BESTIE UCCIDI</string>
+    <string name="statistics_headshots">COLPI ALLA TESTA</string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/it-it/games/apex-legends/news</string>

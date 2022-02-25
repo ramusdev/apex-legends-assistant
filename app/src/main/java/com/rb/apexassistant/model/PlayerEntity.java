@@ -2,9 +2,12 @@ package com.rb.apexassistant.model;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import androidx.room.Relation;
+
+import java.util.List;
 
 @Entity(tableName = "stats")
-public class PlayerStatsEntity {
+public class PlayerEntity {
     @PrimaryKey(autoGenerate = true)
     public long id;
     public String name;
@@ -20,7 +23,7 @@ public class PlayerStatsEntity {
     private int arKills;
     private double kd;
 
-    public PlayerStatsEntity(long id, String name, int kills, int gamesPlayed, int barrageDamage, int topThree, int huntKills, int damage, int droppedItems, int pistolKills, int beaconsScanned, int arKills, double kd) {
+    public PlayerEntity(long id, String name, int kills, int gamesPlayed, int barrageDamage, int topThree, int huntKills, int damage, int droppedItems, int pistolKills, int beaconsScanned, int arKills, double kd) {
         this.id = id;
         this.name = name;
         this.kills = kills;
@@ -36,7 +39,7 @@ public class PlayerStatsEntity {
         this.kd = kd;
     }
 
-    public PlayerStatsEntity() {
+    public PlayerEntity() {
 
     }
 

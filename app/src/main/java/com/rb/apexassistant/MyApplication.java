@@ -36,14 +36,16 @@ public class MyApplication extends Application {
 
         MyApplicationContext myApplicationContext = new MyApplicationContext(this);
 
+        /*
         MobileAds.initialize(MyApplicationContext.getAppContext(), new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
                 appOpenManager = new AppOpenManager(MyApplication.this);
             }
         });
+        */
 
-        appOpenManager = new AppOpenManager(this);
+        // appOpenManager = new AppOpenManager(this);
 
         Log.d("MyTag", "My application start class --->");
         WorkManager workManager = WorkManager.getInstance(this);
