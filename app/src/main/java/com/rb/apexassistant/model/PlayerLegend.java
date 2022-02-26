@@ -16,6 +16,10 @@ public class PlayerLegend {
         this.legends = legends;
     }
 
+    public PlayerLegend() {
+
+    }
+
     public PlayerEntity getPlayer() {
         return player;
     }

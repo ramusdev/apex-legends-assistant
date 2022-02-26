@@ -3,7 +3,9 @@ package com.rb.apexassistant.tasks;
 import com.rb.apexassistant.MyApplication;
 import com.rb.apexassistant.database.AppDatabase;
 import com.rb.apexassistant.database.PlayerStatsDao;
+import com.rb.apexassistant.model.LegendEntity;
 import com.rb.apexassistant.model.PlayerEntity;
+import com.rb.apexassistant.model.PlayerLegend;
 import com.rb.apexassistant.stats.client.ApiClient;
 import com.rb.apexassistant.stats.settings.ApiConfiguration;
 
@@ -19,7 +21,7 @@ public class StatsUpdateTask implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        /*
+
         AppDatabase appDatabase = MyApplication.getInstance().getDatabase();
         PlayerStatsDao playerStatsDao = appDatabase.PlayerStatsDao();
 
@@ -30,17 +32,31 @@ public class StatsUpdateTask implements Callable<Integer> {
         }
 
         ApiClient apiClient = new ApiClient(ApiConfiguration.AUTH_KEY);
+
+
         for (PlayerEntity playerEntity : playerStatsEntities) {
-            PlayerEntity playerEntityNew = apiClient.getPlayerInfo(playerEntity.getName());
-            if (playerEntityNew == null) {
-                break;
+            String playerName = playerEntity.getName();
+            long playerId = playerEntity.getId();
+
+            String json = apiClient.getResponse(playerName);
+
+            if (json == null) {
+                continue;
             }
-            playerEntityNew.setId(playerEntity.getId());
-            playerStatsDao.update(playerEntityNew);
+
+            PlayerEntity player = apiClient.getPlayerInfo(json, playerName);
+            List<LegendEntity> legends = apiClient.getPlayerLegends(json, playerName);
+
+            player.setId(playerId);
+
+            PlayerLegend playerLegend = new PlayerLegend();
+            playerLegend.setPlayer(player);
+            playerLegend.setLegends(legends);
+            
             Thread.sleep(10000);
         }
 
-         */
+
 
         return 200;
     }
