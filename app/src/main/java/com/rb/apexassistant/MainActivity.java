@@ -22,6 +22,7 @@ import com.rb.apexassistant.data.DataDbHelper;
 import com.rb.apexassistant.database.AppDatabase;
 import com.rb.apexassistant.database.PlayerStatsDao;
 import com.rb.apexassistant.model.PlayerEntity;
+import com.rb.apexassistant.tasks.StatsUpdateTask;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.fragment.app.FragmentTransaction;
@@ -248,6 +249,9 @@ public class MainActivity extends AppCompatActivity {
         List<Tweet> tweets = tweetsLoader.load();
 
         TaskRunner<Integer> taskRunner = new TaskRunner<Integer>();
+
+        // Callable statsUpdateCallable = new StatsUpdateTask();
+        // taskRunner.executeAsync(statsUpdateCallable);
         // Callable statsTask = new StatsTask();
         // taskRunner.executeAsync(statsTask);
 

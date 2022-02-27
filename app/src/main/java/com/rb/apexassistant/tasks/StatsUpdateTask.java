@@ -8,7 +8,6 @@ import com.rb.apexassistant.model.PlayerEntity;
 import com.rb.apexassistant.model.PlayerLegend;
 import com.rb.apexassistant.stats.client.ApiClient;
 import com.rb.apexassistant.stats.settings.ApiConfiguration;
-
 import java.util.List;
 import java.util.concurrent.Callable;
 
@@ -33,7 +32,6 @@ public class StatsUpdateTask implements Callable<Integer> {
 
         ApiClient apiClient = new ApiClient(ApiConfiguration.AUTH_KEY);
 
-
         for (PlayerEntity playerEntity : playerStatsEntities) {
             String playerName = playerEntity.getName();
             long playerId = playerEntity.getId();
@@ -45,19 +43,36 @@ public class StatsUpdateTask implements Callable<Integer> {
             }
 
             PlayerEntity player = apiClient.getPlayerInfo(json, playerName);
-            List<LegendEntity> legends = apiClient.getPlayerLegends(json, playerName);
+            List<LegendEntity> legendsNew = apiClient.getPlayerLegends(json, playerName);
+            PlayerLegend playerLegend = playerStatsDao.getPlayerLegendById(playerId);
 
+            setIdToLegends(legendsNew, playerLegend);
             player.setId(playerId);
+            player.setKills(10000);
 
-            PlayerLegend playerLegend = new PlayerLegend();
-            playerLegend.setPlayer(player);
-            playerLegend.setLegends(legends);
-            
+            PlayerLegend playerLegendUpdate = new PlayerLegend();
+            playerLegendUpdate.setPlayer(player);
+            playerLegendUpdate.setLegends(legendsNew);
+
+            playerStatsDao.updatePlayerLegend(playerLegendUpdate);
             Thread.sleep(10000);
         }
 
-
-
         return 200;
+    }
+
+    public void setIdToLegends(List<LegendEntity> legends, PlayerLegend playerLegend) {
+        List<LegendEntity> legendsOld = playerLegend.getLegends();
+        long playerId = playerLegend.getPlayer().getId();
+        for (LegendEntity legend : legends) {
+            legend.setPlayerId(playerId);
+            for (LegendEntity legendOld : legendsOld) {
+                if (legend.getName().contains(legendOld.getName())) {
+                    legend.setId(legendOld.getId());
+                    legend.setKills(10000);
+                    break;
+                }
+            }
+        }
     }
 }

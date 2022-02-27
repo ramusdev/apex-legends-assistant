@@ -1,5 +1,7 @@
 package com.rb.apexassistant.database;
 
+import android.util.Log;
+
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -47,13 +49,23 @@ public abstract class PlayerStatsDao {
     @Query("SELECT * FROM stats LIMIT 1")
     public abstract PlayerLegend getFirstPlayerLegend();
 
+    @Transaction
+    public void updatePlayerLegend(PlayerLegend playerLegend) {
+        this.updatePlayer(playerLegend.getPlayer());
+        this.updateLegend(playerLegend.getLegends());
+    }
+
+    @Update
+    public abstract void updatePlayer(PlayerEntity playerEntity);
+
+    @Update
+    public abstract void updateLegend(List<LegendEntity> legendEntity);
+
     public void insertPlayerAndLegends(PlayerEntity player, List<LegendEntity> legends) {
         long id = this.insertPlayer(player);
-
         for (LegendEntity legend : legends) {
             legend.setPlayerId(id);
         }
-
         this.insertAllLegends(legends);
     }
 }

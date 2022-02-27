@@ -25,6 +25,22 @@ public class LegendEntity {
     private int pistolKills;
     private long playerId;
 
+    @Override
+    public String toString() {
+        return "LegendEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", kills=" + kills +
+                ", damage=" + damage +
+                ", gamesPlayed=" + gamesPlayed +
+                ", topThree=" + topThree +
+                ", droppedItems=" + droppedItems +
+                ", headshots=" + headshots +
+                ", pistolKills=" + pistolKills +
+                ", playerId=" + playerId +
+                '}';
+    }
+
     public LegendEntity(long id, String name, int kills, int damage, int gamesPlayed, int topThree, int droppedItems, int headshots, int pistolKills, long playerId) {
         this.id = id;
         this.name = name;
