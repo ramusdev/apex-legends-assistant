@@ -50,9 +50,22 @@
     <string name="toolbar_statsoptions">オプション</string>
     <string name="toolbar_wallpaper">壁紙</string>
     <string name="toolbar_donate">寄付</string>
+    <string name="toolbar_weapons">兵器</string>
     <string name="toolbar_settings">設定</string>
     <string name="toolbar_about">約</string>
     <string name="title_activity_my_application">MyApplication</string>
+
+    <string name="weapons_dps">DPS</string>
+    <string name="weapons_rpm">RPM</string>
+    <string name="weapons_magazine">雑誌</string>
+    <string name="weapons_reload">リロード</string>
+    <string name="weaponstab_energy">エネルギー</string>
+    <string name="weaponstab_heavy">重い</string>
+    <string name="weaponstab_light">ライト</string>
+    <string name="weaponstab_shotgun">ショットガン</string>
+    <string name="weaponstab_sniper">スナイパー</string>
+    <string name="weaponstab_unique">ユニーク</string>
+    <string name="weaponstab_arrow">矢印</string>
 
     <!-- Donate buttons -->
     <string name="donate_button_one">ブロンズ</string>

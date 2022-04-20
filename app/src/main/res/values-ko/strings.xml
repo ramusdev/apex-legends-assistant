@@ -50,9 +50,22 @@
     <string name="toolbar_donate">기부</string>
     <string name="toolbar_stats">통계</string>
     <string name="toolbar_statsoptions">옵션</string>
+    <string name="toolbar_weapons">무기</string>
     <string name="toolbar_settings">설정</string>
     <string name="toolbar_about">에 대한</string>
     <string name="title_activity_my_application">MyApplication</string>
+
+    <string name="weapons_dps">DPS</string>
+    <string name="weapons_rpm">RPM</string>
+    <string name="weapons_magazine">매거진</string>
+    <string name="weapons_reload">재장전</string>
+    <string name="weaponstab_energy">에너지</string>
+    <string name="weaponstab_heavy">무거움</string>
+    <string name="weaponstab_light">빛</string>
+    <string name="weaponstab_shotgun">산탄총</string>
+    <string name="weaponstab_sniper">저격수</string>
+    <string name="weaponstab_unique">고유</string>
+    <string name="weaponstab_arrow">화살표</string>
 
     <!-- Donate buttons -->
     <string name="donate_button_one">청동</string>

@@ -45,8 +45,8 @@ public class PeriodicWork extends Worker {
         Callable tweetsClearCallable = new TweetsClearCallable();
         taskRunner.executeAsync(tweetsClearCallable);
 
-        // Callable statsUpdateCallable = new StatsUpdateTask();
-        // taskRunner.executeAsync(statsUpdateCallable);
+        Callable statsUpdateCallable = new StatsUpdateTask();
+        taskRunner.executeAsync(statsUpdateCallable);
 
         return Result.success();
     }

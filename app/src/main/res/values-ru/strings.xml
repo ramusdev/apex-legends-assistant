@@ -48,6 +48,7 @@
     <string name="toolbar_legend">Легенды</string>
     <string name="toolbar_stats">Статистика</string>
     <string name="toolbar_statsoptions">Настройки</string>
+    <string name="toolbar_weapons">Оружие</string>
     <string name="toolbar_wallpaper">Обои</string>
     <string name="toolbar_donate">Донат</string>
     <string name="toolbar_settings">Настройки</string>
@@ -84,9 +85,21 @@
     <string name="statisticoptions_field_empty">ПОЛЕ ПУСТОЕ</string>
     <string name="statisticoptions_field_added">ИГРОК ДОБАВЛЕН</string>
     <string name="statisticoptions_field_notfound">ИГРОК НЕ НАЙДЕН</string>
-
     <string name="statisticoptions_player_info">СТАТИСТИКА</string>
     <string name="statisticoptions_player_delete">УДАЛИТЬ</string>
+
+    <!-- Weapons -->
+    <string name="weapons_dps">УРОН В СЕКУНДУ</string>
+    <string name="weapons_rpm">ВЫСТРЕЛОВ В МИН</string>
+    <string name="weapons_magazine">МАГАЗИН</string>
+    <string name="weapons_reload">СКОРОСТЬ ПЕРЕЗАРЯДКИ</string>
+    <string name="weaponstab_energy">Энергитическое</string>
+    <string name="weaponstab_heavy">Тяжелое</string>
+    <string name="weaponstab_light">Легкое</string>
+    <string name="weaponstab_shotgun">Дробовики</string>
+    <string name="weaponstab_sniper">Снайперское</string>
+    <string name="weaponstab_unique">Уникальное</string>
+    <string name="weaponstab_arrow">Арбалеты</string>
 
     <!-- Statistics -->
     <string name="statistics_title_overall">ВСЕГО</string>

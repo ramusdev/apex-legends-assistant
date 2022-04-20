@@ -49,10 +49,23 @@
     <string name="toolbar_wallpaper">Fondo de pantalla</string>
     <string name="toolbar_stats">Estadísticas</string>
     <string name="toolbar_statsoptions">Opciones</string>
+    <string name="toolbar_weapons">Armas</string>
     <string name="toolbar_donate">Donar</string>
     <string name="toolbar_settings">Ajustes</string>
     <string name="toolbar_about">Acerca de</string>
     <string name="title_activity_my_application">MyApplication</string>
+
+    <string name="weapons_dps">DPS</string>
+    <string name="weapons_rpm">RPM</string>
+    <string name="weapons_magazine">REVISTA</string>
+    <string name="weapons_reload">RECARGAR</string>
+    <string name="weaponstab_energy">Energía</string>
+    <string name="weaponstab_heavy">Pesado</string>
+    <string name="weaponstab_light">Luz</string>
+    <string name="weaponstab_shotgun">Escopeta</string>
+    <string name="weaponstab_sniper">Francotirador</string>
+    <string name="weaponstab_unique">Único</string>
+    <string name="weaponstab_arrow">Flecha</string>
 
     <!-- Donate buttons -->
     <string name="donate_button_one">Bronce</string>

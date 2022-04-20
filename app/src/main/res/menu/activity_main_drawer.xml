@@ -18,8 +18,12 @@
             android:icon="@drawable/menu_legends"
             android:title="@string/toolbar_legend" />
         <item
-            android:id="@+id/nav_item_wallpaper"
+            android:id="@+id/nav_item_weapons"
             android:icon="@drawable/ic_wallpapper"
+            android:title="@string/toolbar_weapons" />
+        <item
+            android:id="@+id/nav_item_wallpaper"
+            android:icon="@drawable/ic_wallpaper"
             android:title="@string/toolbar_wallpaper" />
         <item
             android:id="@+id/nav_item_stats"

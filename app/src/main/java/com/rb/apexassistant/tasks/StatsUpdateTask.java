@@ -21,7 +21,7 @@ public class StatsUpdateTask implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
 
-        AppDatabase appDatabase = MyApplication.getInstance().getDatabase();
+        AppDatabase appDatabase = AppDatabase.getInstance();
         PlayerStatsDao playerStatsDao = appDatabase.PlayerStatsDao();
 
         List<PlayerEntity> playerStatsEntities = playerStatsDao.getAll();
@@ -48,7 +48,6 @@ public class StatsUpdateTask implements Callable<Integer> {
 
             setIdToLegends(legendsNew, playerLegend);
             player.setId(playerId);
-            player.setKills(10000);
 
             PlayerLegend playerLegendUpdate = new PlayerLegend();
             playerLegendUpdate.setPlayer(player);
@@ -69,7 +68,6 @@ public class StatsUpdateTask implements Callable<Integer> {
             for (LegendEntity legendOld : legendsOld) {
                 if (legend.getName().contains(legendOld.getName())) {
                     legend.setId(legendOld.getId());
-                    legend.setKills(10000);
                     break;
                 }
             }

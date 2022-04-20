@@ -48,11 +48,24 @@
     <string name="toolbar_legend">Leggende</string>
     <string name="toolbar_stats">Statistiche</string>
     <string name="toolbar_statsoptions">Opzioni</string>
+    <string name="toolbar_weapons">Armi</string>
     <string name="toolbar_wallpaper">Sfondo</string>
     <string name="toolbar_donate">Donare</string>
     <string name="toolbar_settings">Impostazioni</string>
     <string name="toolbar_about">Di</string>
     <string name="title_activity_my_application">MyApplication</string>
+
+    <string name="weapons_dps">DPS</string>
+    <string name="weapons_rpm">RPM</string>
+    <string name="weapons_magazine">MAGAZINE</string>
+    <string name="weapons_reload">RICARICA</string>
+    <string name="weaponstab_energy">Energia</string>
+    <string name="weaponstab_heavy">Pesante</string>
+    <string name="weaponstab_light">Luce</string>
+    <string name="weaponstab_shotgun">Fucile a pompa</string>
+    <string name="weaponstab_sniper">Cecchino</string>
+    <string name="weaponstab_unique">Unico</string>
+    <string name="weaponstab_arrow">Freccia</string>
 
     <!-- Donate buttons -->
     <string name="donate_button_one">Bronzo</string>

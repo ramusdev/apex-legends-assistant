@@ -47,6 +47,7 @@
     <string name="toolbar_twitter">Twitter</string>
     <string name="toolbar_legend">Legends</string>
     <string name="toolbar_wallpaper">Wallpapers</string>
+    <string name="toolbar_weapons">Weapons</string>
     <string name="toolbar_stats">Statistics</string>
     <string name="toolbar_statsoptions">Options</string>
     <string name="toolbar_donate">Donate</string>
@@ -84,7 +85,6 @@
     <string name="statisticoptions_field_empty">FIELD EMPTY</string>
     <string name="statisticoptions_field_added">PLAYER ADDED</string>
     <string name="statisticoptions_field_notfound">PLAYER NOT FOUND</string>
-
     <string name="statisticoptions_player_info">INFO</string>
     <string name="statisticoptions_player_delete">DELETE</string>
 
@@ -92,7 +92,7 @@
     <string name="statistics_title_overall">OVERALL</string>
     <string name="statistics_title_kills">KILLS</string>
     <string name="statistics_gamesplayed">GAMES PLAYED</string>
-    <string name="statistics_creepingbarragedamage">CREEPING BARAGE DAMAGE</string>
+    <string name="statistics_creepingbarragedamage">CREEPING BARRAGE DAMAGE</string>
     <string name="statistics_topthree">TOP 3</string>
     <string name="statistics_damage">DAMAGE</string>
     <string name="statistics_droppeditems">DROPPED ITEMS</string>
@@ -104,6 +104,18 @@
     <string name="statistics_beasthuntkills">HUNT</string>
     <string name="statistics_headshots">HEADSHOTS</string>
 
+    <!-- Weapons -->
+    <string name="weapons_dps">DPS</string>
+    <string name="weapons_rpm">RPM</string>
+    <string name="weapons_magazine">MAGAZINE</string>
+    <string name="weapons_reload">RELOAD</string>
+    <string name="weaponstab_energy">Energy</string>
+    <string name="weaponstab_heavy">Heavy</string>
+    <string name="weaponstab_light">Light</string>
+    <string name="weaponstab_shotgun">Shotgun</string>
+    <string name="weaponstab_sniper">Sniper</string>
+    <string name="weaponstab_unique">Unique</string>
+    <string name="weaponstab_arrow">Arrow</string>
 
     <!-- News link -->
     <string name="news_link">https://www.ea.com/games/apex-legends/news</string>
@@ -115,6 +127,7 @@
 
     <!-- Legend -->
     <string name="legends_json_dir">Legends/en/legends_en.json</string>
+    <string name="weapons_json_dir" translatable="false">Weapons/en/weapons_en.json</string>
 
     <!--
     This string is used for square devices and overridden by hello_world in

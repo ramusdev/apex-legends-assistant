@@ -20,7 +20,7 @@ import androidx.work.WorkManager;
 public class MyApplication extends Application {
 
     private static AppOpenManager appOpenManager;
-    public AppDatabase database;
+    // public AppDatabase database;
     public static MyApplication instance;
 
     @Override
@@ -29,24 +29,24 @@ public class MyApplication extends Application {
 
         instance = this;
 
+        /*
         database = Room.databaseBuilder(this, AppDatabase.class, "databaseroom")
                 .allowMainThreadQueries()
                 .fallbackToDestructiveMigration()
                 .build();
 
+         */
+
         MyApplicationContext myApplicationContext = new MyApplicationContext(this);
 
-        /*
         MobileAds.initialize(MyApplicationContext.getAppContext(), new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
                 appOpenManager = new AppOpenManager(MyApplication.this);
             }
         });
-        */
 
         // appOpenManager = new AppOpenManager(this);
-
         Log.d("MyTag", "My application start class --->");
         WorkManager workManager = WorkManager.getInstance(this);
         ListenableFuture<List<WorkInfo>> statuses = workManager.getWorkInfosByTag("task_worker8");
@@ -65,9 +65,5 @@ public class MyApplication extends Application {
 
     public static MyApplication getInstance() {
         return instance;
-    }
-
-    public AppDatabase getDatabase() {
-        return database;
     }
 }

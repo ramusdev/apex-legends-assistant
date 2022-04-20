@@ -21,7 +21,7 @@ public class StatsTask implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        AppDatabase appDatabase = MyApplication.getInstance().getDatabase();
+        AppDatabase appDatabase = AppDatabase.getInstance();
         PlayerStatsDao playerStatsDao = appDatabase.PlayerStatsDao();
 
         ApiClient apiClient = new ApiClient(ApiConfiguration.AUTH_KEY);

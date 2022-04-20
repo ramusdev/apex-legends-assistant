@@ -44,7 +44,7 @@ public class StatisticFragmentService {
 
     private void loadFirstPlayer() {
 
-        AppDatabase appDatabase = MyApplication.getInstance().getDatabase();
+        AppDatabase appDatabase = AppDatabase.getInstance();
         PlayerStatsDao playerStatsDao = appDatabase.PlayerStatsDao();
 
         TaskRunner<PlayerLegend> taskRunner = new TaskRunner<PlayerLegend>();
@@ -62,7 +62,7 @@ public class StatisticFragmentService {
     }
 
     private void loadPlayer(long id) {
-        AppDatabase appDatabase = MyApplication.getInstance().getDatabase();
+        AppDatabase appDatabase = AppDatabase.getInstance();
         PlayerStatsDao playerStatsDao = appDatabase.PlayerStatsDao();
 
         TaskRunner<PlayerLegend> taskRunner = new TaskRunner<PlayerLegend>();

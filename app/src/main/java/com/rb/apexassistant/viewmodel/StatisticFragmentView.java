@@ -29,7 +29,7 @@ public class StatisticFragmentView extends ViewModel {
 
     public void loadData(long playerId) {
 
-        AppDatabase appDatabase = MyApplication.getInstance().getDatabase();
+        AppDatabase appDatabase = AppDatabase.getInstance();
         PlayerStatsDao playerStatsDao = appDatabase.PlayerStatsDao();
 
         TaskRunner<PlayerEntity> taskRunner = new TaskRunner<PlayerEntity>();

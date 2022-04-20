@@ -165,7 +165,7 @@ public class StatisticOptionsService {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AppDatabase appDatabase = MyApplication.getInstance().getDatabase();
+                AppDatabase appDatabase = AppDatabase.getInstance();
                 PlayerStatsDao playerStatsDao = appDatabase.PlayerStatsDao();
 
                 TaskRunner<Integer> taskRunner = new TaskRunner<Integer>();

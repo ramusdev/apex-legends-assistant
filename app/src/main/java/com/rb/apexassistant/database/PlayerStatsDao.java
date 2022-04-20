@@ -17,8 +17,8 @@ import java.util.List;
 
 @Dao
 public abstract class PlayerStatsDao {
-    @Query("SELECT * FROM stats WHERE name = :name")
-    public abstract PlayerEntity getByName(String name);
+    // @Query("SELECT * FROM stats WHERE name = :name")
+    // public abstract PlayerEntity getByName(String name);
 
     @Query("SELECT * FROM stats WHERE id = :playerId")
     public abstract PlayerEntity getById(long playerId);

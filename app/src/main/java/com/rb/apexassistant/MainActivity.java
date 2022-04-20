@@ -22,6 +22,7 @@ import com.rb.apexassistant.data.DataDbHelper;
 import com.rb.apexassistant.database.AppDatabase;
 import com.rb.apexassistant.database.PlayerStatsDao;
 import com.rb.apexassistant.model.PlayerEntity;
+import com.rb.apexassistant.tasks.PopulatorWeaponsTask;
 import com.rb.apexassistant.tasks.StatsUpdateTask;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -197,6 +198,18 @@ public class MainActivity extends AppCompatActivity {
                     }, 275);
                 }
 
+                if (item.getItemId() == R.id.nav_item_weapons) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            item.setChecked(true);
+                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+                            transaction.replace(R.id.nav_host_fragment, WeaponsTabFragment.class, null).commit();
+                        }
+                    }, 275);
+                }
+
 
 
                 return false;
@@ -214,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void isFirstPlayerInBd() {
-        AppDatabase appDatabase = MyApplication.getInstance().getDatabase();
+        AppDatabase appDatabase = AppDatabase.getInstance();
         PlayerStatsDao playerStatsDao = appDatabase.PlayerStatsDao();
 
         TaskRunner<PlayerEntity> taskRunner = new TaskRunner<PlayerEntity>();
@@ -241,6 +254,7 @@ public class MainActivity extends AppCompatActivity {
     public void createTasks() {
 
         Log.d("MyTag", "create task -->");
+
 
         NewsLoader newsLoader = new NewsLoader(this.getApplicationContext());
         List<News> news = newsLoader.load();
@@ -269,11 +283,15 @@ public class MainActivity extends AppCompatActivity {
         String currentVersion = sharedPreferences.getString(APP_PREFERENCES_VERSION, "");
 
         if (! currentVersion.equals(getVersionName())) {
-            Callable populatorWallapeper = new DatabasePopulatorCallable<Wallpaper>("Wallpapers/wallpapers.json", Wallpaper.class);
-            taskRunner.executeAsync(populatorWallapeper);
+            Log.d("MyTag", "Current version ------------------------->");
+            Callable populatorWallpapper = new DatabasePopulatorCallable<Wallpaper>("Wallpapers/wallpapers.json", Wallpaper.class);
+            taskRunner.executeAsync(populatorWallpapper);
 
             Callable populatorLegend = new DatabasePopulatorCallable<Legend>(getResources().getString(R.string.legends_json_dir), Legend.class);
             taskRunner.executeAsync(populatorLegend);
+
+            Callable populatorWeaponsTask = new PopulatorWeaponsTask();
+            taskRunner.executeAsync(populatorWeaponsTask);
 
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString(APP_PREFERENCES_VERSION, getVersionName());

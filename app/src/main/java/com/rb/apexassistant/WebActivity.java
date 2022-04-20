@@ -48,7 +48,7 @@ public class WebActivity extends AppCompatActivity {
         String titleHtml = "<div class=\"main_title\">" + title + "</div>";
 
         // Style after move to parser
-        String style = "<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"https://edgenews.ru/android/apexlegends/legends/static/style.css\">";
+        String style = "<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"https://berdyansk.pro/android/apexlegends/legends/static/style.css\">";
         StringBuilder stringBuilder = new StringBuilder(text)
             .insert(0, "<html>")
             .insert(6, titleHtml)

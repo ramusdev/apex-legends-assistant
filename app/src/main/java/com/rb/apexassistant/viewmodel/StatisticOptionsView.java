@@ -30,7 +30,7 @@ public class StatisticOptionsView extends ViewModel {
 
     public void loadData() {
 
-        AppDatabase appDatabase = MyApplication.getInstance().getDatabase();
+        AppDatabase appDatabase = AppDatabase.getInstance();
         PlayerStatsDao playerStatsDao = appDatabase.PlayerStatsDao();
 
         TaskRunner<List<PlayerEntity>> taskRunner = new TaskRunner<List<PlayerEntity>>();

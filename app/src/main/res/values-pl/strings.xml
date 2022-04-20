@@ -54,6 +54,18 @@
     <string name="toolbar_about">Dookoła</string>
     <string name="title_activity_my_application">MyApplication</string>
 
+    <string name="weapons_dps">DPS</string>
+    <string name="weapons_rpm">RPM</string>
+    <string name="weapons_magazine">MAGAZYN</string>
+    <string name="weapons_reload">PONOWNIE ZAŁADUJ</string>
+    <string name="weaponstab_energy">Energia</string>
+    <string name="weaponstab_heavy">Ciężkie</string>
+    <string name="weaponstab_light">Światło</string>
+    <string name="weaponstab_shotgun">Strzelba</string>
+    <string name="weaponstab_sniper">Snajper</string>
+    <string name="weaponstab_unique">Unikalny</string>
+    <string name="weaponstab_arrow">Strzałka</string>
+
     <!-- Donate buttons -->
     <string name="donate_button_one">Brązowy</string>
     <string name="donate_button_two">Srebro</string>
@@ -83,7 +95,7 @@
     <string name="statisticoptions_field_empty">PUSTE POLE</string>
     <string name="statisticoptions_field_added">DODANO GRACZA</string>
     <string name="statisticoptions_field_notfound">NIE ZNALEZIONO GRACZA</string>
-
+    <string name="toolbar_weapons">Bronie</string>
     <string name="statisticoptions_player_info">INFO</string>
     <string name="statisticoptions_player_delete">USUŃ</string>
 

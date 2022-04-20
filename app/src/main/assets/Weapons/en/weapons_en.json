@@ -1,0 +1,282 @@
+[
+  {
+    "name": "Havoc",
+    "type": "energy",
+    "image": "energy_havoc",
+    "damage": "32/18/14",
+    "dps": "198",
+    "rpm": "672",
+    "magazine": "24/28/32/36",
+    "reload": "3.2/3.2"
+  },
+  {
+    "name": "Volt",
+    "type": "energy",
+    "image": "energy_volt",
+    "damage": "23/15/12",
+    "dps": "180",
+    "rpm": "720",
+    "magazine": "19/21/23/26",
+    "reload": "1.6/2.25"
+  },
+  {
+    "name": "Devotion",
+    "type": "energy",
+    "image": "energy_devotion",
+    "damage": "28/16/14",
+    "dps": "240",
+    "rpm": "900",
+    "magazine": "36/40/44/48",
+    "reload": "2.8/3.63"
+  },
+  {
+    "name": "L-Star",
+    "type": "energy",
+    "image": "energy_lstar",
+    "damage": "30/17/14",
+    "dps": "170",
+    "rpm": "600",
+    "magazine": "23/25/27/29",
+    "reload": "1.15/2.45"
+  },
+  {
+    "name": "Triple Take",
+    "type": "energy",
+    "image": "energy_tripletake",
+    "damage": "138/69/63",
+    "dps": "90",
+    "rpm": "78",
+    "magazine": "6/7/8/9",
+    "reload": "2.6/3.4"
+  },
+  {
+    "name": "Flatline",
+    "type": "heavy",
+    "image": "heavy_flatline",
+    "damage": "33/19/14",
+    "dps": "190",
+    "rpm": "600",
+    "magazine": "20/25/28/30",
+    "reload": "2.4/3.1"
+  },
+  {
+    "name": "Hemlok",
+    "type": "heavy",
+    "image": "heavy_hemlock",
+    "damage": "35/20/15",
+    "dps": "214",
+    "rpm": "643",
+    "magazine": "18/24/27/30",
+    "reload": "2.4/2.85"
+  },
+  {
+    "name": "Prowler",
+    "type": "heavy",
+    "image": "heavy_prowler",
+    "damage": "23/15/12",
+    "dps": "171",
+    "rpm": "685",
+    "magazine": "20/25/30/35",
+    "reload": "2.0/2.6"
+  },
+  {
+    "name": "Rampage",
+    "type": "heavy",
+    "image": "heavy_rampage",
+    "damage": "49/28/24",
+    "dps": "140",
+    "rpm": "300",
+    "magazine": "28/32/34/40",
+    "reload": "2.3/3.0"
+  },
+  {
+    "name": "30-30 Repeater",
+    "type": "heavy",
+    "image": "heavy_3030repeater",
+    "damage": "74/42/36",
+    "dps": "98",
+    "rpm": "140",
+    "magazine": "6/8/10/12",
+    "reload": "0.6"
+  },
+  {
+    "name": "Wingman",
+    "type": "heavy",
+    "image": "heavy_wingman",
+    "damage": "97/45/41",
+    "dps": "117",
+    "rpm": "156",
+    "magazine": "6/7/8/9",
+    "reload": "2.1/2.1"
+  },
+  {
+    "name": "R-301 Carbine",
+    "type": "light",
+    "image": "light_r301carbine",
+    "damage": "25/14/11",
+    "dps": "190",
+    "rpm": "816",
+    "magazine": "18/20/25/28",
+    "reload": "2.4/3.2"
+  },
+  {
+    "name": "R-99",
+    "type": "light",
+    "image": "light_r99",
+    "damage": "17/11/9",
+    "dps": "198",
+    "rpm": "1080",
+    "magazine": "20/22/24/27",
+    "reload": "1.8/2.45"
+  },
+  {
+    "name": "CAR",
+    "type": "light",
+    "image": "light_car",
+    "damage": "20/13/10",
+    "dps": "202",
+    "rpm": "930",
+    "magazine": "20/22/24/27",
+    "reload": "1.7/2.13"
+  },
+  {
+    "name": "P2020",
+    "type": "light",
+    "image": "light_p2020",
+    "damage": "27/18/16",
+    "dps": "126",
+    "rpm": "420",
+    "magazine": "14/16/18/21",
+    "reload": "1.25/1.25"
+  },
+  {
+    "name": "RE-45",
+    "type": "light",
+    "image": "light_re45",
+    "damage": "18/12/11",
+    "dps": "150",
+    "rpm": "750",
+    "magazine": "16/19/22/25",
+    "reload": "1.5/1.95"
+  },
+  {
+    "name": "EVA-8",
+    "type": "shotgun",
+    "image": "shotgun_eva8",
+    "damage": "99/63/63",
+    "dps": "126",
+    "rpm": "120",
+    "magazine": "8",
+    "reload": "2.75/3.0"
+  },
+  {
+    "name": "Peacekeeper",
+    "type": "shotgun",
+    "image": "shotgun_peacekeeper",
+    "damage": "129/99/79",
+    "dps": "96",
+    "rpm": "58",
+    "magazine": "5",
+    "reload": "2.5/3.5"
+  },
+  {
+    "name": "Mastiff",
+    "type": "shotgun",
+    "image": "shotgun_mastiff",
+    "damage": "112/88/88",
+    "dps": "96.8",
+    "rpm": "66",
+    "magazine": "6",
+    "reload": "1.03/1.7"
+  },
+  {
+    "name": "Mozambique",
+    "type": "shotgun",
+    "image": "shotgun_mozambique",
+    "damage": "69/45/42",
+    "dps": "135",
+    "rpm": "180",
+    "magazine": "6",
+    "reload": "2.1/2.6"
+  },
+  {
+    "name": "Charge Rifle",
+    "type": "sniper",
+    "image": "sniper_chargerifle",
+    "damage": "56/45/45",
+    "dps": "23",
+    "rpm": "30",
+    "magazine": "8",
+    "reload": "3.6/3.6"
+  },
+  {
+    "name": "Longbow",
+    "type": "sniper",
+    "image": "sniper_longbow",
+    "damage": "118/55/44",
+    "dps": "71.5",
+    "rpm": "78",
+    "magazine": "6/8/10/12",
+    "reload": "2.66/3.66"
+  },
+  {
+    "name": "Sentinel",
+    "type": "sniper",
+    "image": "sniper_sentinel",
+    "damage": "140/70/63",
+    "dps": "40",
+    "rpm": "37.5",
+    "magazine": "4/5/6/7",
+    "reload": "2.5/3.6"
+  },
+  {
+    "name": "Alternator",
+    "type": "unique",
+    "image": "unique_alternator",
+    "damage": "24/16/13",
+    "dps": "160",
+    "rpm": "600",
+    "magazine": "27",
+    "reload": "1.9/2.23"
+  },
+  {
+    "name": "Spitfire",
+    "type": "unique",
+    "image": "unique_spitfire",
+    "damage": "32/18/15",
+    "dps": "162",
+    "rpm": "540",
+    "magazine": "55",
+    "reload": "3.2/3.8"
+  },
+  {
+    "name": "G7 Scout",
+    "type": "unique",
+    "image": "unique_scoutg7",
+    "damage": "63/36/27",
+    "dps": "144",
+    "rpm": "240",
+    "magazine": "20",
+    "reload": "2.4/3.0"
+  },
+  {
+    "name": "Kraber",
+    "type": "unique",
+    "image": "unique_kraber",
+    "damage": "435/145/116",
+    "dps": "87",
+    "rpm": "36",
+    "magazine": "4",
+    "reload": "3.2/4.3"
+  },
+  {
+    "name": "Bocek Bow",
+    "type": "arrow",
+    "image": "arrow_bocekbow",
+    "damage": "105/60/54",
+    "dps": "69",
+    "rpm": "69",
+    "magazine": "n/a",
+    "reload": "n/a"
+  }
+]
