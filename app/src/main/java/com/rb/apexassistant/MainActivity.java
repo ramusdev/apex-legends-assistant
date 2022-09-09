@@ -17,6 +17,9 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.navigation.NavigationView;
 import com.rb.apexassistant.data.DataDbHelper;
 import com.rb.apexassistant.database.AppDatabase;
@@ -25,6 +28,7 @@ import com.rb.apexassistant.model.PlayerEntity;
 import com.rb.apexassistant.tasks.PopulatorWeaponsTask;
 import com.rb.apexassistant.tasks.StatsUpdateTask;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -253,7 +257,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void createTasks() {
 
+        /*
         Log.d("MyTag", "create task -->");
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+                AppOpenManager appOpenManager = null;
+                appOpenManager = new AppOpenManager(MyApplication.getInstance());
+            }
+        });
+        */
+
 
 
         NewsLoader newsLoader = new NewsLoader(this.getApplicationContext());

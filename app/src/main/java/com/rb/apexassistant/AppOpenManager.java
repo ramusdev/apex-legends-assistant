@@ -24,8 +24,8 @@ import androidx.lifecycle.ProcessLifecycleOwner;
 
 public class AppOpenManager implements LifecycleObserver, Application.ActivityLifecycleCallbacks {
     private static final String LOG_TAG = "MyTag";
-    // private static String AD_UNIT_ID = "ca-app-pub-3940256099942544/3419835294";
-    private static final String AD_UNIT_ID = "ca-app-pub-4140002463111288/6250480639";
+    // private static final String AD_UNIT_ID = "ca-app-pub-3940256099942544/3419835294";
+    private static final String AD_UNIT_ID = "ca-app-pub-4140002463111288/9241235350";
     // private final int TIME_FOR_AD_LOAD = 10000;
     private AppOpenAd appOpenAd = null;
     private AppOpenAd.AppOpenAdLoadCallback loadCallback;
