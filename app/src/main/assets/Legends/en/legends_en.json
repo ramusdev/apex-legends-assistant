@@ -1,5 +1,19 @@
 [
   {
+    "name": "Newcastle",
+    "image": "legend_newcastle",
+    "link": "https://berdyansk.pro/android/apexlegends/legends/data/en/legend_newcastle_en.html",
+    "tagline": "Heroic Defender",
+    "description": "Lamont Craig wasn’t like other dads in the neighborhood. Sure, he dropped the kids off at school and acted out multiple voices every night for Story Time with his toddler. "
+  },
+  {
+    "name": "Vantage",
+    "image": "legend_vantage",
+    "link": "https://berdyansk.pro/android/apexlegends/legends/data/en/legend_vantage_en.html",
+    "tagline": "Sniper Savant",
+    "description": "Xiomara “Mara” Contreras was born and raised alone on the wild ice planet Págos by her survivalist mother, Xenia."
+  },
+  {
     "name": "Mad Maggie",
     "image": "legend_maggie",
     "link": "https://berdyansk.pro/android/apexlegends/legends/data/en/legend_maggie_en.html",

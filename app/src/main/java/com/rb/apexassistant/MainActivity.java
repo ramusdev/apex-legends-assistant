@@ -43,13 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     public DataDbHelper dbHelper;
-    // public static String AD_INTERSTITIAL_ID = "24534e1901884e398f1253216226017e";
-    // public static String AD_INTERSTITIAL_ID = "a51cf41cb09d40f3b9cad9837a74ccfc";
     public static final String APP_PREFERENCES = "settings";
     public static final String APP_PREFERENCES_VERSION = "version";
-    private static final String ADMOB_INTERSTITIAL_ID = "ca-app-pub-4140002463111288/1213456548";
     public NavigationView navigationView;
-    // private static final String ADMOB_INTERSTITIAL_ID = "ca-app-pub-3940256099942544/1033173712";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
